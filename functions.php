@@ -34,6 +34,15 @@ if( function_exists('acf_add_options_sub_page') ) {
 
 }
 
+
+/*********************************************************************************************************
+ADD CUSTOM POST TYPES
+*********************************************************************************************************/
+include_once('includes/cpt-shows.php');
+include_once('includes/cpt-music.php');
+include_once('includes/cpt-videos.php');
+
+
 /*********************************************************************************************************
 BOOMBOX MAIN MENU - Used as fallback when no menu is initially created
 *********************************************************************************************************/
@@ -83,39 +92,6 @@ function hex2rgba($color, $opacity = false) {
 
         //Return rgb(a) color string
         return $output;
-}
-
-
-/*********************************************************************************************************
-ADD & SET HOME PAGE ON THEME ACTIVATION
-Thanks Kevin: http://wpsnipp.com/index.php/functions-php/create-page-on-theme-activation/
-*********************************************************************************************************/
-if (isset($_GET['activated']) && is_admin()){
-    $new_page_title = 'Home';
-    $new_page_content = '';
-    $new_page_template = ''; //ex. template-custom.php. Leave blank if you don't want a custom page template.
-    //don't change the code bellow, unless you know what you're doing
-    $page_check = get_page_by_title($new_page_title);
-    $new_page = array(
-        'post_type' => 'page',
-        'post_title' => $new_page_title,
-        'post_content' => $new_page_content,
-        'post_status' => 'publish',
-        'post_author' => 1,
-    );
-    if(!isset($page_check->ID)){
-        $new_page_id = wp_insert_post($new_page);
-        if(!empty($new_page_template)){
-            update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
-        }
-    }
-
-    $homepage = get_page_by_title($new_page_title);
-    if( $homepage ){
-    	update_option( 'page_on_front', $homepage->ID );
-    	update_option( 'show_on_front', 'page' );
-    }
-
 }
 
 
@@ -292,5 +268,3 @@ add_action( 'init', 'boombox_add_editor_styles' );
 /*********************************************************************************************************
 Sellwire + Wp-Updates integration (keep this for automatic updates!)
 *********************************************************************************************************/
-require_once('wp-updates-theme.php');
-new WPUpdatesThemeUpdater_701( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
