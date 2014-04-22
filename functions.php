@@ -14,13 +14,13 @@ include_once( 'plugins/acf-options-page/acf-options-page.php' ); //ACF Options P
 ADD CUSTOM ACF OPTIONS + TOGGLE ACF CONFIG PANEL IN DASHBOARD
 *********************************************************************************************************/
 //add custom ACF options
-include_once( 'includes/theme_options.php' );
+//include_once( 'includes/theme_options.php' );
 
 //set default values for fields
 include_once( 'includes/default_options.php' );
 
 // change this value to false to view custom field editor in Wordpress and make modifications.
-define( 'ACF_LITE' , true );
+define( 'ACF_LITE' , false );
 
 
 /*********************************************************************************************************
@@ -222,7 +222,7 @@ add_theme_support('post-thumbnails');
 
 // default thumb size
 set_post_thumbnail_size( 256, 160, true );
-add_image_size( 'gallery-photo', 320, 320, true );
+add_image_size( 'gallery-photo', 400, 400, true );
 add_image_size( 'background-photo', 1920, 1920, false );
 
 // registering wp3+ menus

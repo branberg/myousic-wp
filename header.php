@@ -1,50 +1,59 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html>
 <head>
-
 	<!--
-	  __  ____     ______  _    _  _____ _____ _____ 
-	 |  \/  \ \   / / __ \| |  | |/ ____|_   _/ ____|
-	 | \  / |\ \_/ / |  | | |  | | (___   | || |     
-	 | |\/| | \   /| |  | | |  | |\___ \  | || |     
-	 | |  | |  | | | |__| | |__| |____) |_| || |____ 
-	 |_|  |_|  |_|  \____/ \____/|_____/|_____\_____|
-	                                                                                                                                                 
-	  Theme: Myousic, by Branberg (branberg.com)
+	
+	  __  __ __     __ ____   _    _   _____  _____  _____ 
+	 |  \/  |\ \   / // __ \ | |  | | / ____||_   _|/ ____|
+	 | \  / | \ \_/ /| |  | || |  | || (___    | | | |     
+	 | |\/| |  \   / | |  | || |  | | \___ \   | | | |     
+	 | |  | |   | |  | |__| || |__| | ____) | _| |_| |____ 
+	 |_|  |_|   |_|   \____/  \____/ |_____/ |_____|\_____|
+	                                                       
+	  Theme: Myousic
+	  Author: Branberg (http://branberg.com)
 
 	-->
-
 	<meta charset="UTF-8">
 	<title><?php the_title(); ?> | <?php bloginfo('name'); ?></title>
-
-	<?php $favicon = get_field('favicon','option'); if($favicon): ?>
-		<link rel="icon" type="image/png" href="<?php echo $favicon; ?>" />
-	<?php else: ?>
-		<link rel="icon" type="image/png" href="<?php echo get_stylesheet_directory_uri() . '/library/img/favicon.png' ?>" />
-	<?php endif; ?>
-
+	<link rel="icon" type="image/png" href="library/img/favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
 	<!-- Social meta tags -->
-	<meta name="description" content="Boombox is a simple, one-page theme that was created specifically for musicians." />
+	<meta name="description" content="<?php bloginfo('description'); ?>" />
 	<meta property="og:title" content="<?php the_title(); ?> | <?php bloginfo('name'); ?>" />
 	<meta property="og:type" content="profile" />
-	<meta property="og:url" content="<?php site_url(); ?>" />
-	<meta property="og:image" content="http://example.com/image.jpg" />
-	<meta property="og:description" content="Boombox is a simple, one-page theme that was created specifically for musicians." />
+	<meta property="og:url" content="<?php echo site_url(); ?>" />
+	<meta property="og:description" content="<?php bloginfo('description'); ?>" />
+
+	<link href="library/css/tooltipster.css" rel="stylesheet" type="text/css" media="all" />
 
 	<?php wp_head(); ?>
 
-	<style type="text/css"><?php include_once('includes/custom_styles.php'); ?></style>
-
 </head>
 <body <?php body_class(); ?>>
-
-	<!--[if lt IE 9]>
-		<div id="ie_upgrade_message">
-			<p>This website is not supported on your browser. It uses up-to-date technology that this version of Internet Exploer does not support.</p>
-			<p>Please <a href="http://browsehappy.com/">upgrade to a modern browser</a> for the best viewing experience possible.</p>
-		</div>
-	<![endif]-->
-
 	
+	<?php // mobile site menu is generated via javascript ?>
+
+	<div id="site_wrap">
+
+		<div id="mobile_header">
+			<div id="mobile_menu_toggle">
+				<i class="icon-menu"></i>
+			</div>
+			<span id="mobile_site_title">Fox &amp; Coyote</span>
+		</div>
+		<header id="main_header" class="site_header">
+			<div id="header_overlay_color"></div>
+			<div class="wrap">
+				<div id="logo_wrap">
+					<a href="/" id="logo" class="logo_img"><img src="/library/img/logo.png" alt="fox &amp; coyote" /></a>
+				</div>
+				
+				<?php wp_nav_menu(array( 'theme_location' => 'main-nav' )); ?>
+
+				<?php if( !is_front_page() ): ?>
+					<span id="page_title"><?php the_title(); ?></span>
+				<?php endif; ?>
+
+			</div>
+		</header>

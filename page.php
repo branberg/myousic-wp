@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-FRONT PAGE
+Page
 <?php get_footer(); ?>

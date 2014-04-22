@@ -23,7 +23,7 @@ function myousic_cpt_music() {
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', ),
 		'hierarchical'        => false,
-		'public'              => true,
+		'public'              => false,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
 		'show_in_nav_menus'   => true,
