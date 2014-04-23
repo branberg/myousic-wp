@@ -1,6 +1,12 @@
 <?php
+	
+	//let's set up variables with null values to be safe
+	$title = null;
+	$permalink = null;
+	$date = null;
+	$excerpt = null;
 
-	if( is_front_page() ){
+	if( is_front_page() ){ //do this stuff if we're showing a snippet on the homepage
 
 		//do different queries based on snippet type
 		if( get_sub_field( 'snippet_type' ) == 'Most Recent Post' ){
@@ -44,6 +50,7 @@
 		</header>
 		<div class="article_excerpt">
 			<p><?php echo $excerpt; ?></p>
+			<a href="<?php echo $permalink; ?>" class="read_more_link">Read More &raquo;</a>
 		</div>
 	</div>
 </div>
