@@ -173,14 +173,16 @@ function boombox_styles_and_scripts(){
 	if (!is_admin()) {
 	
 		// register scripts
+		wp_register_script( 'tooltipster', get_stylesheet_directory_uri() . '/library/js/jquery.tooltipster.min.js', array('jquery'), '3.0.4', true );
 		wp_register_script( 'fitvids', get_stylesheet_directory_uri() . '/library/js/jquery.fitvids.js', array('jquery'), '1.1', true );
 		wp_register_script( 'swipebox', get_stylesheet_directory_uri() . '/library/js/jquery.swipebox.min.js', array('jquery'), '1.2.4', true );
 		wp_register_script( 'nivo', get_stylesheet_directory_uri() . '/library/js/jquery.nivo-lightbox.min.js', array('jquery'), '1.0', true );
-		wp_register_script( 'main-js', get_stylesheet_directory_uri() . '/library/js/main-ck.js', array( 'jquery' ), '', true );
+		wp_register_script( 'main-js', get_stylesheet_directory_uri() . '/library/js/main.js', array( 'jquery' ), '', true );
 		
 		// register stylesheets
 		wp_register_style( 'default', get_stylesheet_directory_uri() . '/style.css', array(), '', 'all' );
 		wp_register_style( 'swipebox', get_stylesheet_directory_uri() . '/library/css/swipebox/swipebox.css', array(), '', 'all' );
+		wp_register_style( 'tooltipster', get_stylesheet_directory_uri() . '/library/css/tooltipster.css', array(), '', 'all' );
 		wp_register_style( 'nivo', get_stylesheet_directory_uri() . '/library/css/nivo/nivo-lightbox.css', array(), '', 'all' );
 		wp_register_style( 'nivotheme', get_stylesheet_directory_uri() . '/library/css/nivo/themes/default/default.css', array(), '', 'all' );
 		wp_register_style( 'stylesheet', get_stylesheet_directory_uri() . '/library/css/main.css', array(), '', 'all' );
@@ -188,6 +190,7 @@ function boombox_styles_and_scripts(){
 		wp_register_style( 'ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 		
 		// enqueue styles
+		wp_enqueue_style( 'tooltipster' );
 		wp_enqueue_style( 'swipebox' );
 		wp_enqueue_style( 'nivo' );
 		wp_enqueue_style( 'nivotheme' );
@@ -200,6 +203,7 @@ function boombox_styles_and_scripts(){
 		//enqueue scripts
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'fitvids' );
+		wp_enqueue_script( 'tooltipster' );
 		wp_enqueue_script( 'swipebox' );
 		wp_enqueue_script( 'nivo' );
 		wp_enqueue_script( 'main-js' );

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("myousic-icons.css");
 /*******
 
@@ -246,15 +247,6 @@ a img.aligncenter {
   margin: 0;
   padding: 0 4px 5px; }
 
-.sticky {
-  display: block; }
-
-.gallery-caption {
-  display: block; }
-
-.bypostauthor {
-  display: block; }
-
 /*********************
 CLEARFIXIN'
 *********************/
@@ -274,9 +266,52 @@ TOOLS
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+/*********************
+TYPOGRAPHY
+*********************/
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
 /*********************
 TRANSITION
 *********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
 /*********************
 BOX SHADOW
 *********************/
@@ -286,47 +321,48 @@ BORDER RADIUS
 /*********************
 BORDER RADIUS - Even
 *********************/
+/*********************
+TRIANGLES
+*********************/
+/*********************
+COLORS
+*********************/
+/*********************
+TYPOGRAPHY
+*********************/
 /********************************************************************
 *** GLOBALS
 *********************************************************************/
 html, body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 1em;
-  color: #382A3B;
+  color: #9dabb3;
   overflow-x: hidden; }
 
 a {
-  color: #382A3B; }
+  color: #9dabb3; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500; }
 
-#ie_upgrade_message {
-  display: none; }
+::selection {
+  background: #c8a999; }
 
-#user_controls {
-  display: none; }
+::-moz-selection {
+  background: #c8a999; }
 
 #site_wrap {
   position: relative;
-  background-image: url("../img/default_background.jpg");
+  background-color: #233743;
   -moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
   -o-box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); }
-  #site_wrap #overlay_color {
-    background-color: #ffffff;
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; }
 
 #mobile_menu {
-  background-color: #322635;
+  background-color: #233743;
   position: fixed;
   top: 0;
   right: 0;
@@ -334,7 +370,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   z-index: 0;
   padding: 0 60px 0 0;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: "Montserrat", sans-serif; }
   #mobile_menu ul {
     padding: 20px;
     margin: 0; }
@@ -353,9 +389,9 @@ h1, h2, h3, h4, h5, h6 {
         text-decoration: none;
         padding: 20px;
         font-size: 1.2em;
-        opacity: 1;
+        opacity: 0.55;
         text-transform: uppercase;
-        color: #ffffff;
+        color: white;
         -webkit-transition: opacity 0.05s linear;
         -ms-transition: opacity 0.05s linear;
         -o-transition: opacity 0.05s linear;
@@ -363,19 +399,13 @@ h1, h2, h3, h4, h5, h6 {
         transition: opacity 0.05s linear; }
     #mobile_menu ul li.current-menu-item a,
     #mobile_menu ul li a:hover {
-      opacity: 0.55; }
-  #mobile_menu ul#social_links li {
-    display: inline-block;
-    margin-right: -4px; }
-    #mobile_menu ul#social_links li a {
-      display: block;
-      font-size: 24px; }
+      opacity: 1; }
 
 #mobile_header {
   height: 56px;
   width: 100%;
-  background-color: rgba(56, 42, 59, 0.9);
-  border-bottom: solid 1px #2d222f;
+  background-color: rgba(38, 60, 74, 0.8);
+  border-bottom: solid 1px #1f313d;
   position: fixed;
   top: 0;
   right: 0;
@@ -397,7 +427,7 @@ h1, h2, h3, h4, h5, h6 {
     #mobile_header #mobile_menu_toggle i {
       display: block;
       font-size: 24px;
-      color: #ffffff; }
+      color: white; }
   #mobile_header #mobile_site_title {
     display: block;
     position: absolute;
@@ -405,7 +435,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     left: 0;
     text-align: center;
-    color: #ffffff;
+    color: white;
     width: 100%;
     font-size: 16px;
     height: 56px;
@@ -413,135 +443,284 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 0; }
 
 .site_header {
-  position: relative; }
+  position: relative;
+  background: url("../img/header_background.jpg") no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  .site_header #header_overlay_color {
+    background-color: #00243b;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0; }
+  .site_header .wrap {
+    position: relative;
+    z-index: 10;
+    height: 100%; }
   .site_header #logo_wrap {
-    padding: 140px 0 84px 0; }
-    .site_header #logo_wrap a {
-      display: block;
-      max-width: 90%;
-      margin: 0 auto;
-      outline: none;
-      font-size: 50px;
-      text-decoration: none;
-      text-align: center;
-      font-weight: 700;
-      font-family: 'Montserrat', sans-serif;
-      -webkit-backface-visibility: hidden;
-      -webkit-transition: opacity 0.15s linear;
-      -ms-transition: opacity 0.15s linear;
-      -o-transition: opacity 0.15s linear;
-      -transition: opacity 0.15s linear;
-      transition: opacity 0.15s linear;
-      opacity: 1; }
-      .site_header #logo_wrap a img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        margin: 0 auto; }
-    .site_header #logo_wrap a:hover {
-      opacity: 0.85; }
-  .site_header nav#header_nav {
     display: none; }
+    .site_header #logo_wrap #logo {
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      color: white;
+      text-decoration: none;
+      text-shadow: 5px 5px 0 rgba(0, 36, 59, 0.5);
+      font-size: 2em;
+      text-align: left; }
+      .site_header #logo_wrap #logo img {
+        width: 100%;
+        height: auto;
+        display: block; }
+  .site_header #header_nav {
+    display: none; }
+  .site_header #page_title {
+    display: block;
+    text-align: center;
+    padding: 116px 20px 60px 20px;
+    font-size: 2em;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 rgba(0, 36, 59, 0.5); }
 
-#page_sections:first-child {
-  margin-top: 0; }
-#page_sections:last-child {
-  margin-bottom: 0; }
+body.home .site_header #logo_wrap {
+  display: block;
+  padding: 116px 20px 60px 20px; }
+  body.home .site_header #logo_wrap #logo {
+    text-align: center; }
 
 .page_section {
-  padding: 15px 0;
-  position: relative; }
-
-.placeholder_section .placeholder_copy {
-  background: #ffffff;
-  padding: 80px 60px;
-  text-align: center;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px; }
-  .placeholder_section .placeholder_copy h1 {
-    margin-top: 0; }
-  .placeholder_section .placeholder_copy p {
-    margin: 2em; }
-  .placeholder_section .placeholder_copy a {
-    display: inline-block;
-    padding: 10px 16px;
-    background: #382A3B;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 26px; }
+  background-color: #263c4a; }
+  .page_section .section_header {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 80px 0 40px 0; }
+    .page_section .section_header h2 {
+      font-weight: 500;
+      font-size: 1.25rem;
+      margin: 0; }
+    .page_section .section_header, .page_section .section_header a {
+      color: #9dabb3; }
+    .page_section .section_header a {
+      text-decoration: none;
+      position: relative;
+      padding-right: 24px;
+      -webkit-transition: color 0.05s linear;
+      -ms-transition: color 0.05s linear;
+      -o-transition: color 0.05s linear;
+      -transition: color 0.05s linear;
+      transition: color 0.05s linear; }
+      .page_section .section_header a:after {
+        content: "»";
+        font-weight: 300;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.4em;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 16px;
+        height: 25px;
+        line-height: 16px; }
+      .page_section .section_header a:hover {
+        color: #c8d0d4; }
 
 /*************************************
 MUSIC/ALBUMS
 *************************************/
-.music_section {
-  background-color: #382A3B;
-  margin: 15px 0;
-  padding: 30px 0; }
-  .music_section .album {
-    background-color: #382A3B;
-    margin-bottom: 30px; }
-    .music_section .album:last-child {
-      margin-bottom: 0; }
-    .music_section .album .soundcloud_embed {
-      height: 200px; }
-      .music_section .album .soundcloud_embed iframe, .music_section .album .soundcloud_embed .soundcloud_plaeholder {
+.music_section .album {
+  background-color: #335062;
+  margin-bottom: 30px; }
+  .music_section .album:last-child {
+    margin-bottom: 0; }
+  .music_section .album .soundcloud_embed {
+    height: 200px; }
+    .music_section .album .soundcloud_embed iframe, .music_section .album .soundcloud_embed .soundcloud_plaeholder {
+      display: block;
+      width: 100% !important;
+      height: 100% !important; }
+  .music_section .album .album_info_wrapper {
+    color: #9dabb3; }
+    .music_section .album .album_info_wrapper .album_info {
+      padding: 20px; }
+      .music_section .album .album_info_wrapper .album_info .album_type {
+        font-family: "Montserrat", sans-serif;
+        color: #9dabb3;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        color: #5c7381; }
+      .music_section .album .album_info_wrapper .album_info .album_title {
+        font-size: 1.625rem;
+        font-weight: 500;
+        margin: 10px 0;
+        color: white; }
+      .music_section .album .album_info_wrapper .album_info .album_description {
+        color: #9dabb3; }
+        .music_section .album .album_info_wrapper .album_info .album_description > :first-child {
+          margin-top: 0; }
+        .music_section .album .album_info_wrapper .album_info .album_description > :last-child {
+          margin-bottom: 0; }
+      .music_section .album .album_info_wrapper .album_info .album_button {
+        font-size: 1.25rem;
         display: block;
-        width: 100% !important;
-        height: 100% !important; }
-    .music_section .album .album_info_wrapper {
-      color: #382A3B; }
-      .music_section .album .album_info_wrapper .album_info {
-        padding: 20px 20px 0 20px; }
-        .music_section .album .album_info_wrapper .album_info .album_type {
-          font-family: 'Montserrat', sans-serif;
-          text-transform: uppercase;
-          font-size: 0.85rem;
-          color: #ffffff;
-          opacity: 0.6; }
-        .music_section .album .album_info_wrapper .album_info .album_title {
-          font-size: 1.625rem;
-          font-weight: 500;
-          margin: 10px 0;
-          color: #ffffff; }
-        .music_section .album .album_info_wrapper .album_info .album_description {
-          color: #ffffff; }
-          .music_section .album .album_info_wrapper .album_info .album_description > :first-child {
-            margin-top: 0; }
-          .music_section .album .album_info_wrapper .album_info .album_description > :last-child {
-            margin-bottom: 0; }
-        .music_section .album .album_info_wrapper .album_info .album_button {
-          font-size: 1.25rem;
-          display: block;
-          margin: 20px 0 0 0;
-          font-family: 'Montserrat', sans-serif;
-          text-transform: uppercase;
-          text-align: center;
-          background-color: #ffffff;
-          color: #382A3B;
-          text-decoration: none;
-          padding: 20px;
-          -webkit-transition: opacity 0.05s linear;
-          -ms-transition: opacity 0.05s linear;
-          -o-transition: opacity 0.05s linear;
-          -transition: opacity 0.05s linear;
-          transition: opacity 0.05s linear; }
-          .music_section .album .album_info_wrapper .album_info .album_button:hover {
-            opacity: 0.7; }
+        margin: 20px 0 0 0;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        background-color: #5c7381;
+        color: #263c4a;
+        text-decoration: none;
+        padding: 20px;
+        -webkit-transition: background-color 0.05s linear;
+        -ms-transition: background-color 0.05s linear;
+        -o-transition: background-color 0.05s linear;
+        -transition: background-color 0.05s linear;
+        transition: background-color 0.05s linear; }
+        .music_section .album .album_info_wrapper .album_info .album_button:hover {
+          background-color: #748d9c; }
 
 /*************************************
-SHOWS
+NEWS SECTION
 *************************************/
+.news_section .news_article_wrap {
+  position: relative;
+  border-top: solid 2px #9dabb3;
+  margin-bottom: 30px; }
+  .news_section .news_article_wrap:last-child {
+    margin-bottom: 0; }
+  .news_section .news_article_wrap:before {
+    content: "";
+    position: absolute;
+    background-color: #263c4a;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#9dabb3), to(#263c4a));
+    background-image: -webkit-linear-gradient(top, #9dabb3, #263c4a);
+    background-image: -moz-linear-gradient(top, #9dabb3, #263c4a);
+    background-image: -o-linear-gradient(top, #9dabb3, #263c4a);
+    background-image: linear-gradient(to bottom, #9dabb3, #263c4a);
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 300px; }
+  .news_section .news_article_wrap .news_article {
+    position: relative;
+    z-index: 10;
+    margin: 0 2px;
+    background-color: #263c4a;
+    padding: 20px; }
+    .news_section .news_article_wrap .news_article header.article_header {
+      margin-bottom: 20px; }
+      .news_section .news_article_wrap .news_article header.article_header h3 {
+        margin: 0;
+        font-size: 1.6em;
+        float: left; }
+        .news_section .news_article_wrap .news_article header.article_header h3 a {
+          text-decoration: none; }
+          .news_section .news_article_wrap .news_article header.article_header h3 a:hover {
+            text-decoration: underline; }
+      .news_section .news_article_wrap .news_article header.article_header span.article_date {
+        display: none; }
+    .news_section .news_article_wrap .news_article .article_excerpt {
+      font-size: 1.15rem;
+      font-weight: 300; }
+      .news_section .news_article_wrap .news_article .article_excerpt p {
+        margin: 0; }
+    .news_section .news_article_wrap .news_article .article_content {
+      font-size: 1.5em;
+      font-weight: 300; }
+    .news_section .news_article_wrap .news_article footer.article_footer {
+      padding: 80px 0; }
+      .news_section .news_article_wrap .news_article footer.article_footer ul.share_links {
+        margin: 0;
+        padding: 0;
+        text-align: center; }
+        .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li {
+          list-style-type: none;
+          display: inline-block;
+          text-transform: uppercase; }
+          .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li a {
+            text-decoration: none;
+            display: block;
+            padding: 0 10px;
+            font-size: 24px; }
+            .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li a:hover {
+              color: white; }
+        .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li.share_label {
+          font-size: 20px;
+          margin-right: 18px;
+          position: relative;
+          top: -2px; }
+        .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li.twitter:hover a {
+          color: #00aced; }
+        .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li.facebook:hover a {
+          color: #3b5998; }
+
+/* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
+.tooltipster-default {
+  border: none;
+  background: none;
+  color: white; }
+  .tooltipster-default .tooltipster-content {
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    padding: 0;
+    overflow: hidden; }
+    .tooltipster-default .tooltipster-content .fill {
+      padding: 8px 12px;
+      border-radius: 3px; }
+    .tooltipster-default .tooltipster-content .fill.tweet {
+      background: #00aced; }
+    .tooltipster-default .tooltipster-content .fill.like {
+      background: #3b5998; }
+
+/* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
+.tooltipster-default .tooltipster-arrow .tooltipster-arrow-border {
+  /* border-color: ... !important; */ }
+
+/*************************************
+SHOWS - BANDSINTOWN
+*************************************/
+.bit-widget-container th, .bit-widget-container td {
+  padding: 20px;
+  font-size: 1.2rem; }
+.bit-widget-container th {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem; }
+
+td.bit-date {
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900; }
+
+td.bit-venue {
+  font-family: "Open Sans", sans-serif; }
+
+#bit-events td .bit-uiButton {
+  background-color: #263c4a;
+  background-image: none; }
+
+/*************************************
+SHOWS - CUSTOM
+*************************************/
+.shows_section {
+  padding-bottom: 40px; }
+
 table.tour_dates {
   width: 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
   border-collapse: separate; }
   table.tour_dates tr:first-child td {
-    border-top: solid 2px rgba(56, 42, 59, 0.3); }
+    border-top: solid 2px rgba(157, 171, 179, 0.3); }
   table.tour_dates tr td {
-    border-bottom: solid 2px rgba(56, 42, 59, 0.3); }
+    border-bottom: solid 2px rgba(157, 171, 179, 0.3); }
   table.tour_dates tr td {
     font-size: 12px; }
     table.tour_dates tr td .cell_wrap {
@@ -572,10 +751,13 @@ table.tour_dates {
 /*************************************
 VIDEOS
 *************************************/
-.videos_section .section_header {
-  margin: 0 0 40px 0; }
-.videos_section .video_embed {
-  padding: 0; }
+.videos_section {
+  background-color: black;
+  padding: 40px 0; }
+  .videos_section .section_header {
+    margin: 0 0 40px 0; }
+  .videos_section .video_embed {
+    padding: 0; }
 
 /*************************************
 PHOTOS SECTION
@@ -606,87 +788,74 @@ PHOTOS SECTION
 /*************************************
 TEXT SECTION
 *************************************/
-.text_section .text_content > :first-child {
-  margin-top: 0; }
-.text_section .text_content > :last-child {
-  margin-bottom: 0; }
+.text_section .text_content {
+  padding: 0 0 80px 0; }
+  .text_section .text_content > :first-child {
+    margin-top: 0; }
+  .text_section .text_content > :last-child {
+    margin-bottom: 0; }
 
 /*************************************
 FOOTER
 *************************************/
 .site_footer {
+  color: #5c7381;
   padding: 40px 0;
-  position: relative; }
+  background-color: #1d2d38; }
   .site_footer .credits {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     text-align: center;
-    padding-top: 40px; }
+    padding-top: 40px;
+    color: #5c7381; }
     .site_footer .credits p {
       margin: 10px 0; }
     .site_footer .credits a {
+      color: #5c7381;
       text-decoration: none; }
+      .site_footer .credits a:hover {
+        color: #9dabb3; }
 
 .mailing_list {
   text-align: center;
   padding: 0 0 40px 0;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: "Montserrat", sans-serif; }
   .mailing_list .mailing_list_title, .mailing_list form {
     display: block;
-    color: #382A3B; }
+    color: #5c7381; }
   .mailing_list .mailing_list_title {
     text-transform: uppercase;
-    font-size: 22px;
+    font-size: 1.4em;
     margin: 0 0 20px 0; }
   .mailing_list form {
     font-size: 18px;
     overflow: hidden; }
     .mailing_list form input {
-      border: solid 2px #382A3B;
+      border: solid 2px #5c7381;
       display: block;
       padding: 15px;
       outline: none; }
-    .mailing_list form input[type="email"] {
+    .mailing_list form input[type="text"] {
       width: 100%;
       background: none;
       margin-bottom: 10px;
-      color: #382A3B; }
+      color: #5c7381; }
     .mailing_list form input[type="submit"] {
       text-transform: uppercase;
-      background-color: #382A3B;
-      color: #ffffff;
+      background-color: #5c7381;
+      color: #1d2d38;
       width: 100%; }
       .mailing_list form input[type="submit"]:hover {
-        opacity: 0.8; }
+        background-color: #647e8d; }
     .mailing_list form ::-webkit-input-placeholder {
-      color: #382A3B; }
+      color: #5c7381; }
     .mailing_list form :-moz-placeholder {
-      color: #382A3B; }
+      color: #5c7381; }
     .mailing_list form ::-moz-placeholder {
-      color: #382A3B; }
+      color: #5c7381; }
     .mailing_list form :-ms-input-placeholder {
-      color: #382A3B; }
+      color: #5c7381; }
     .mailing_list form label.placeholder {
-      color: #382A3B; }
-  .mailing_list #mc_embed_signup {
-    background: none;
-    clear: none;
-    font: 18px "Montserrat",sans-serif; }
-    .mailing_list #mc_embed_signup form {
-      text-align: center;
-      padding: 0;
-      font-size: 18px;
-      overflow: hidden; }
-    .mailing_list #mc_embed_signup label[for="mce-EMAIL"] {
-      text-transform: uppercase;
-      font-size: 22px;
-      margin: 0 0 20px 0;
-      display: block; }
-
-#FbridgeSGWidget #attribution {
-  display: none; }
-
-.fanbridge_mailing_list_widget fieldset label {
-  text-align: left; }
+      color: #5c7381; }
 
 .social_links ul {
   margin: 0;
@@ -699,12 +868,12 @@ FOOTER
     .social_links ul li a {
       display: block;
       padding: 10px 14px;
-      background-color: none;
+      background-color: #1d2d38;
       font-size: 28px;
       text-decoration: none;
-      color: #382A3B; }
+      color: #5c7381; }
     .social_links ul li a:hover, .social_links ul li a:hover {
-      color: #715477; }
+      color: #9dabb3; }
 
 /*************************************
 PAGE STYLES
@@ -712,12 +881,110 @@ PAGE STYLES
 #page_content {
   padding: 30px 0; }
 
+/*************************************
+MUSIC PAGE
+*************************************/
+/*************************************
+NEWS PAGE
+*************************************/
+/*************************************
+SHOWS PAGE
+*************************************/
+/*************************************
+VIDEOS PAGE
+*************************************/
+#page_content.videos_section > .wrap {
+  background-color: black; }
+
+.video_list .video_embed {
+  margin-bottom: 40px; }
+  .video_list .video_embed:last-child {
+    margin-bottom: 0; }
+
+/*************************************
+CONTACT STYLES
+*************************************/
+form.contact_form {
+  color: #5c7381; }
+  form.contact_form ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; }
+    form.contact_form ul li {
+      list-style-type: none;
+      float: left;
+      display: block;
+      margin-bottom: 30px; }
+    form.contact_form ul li:last-child {
+      margin-bottom: 0; }
+    form.contact_form ul li.half {
+      width: 100%;
+      margin-right: 0%; }
+    form.contact_form ul li.full {
+      width: 100%; }
+    form.contact_form ul li.last {
+      margin-right: 0; }
+  form.contact_form label {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    margin-bottom: 10px; }
+  form.contact_form input, form.contact_form textarea {
+    display: block;
+    border: solid 2px #5c7381;
+    background: none;
+    font-size: 1.5em;
+    padding: 20px;
+    outline: none;
+    color: #9dabb3;
+    width: 100%; }
+  form.contact_form textarea {
+    min-height: 300px;
+    resize: none; }
+  form.contact_form input[type="submit"] {
+    font-family: "Montserrat", sans-serif;
+    background-color: #5c7381;
+    color: #263c4a;
+    padding: 20px 30px;
+    border: none;
+    -webkit-transition: background-color 0.05s linear;
+    -ms-transition: background-color 0.05s linear;
+    -o-transition: background-color 0.05s linear;
+    -transition: background-color 0.05s linear;
+    transition: background-color 0.05s linear; }
+    form.contact_form input[type="submit"]:hover {
+      background-color: #748d9c; }
+  form.contact_form ::-webkit-input-placeholder {
+    color: #5c7381; }
+  form.contact_form :-moz-placeholder {
+    color: #5c7381; }
+  form.contact_form ::-moz-placeholder {
+    color: #5c7381; }
+  form.contact_form :-ms-input-placeholder {
+    color: #5c7381; }
+  form.contact_form label.placeholder {
+    color: #5c7381; }
+
+p.alert {
+  color: #263c4a;
+  text-align: center;
+  padding: 6px;
+  font-size: 1.1em;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px; }
+  p.alert.success {
+    background-color: #2BB673; }
+  p.alert.warning {
+    background-color: #FBB040; }
+  p.alert.error {
+    background-color: #EF4136; }
+
 @media only screen and (min-width: 480px) {
-  /********************************************************************
-  *** GLOBALS
-  *********************************************************************/
-  .page_section {
-    padding: 40px 0; }
+  body.home .site_header #logo_wrap #logo {
+    font-size: 3em; }
 
   /*************************************
   MUSIC/ALBUMS
@@ -726,20 +993,42 @@ PAGE STYLES
     margin-bottom: 40px; }
 
   /*************************************
-  SHOWS
+  NEWS SECTION
   *************************************/
+  .news_section .news_article_wrap {
+    margin-bottom: 40px; }
+
+  /*************************************
+  SHOWS - CUSTOM
+  *************************************/
+  table.tour_dates tr td.date {
+    /*&:after{
+    	content: "";
+    	border-right: solid 1px $textColor;
+    	width: 1px;
+    	position: absolute;
+    	right: 0;
+    	top: 10px;
+    	bottom: 10px;
+    }*/ }
   table.tour_dates tr td.rsvp {
     display: table-cell;
     text-align: right; }
 
+  /*************************************
+  SHOWS - BANDSINTOWN
+  *************************************/
   /*************************************
   VIDEOS
   *************************************/
   /*************************************
   PHOTOS SECTION
   *************************************/
+  .photo_gallery ul li {
+    width: 33.333%; }
+
   /*************************************
-  TEXT SECTION
+  PHOTOS SECTION
   *************************************/
   .text_section .text_content {
     font-size: 1.25em; }
@@ -751,63 +1040,33 @@ PAGE STYLES
     padding: 60px 0; }
 
   .mailing_list {
-    padding: 0 0 60px 0; } }
+    padding: 0 0 60px 0; }
+
+  /*************************************
+  PAGE STYLES
+  *************************************/
+  #page_content {
+    padding: 40px 0; }
+
+  /*************************************
+  MUSIC PAGE
+  *************************************/
+  /*************************************
+  NEWS PAGE
+  *************************************/
+  /*************************************
+  SHOWS PAGE
+  *************************************/
+  /*************************************
+  VIDEOS PAGE
+  *************************************/
+  /*************************************
+  CONTACT STYLES
+  *************************************/ }
 @media only screen and (min-width: 768px) {
   /********************************************************************
   *** GLOBALS
   *********************************************************************/
-  #user_controls {
-    display: block;
-    position: fixed;
-    z-index: 5000;
-    top: 15px;
-    left: 15px; }
-    #user_controls ul {
-      padding: 0;
-      margin: 0;
-      background: rgba(0, 0, 0, 0.1);
-      padding: 6px;
-      -moz-border-radius: 26px;
-      -webkit-border-radius: 26px;
-      -o-border-radius: 26px;
-      border-radius: 26px;
-      -webkit-transition: background-color 0.15s linear;
-      -ms-transition: background-color 0.15s linear;
-      -o-transition: background-color 0.15s linear;
-      -transition: background-color 0.15s linear;
-      transition: background-color 0.15s linear; }
-      #user_controls ul:hover {
-        background: rgba(0, 0, 0, 0.16); }
-      #user_controls ul li {
-        list-style-type: none;
-        margin: 0 0 10px 0; }
-        #user_controls ul li a {
-          display: block;
-          color: #ffffff;
-          text-decoration: none;
-          text-align: center;
-          width: 40px;
-          height: 40px;
-          border: solid 2px #ffffff;
-          background-color: none;
-          font-size: 20px;
-          -moz-border-radius: 20px;
-          -webkit-border-radius: 20px;
-          -o-border-radius: 20px;
-          border-radius: 20px;
-          -webkit-transition: background-color 0.15s linear;
-          -ms-transition: background-color 0.15s linear;
-          -o-transition: background-color 0.15s linear;
-          -transition: background-color 0.15s linear;
-          transition: background-color 0.15s linear; }
-          #user_controls ul li a i {
-            position: relative;
-            top: 6px; }
-        #user_controls ul li a:hover {
-          background-color: #382A3B; }
-      #user_controls ul li:last-child {
-        margin-bottom: 0; }
-
   #site_wrap {
     padding-top: 0;
     -moz-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -822,69 +1081,143 @@ PAGE STYLES
     display: none; }
 
   .site_header {
-    padding-bottom: 30px; }
+    padding-top: 30px; }
     .site_header #logo_wrap {
-      padding: 75px 0; }
-      .site_header #logo_wrap #logo {
-        font-size: 60px; }
-    .site_header nav#header_nav {
       display: block;
-      font-family: 'Montserrat', sans-serif; }
-      .site_header nav#header_nav ul {
+      float: left;
+      max-width: 22%; }
+      .site_header #logo_wrap #logo {
+        font-size: 1.6em;
+        text-shadow: 0 0 4px rgba(0, 36, 59, 0.5);
+        -webkit-backface-visibility: hidden;
+        -webkit-transition: opacity 0.15s linear;
+        -ms-transition: opacity 0.15s linear;
+        -o-transition: opacity 0.15s linear;
+        -transition: opacity 0.15s linear;
+        transition: opacity 0.15s linear; }
+        .site_header #logo_wrap #logo:hover {
+          opacity: 0.65; }
+    .site_header #header_nav {
+      float: right;
+      display: block;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1em;
+      text-transform: uppercase;
+      color: white;
+      font-weight: 500;
+      max-width: 75%; }
+      .site_header #header_nav ul {
         margin: 0;
         padding: 0;
-        text-align: center; }
-        .site_header nav#header_nav ul li {
-          list-style-type: none;
+        text-align: right; }
+        .site_header #header_nav ul li {
           display: inline-block;
-          text-transform: uppercase;
-          font-size: 22px; }
-          .site_header nav#header_nav ul li a {
+          list-style-type: none;
+          position: relative; }
+          .site_header #header_nav ul li ul.sub-menu {
+            display: none;
+            position: absolute;
+            padding-top: 14px;
+            width: 200px;
+            margin-left: -100px;
+            left: 50%; }
+            .site_header #header_nav ul li ul.sub-menu:before {
+              content: "";
+              width: 0;
+              height: 0;
+              border-left: 14px solid transparent;
+              border-right: 14px solid transparent;
+              border-bottom: 14px solid #263c4a;
+              position: absolute;
+              left: 50%;
+              top: 0;
+              margin-left: -14px; }
+            .site_header #header_nav ul li ul.sub-menu li {
+              background-color: #263c4a;
+              display: block;
+              text-align: center; }
+              .site_header #header_nav ul li ul.sub-menu li a {
+                display: block;
+                font-size: 1em;
+                padding: 14px; }
+            .site_header #header_nav ul li ul.sub-menu li:first-child a {
+              padding-top: 28px; }
+            .site_header #header_nav ul li ul.sub-menu li:last-child a {
+              padding-bottom: 28px; }
+          .site_header #header_nav ul li a {
+            color: white;
+            display: inline-block;
+            opacity: 0.3;
             text-decoration: none;
-            display: block;
-            padding: 10px;
+            padding: 10px 16px;
+            font-weight: 300;
             -webkit-backface-visibility: hidden;
             -webkit-transition: opacity 0.15s linear;
             -ms-transition: opacity 0.15s linear;
             -o-transition: opacity 0.15s linear;
             -transition: opacity 0.15s linear;
-            transition: opacity 0.15s linear;
-            opacity: 1; }
-        .site_header nav#header_nav ul li.current-menu-item > a,
-        .site_header nav#header_nav ul li a:hover {
-          opacity: 0.5; }
+            transition: opacity 0.15s linear; }
+        .site_header #header_nav ul li.current-menu-item > a,
+        .site_header #header_nav ul li a:hover {
+          opacity: 1; }
+        .site_header #header_nav ul li:hover ul.sub-menu {
+          display: block; }
+    .site_header #page_title {
+      padding: 80px 0 300px 0;
+      font-size: 2em;
+      clear: both;
+      text-shadow: 3px 3px 0 rgba(0, 36, 59, 0.5); }
 
-  .page_section {
-    padding: 30px 0; }
+  body.home .site_header #logo_wrap {
+    padding: 200px 0;
+    float: none;
+    max-width: 70%;
+    margin: 0 auto; }
+    body.home .site_header #logo_wrap #logo {
+      font-size: 4em; }
+  body.home .site_header #header_nav {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%; }
+    body.home .site_header #header_nav ul {
+      text-align: center; }
+
+  .page_section .section_header {
+    text-align: left; }
+    .page_section .section_header h2 {
+      font-size: 1.85rem; }
+    .page_section .section_header a:after {
+      font-size: 1.6em;
+      top: 4px; }
 
   /*************************************
   MUSIC/ALBUMS
   *************************************/
-  .music_section {
-    background: none;
-    margin: 0; }
-    .music_section .album {
-      margin-bottom: 40px; }
-      .music_section .album .soundcloud_embed {
-        float: left;
-        width: 50%; }
-      .music_section .album .album_info_wrapper {
-        float: left;
-        width: 50%;
-        position: relative; }
-        .music_section .album .album_info_wrapper .album_info {
-          padding: 40px; }
-          .music_section .album .album_info_wrapper .album_info .album_type {
-            font-size: 1.125rem; }
-          .music_section .album .album_info_wrapper .album_info .album_title {
-            font-size: 2.375rem; }
-          .music_section .album .album_info_wrapper .album_info .album_description {
-            font-size: 1.15em; }
-          .music_section .album .album_info_wrapper .album_info .album_button {
-            position: absolute;
-            bottom: 40px;
-            left: 40px;
-            right: 40px; }
+  .music_section .album {
+    margin-bottom: 40px; }
+    .music_section .album .soundcloud_embed {
+      float: left;
+      width: 50%; }
+    .music_section .album .album_info_wrapper {
+      float: left;
+      width: 50%;
+      position: relative; }
+      .music_section .album .album_info_wrapper .album_info {
+        padding: 40px; }
+        .music_section .album .album_info_wrapper .album_info .album_type {
+          font-size: 1.125rem; }
+        .music_section .album .album_info_wrapper .album_info .album_title {
+          font-size: 2.375rem; }
+        .music_section .album .album_info_wrapper .album_info .album_description {
+          font-size: 1.15em; }
+        .music_section .album .album_info_wrapper .album_info .album_button {
+          position: absolute;
+          bottom: 40px;
+          left: 40px;
+          right: 40px; }
 
   /*************************************
   NEWS SECTION
@@ -899,13 +1232,13 @@ PAGE STYLES
         display: block;
         float: right;
         text-transform: uppercase;
-        color: #382A3B;
+        color: #9dabb3;
         margin-top: 10px; }
       .news_section .news_article_wrap .news_article .article_excerpt {
         font-size: 1.5rem; }
 
   /*************************************
-  SHOWS
+  SHOWS - CUSTOM
   *************************************/
   .shows_section {
     padding-bottom: 80px; }
@@ -928,7 +1261,7 @@ PAGE STYLES
         font-size: 28px; }
       table.tour_dates tr td.date .cell_wrap:after {
         content: "";
-        border-right: solid 2px rgba(56, 42, 59, 0.3);
+        border-right: solid 2px rgba(157, 171, 179, 0.3);
         width: 1px;
         position: absolute;
         right: 0;
@@ -947,6 +1280,9 @@ PAGE STYLES
     padding-right: 40px; }
 
   /*************************************
+  SHOWS - BANDSINTOWN
+  *************************************/
+  /*************************************
   VIDEOS
   *************************************/
   /*************************************
@@ -964,59 +1300,74 @@ PAGE STYLES
   /*************************************
   FOOTER
   *************************************/
-  .site_footer .credits {
-    padding-top: 0; }
-    .site_footer .credits p {
-      margin: 0; }
-
   .mailing_list .mailing_list_title, .mailing_list form {
     display: inline-block;
     vertical-align: middle; }
   .mailing_list .mailing_list_title {
-    font-size: 24px;
+    font-size: 1.5em;
     margin: 0 40px 0 0; }
   .mailing_list form {
     font-size: 18px; }
     .mailing_list form input {
       float: left;
       padding: 20px; }
-    .mailing_list form input[type="email"] {
+    .mailing_list form input[type="text"] {
       width: 280px;
       border-right: none;
       margin-bottom: 0; }
     .mailing_list form input[type="submit"] {
       width: 150px; }
-  .mailing_list #mc_embed_signup label[for="mce-EMAIL"] {
-    float: left;
-    font-size: 24px;
-    margin: 16px 40px 0 0;
-    display: inline-block;
-    vertical-align: middle; }
-  .mailing_list #mc_embed_signup input[type="email"] {
-    float: left; }
-  .mailing_list #mc_embed_signup .clear {
-    clear: none;
-    float: left; } }
+
+  /*************************************
+  PAGE STYLES
+  *************************************/
+  #page_content {
+    padding: 0; }
+
+  #page_content > .wrap {
+    position: relative;
+    margin-top: -200px;
+    padding: 0 0 40px 0;
+    z-index: 100;
+    background-color: #263c4a;
+    min-height: 400px; }
+
+  #page_content.content_padding > .wrap {
+    padding: 40px; }
+
+  /*************************************
+  MUSIC PAGE
+  *************************************/
+  /*************************************
+  NEWS PAGE
+  *************************************/
+  /*************************************
+  SHOWS PAGE
+  *************************************/
+  #page_content.shows_section > .wrap {
+    background-color: #263c4a; }
+
+  /*************************************
+  VIDEOS PAGE
+  *************************************/
+  /*************************************
+  CONTACT STYLES
+  *************************************/
+  form.contact_form ul li {
+    margin-bottom: 40px; }
+  form.contact_form ul li.half {
+    width: 47.5%;
+    margin-right: 5%; } }
 @media only screen and (min-width: 1024px) {
   /********************************************************************
   *** GLOBALS
   *********************************************************************/
-  .site_header #logo_wrap {
-    padding: 100px 0; }
-    .site_header #logo_wrap #logo {
-      font-size: 80px; }
-  .site_header nav#header_nav.justified_menus ul#menu_links {
-    text-align: left;
-    float: left; }
-  .site_header nav#header_nav.justified_menus ul#social_links {
-    text-align: right;
-    float: right; }
-  .site_header nav#header_nav.centered_menus ul#menu_links {
-    text-align: center;
-    float: none; }
-  .site_header nav#header_nav.centered_menus ul#social_links {
-    text-align: center;
-    float: none; }
+  .site_header #page_title {
+    padding: 100px 0 350px 0;
+    font-size: 3em; }
+
+  body.home .site_header #logo_wrap #logo {
+    font-size: 6em; }
 
   /*************************************
   MUSIC/ALBUMS
@@ -1025,32 +1376,47 @@ PAGE STYLES
   NEWS SECTION
   *************************************/
   /*************************************
+  SHOWS - BANDSINTOWN
+  *************************************/
+  /*************************************
   VIDEOS
   *************************************/
   /*************************************
   PHOTOS SECTION
   *************************************/
+  .photo_gallery ul li {
+    width: 20%; }
+
   /*************************************
-  TEXT SECTION
+  PHOTOS SECTION
   *************************************/
   /*************************************
   FOOTER
   *************************************/
   .mailing_list .mailing_list_title {
-    font-size: 32px; }
+    font-size: 2em; }
   .mailing_list form {
     font-size: 22px; }
-    .mailing_list form input[type="email"] {
+    .mailing_list form input[type="text"] {
       width: 340px; }
     .mailing_list form input[type="submit"] {
       width: 182px; }
-  .mailing_list #mc_embed_signup {
-    font-size: 22px; }
-    .mailing_list #mc_embed_signup label[for="mce-EMAIL"] {
-      font-size: 32px; }
-    .mailing_list #mc_embed_signup input[type="email"] {
-      width: 340px;
-      font-size: 22px; }
-    .mailing_list #mc_embed_signup input[type="submit"] {
-      width: 182px;
-      font-size: 22px; } }
+
+  /*************************************
+  PAGE STYLES
+  *************************************/
+  /*************************************
+  MUSIC PAGE
+  *************************************/
+  /*************************************
+  NEWS PAGE
+  *************************************/
+  /*************************************
+  SHOWS PAGE
+  *************************************/
+  /*************************************
+  VIDEOS PAGE
+  *************************************/
+  /*************************************
+  CONTACT STYLES
+  *************************************/ }

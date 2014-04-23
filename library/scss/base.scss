@@ -4,48 +4,35 @@
 *********************************************************************/
 html, body{
 
-	font-family: 'Open Sans', sans-serif;
+	font-family: $opensans;
 	font-weight: 500;
 	font-size: 1em;
-	color: #382A3B;
+	color: $textColor;
 	overflow-x: hidden;
 
 }
 
 a{
-	color: #382A3B;
+	color: $textColor;
 }
 
 h1, h2, h3, h4, h5, h6{
-	font-family: 'Montserrat', sans-serif;
+	font-family: $montserrat;
 	font-weight: 500;
 }
 
-#ie_upgrade_message{ display: none; }
-
-#user_controls{ display: none; }
+::selection { background: $selectionColor; }
+::-moz-selection { background: $selectionColor; }
 
 #site_wrap{
-
 	position: relative;
-	background-image: url('../img/default_background.jpg');
+	background-color: darken($accent, 2%);
 	@include box-shadow( 0, 0, 40px, 0.5 );
-
-	#overlay_color{
-		background-color: #ffffff;
-		opacity: 0.8;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-	}
-
 }
 
 #mobile_menu{
 
-	background-color: darken(#382A3B, 2%);
+	background-color: darken($accent, 2%);
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -53,7 +40,7 @@ h1, h2, h3, h4, h5, h6{
 	left: 0;
 	z-index: 0;
 	padding: 0 60px 0 0;
-	font-family: 'Montserrat', sans-serif;
+	font-family: $montserrat;
 
 	ul{
 
@@ -87,38 +74,16 @@ h1, h2, h3, h4, h5, h6{
 				text-decoration: none;
 				padding: 20px;
 				font-size: 1.2em;
-				opacity: 1;
+				opacity: 0.55;
 				text-transform: uppercase;
-				color: #ffffff;
+				color: $white;
 				@include transition(opacity 0.05s linear);
 			}
 
 		}
 		li.current-menu-item a,
 		li a:hover{
-			opacity: 0.55;
-		}
-
-	}
-
-	ul#social_links{
-
-		li{
-
-			display: inline-block;
-			margin-right:-4px;
-
-			a{
-
-				display: block;
-				font-size: 24px;
-
-				i{
-
-				}
-
-			}
-
+			opacity: 1;
 		}
 
 	}
@@ -129,8 +94,8 @@ h1, h2, h3, h4, h5, h6{
 
 	height: 56px;
 	width: 100%;
-	background-color: transparentize(#382A3B, 0.1);
-	border-bottom: solid 1px darken(#382A3B, 4%);
+	background-color: transparentize($accent, 0.2);
+	border-bottom: solid 1px darken($accent, 4%);
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -153,7 +118,7 @@ h1, h2, h3, h4, h5, h6{
 		i{
 			display: block;
 			font-size: 24px;
-			color: #ffffff;
+			color: $white;
 		}
 
 	}
@@ -165,7 +130,7 @@ h1, h2, h3, h4, h5, h6{
 		top: 0;
 		left: 0;
 		text-align: center;
-		color: #ffffff;
+		color: $white;
 		width: 100%;
 		font-size: 16px;
 		height: 56px;
@@ -178,92 +143,142 @@ h1, h2, h3, h4, h5, h6{
 .site_header{
 
 	position: relative;
+	background: url('../img/header_background.jpg') no-repeat center center scroll; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 
-	.wrap{}
+	#header_overlay_color{
+		background-color: $headerOverlay;
+		opacity: $headerOverlayOpacity;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		position: absolute;
+		z-index: 0;
+	}
+
+	.wrap{
+		position: relative;
+		z-index: 10;
+		height: 100%;
+	}
 
 	#logo_wrap{
 
-		padding: 140px 0 84px 0;
+		display: none;
 
-		a{
+		#logo{
 
 			display: block;
-			max-width: 90%;
-			margin: 0 auto;
-			outline: none;
-
-			font-size: 50px;
+			font-family: $montserrat;
+			color: $logoColor;
 			text-decoration: none;
-			text-align: center;
-			font-weight: 700;
-			font-family: 'Montserrat', sans-serif;
-
-			-webkit-backface-visibility: hidden; //to fix the Chrome moving bug on transition hover
-			@include transition(opacity 0.15s linear);
-			opacity: 1;
+			text-shadow: 5px 5px 0 $logoShadow;
+			font-size: 2em;
+			text-align: left;
 
 			img{
-				display: block;
-				max-width: 100%;
+				width: 100%;
 				height: auto;
-				margin: 0 auto;
+				display: block;
 			}
 
 		}
-		a:hover{
-			opacity: 0.85;
+
+	}
+
+	#header_nav{ display: none; }
+
+	#page_title{
+
+		display: block;
+		text-align: center;
+		padding: 116px 20px 60px 20px;
+		font-size: 2em;
+		margin: 0 auto;
+		text-transform: uppercase;
+		font-family: $montserrat;
+		color: $logoColor;
+		text-decoration: none;
+		text-shadow: 1px 1px 0 $logoShadow;
+
+	}
+
+}
+
+body.home{
+
+	.site_header{
+
+		#logo_wrap{
+
+			display: block;
+			padding: 116px 20px 60px 20px;
+
+			#logo{
+
+				text-align: center;
+
+				img{
+
+				}
+
+			}
+
 		}
 
 	}
 
-	nav#header_nav{ display: none; }
-
 }
 
-#page_sections{
-
-	&:first-child{
-		margin-top:0;
-	}
-	&:last-child{
-		margin-bottom: 0;
-	}
-
-}
 .page_section{
 
-	padding: 15px 0;
-	position: relative;
+	background-color: $accent;
 
 	.wrap{}
 
-}
+	.section_header{
 
-.placeholder_section{
-
-	.wrap{}
-
-	.placeholder_copy{
-
-		//border: dashed 4px #e2e2e2;
-		background: #ffffff;
-		padding: 80px 60px;
 		text-align: center;
-		@include rounded(4px);
+		text-transform: uppercase;
+		margin: 80px 0 40px 0;
 
-		h1{
-			margin-top: 0;
+		h2{
+			font-weight: 500;
+			font-size: 1.25rem;
+			margin: 0;
 		}
-		p{
-			margin: 2em;
+		&, a{
+			color: $headerText;
 		}
 		a{
-			display: inline-block;
-			padding: 10px 16px;
-			background: #382A3B;
-			color: #ffffff;
+
 			text-decoration: none;
-			font-size: 26px;
+			position: relative;
+			padding-right: 24px;
+			@include transition(color 0.05s linear);
+
+			&:after{
+				content: "»";
+				font-weight: 300;
+				font-family: $opensans;
+				font-size: 1.4em;
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 16px;
+				height: 25px;
+				line-height: 16px;
+			}
+
+			&:hover{
+				color: $headerTextHover;
+			}
+
 		}
 
 	}
@@ -275,9 +290,6 @@ MUSIC/ALBUMS
 *************************************/
 .music_section{
 
-	background-color: #382A3B;
-	margin: 15px 0;
-	padding: 30px 0;
 
 	.wrap{}
 
@@ -285,7 +297,7 @@ MUSIC/ALBUMS
 
 	.album{
 
-		background-color: #382A3B;
+		background-color: $albumBackground;
 		margin-bottom: 30px;
 
 		&:last-child{
@@ -306,50 +318,51 @@ MUSIC/ALBUMS
 
 		.album_info_wrapper{
 
-			color: #382A3B;
+			color: $textColor;
 
 			.album_info{
 				
-				padding: 20px 20px 0 20px;
+				padding: 20px;
 
 				.album_type{
-					font-family: 'Montserrat', sans-serif;
+					font-family: $montserrat;
+					color: $headerText;
 					text-transform: uppercase;
 					font-size: 0.85rem;
-					color: #ffffff;
-					opacity: 0.6;
+					color: $albumType;
 				}
 				.album_title{
 					font-size: 1.625rem;
 					font-weight: 500;
 					margin: 10px 0;
-					color: #ffffff;
+					color: $albumTitle;
 				}
 				.album_description{
 
-					color: #ffffff;
+					color: $albumText;
 
 					& > :first-child{ margin-top: 0; }
 					& > :last-child{ margin-bottom: 0; }
+					p{
 
-					p{}
+					}
 
 				}
 				.album_button{
 					font-size: 1.25rem;
 					display: block;
 					margin: 20px 0 0 0;
-					font-family: 'Montserrat', sans-serif;
+					font-family: $montserrat;
 					text-transform: uppercase;
 					text-align: center;
-					background-color: #ffffff;
-					color: #382A3B;
+					background-color: $albumButtonBackground;
+					color: $albumButtonText;
 					text-decoration: none;
 					padding: 20px;
-					@include transition(opacity 0.05s linear);
+					@include transition(background-color 0.05s linear);
 
 					&:hover{
-						opacity: 0.7;
+						background-color: lighten($albumButtonBackground, 10%);
 					}
 
 				}
@@ -362,30 +375,264 @@ MUSIC/ALBUMS
 
 }
 
+/*************************************
+NEWS SECTION
+*************************************/
+.news_section{
+
+	.wrap{}
+
+	.section_header{}
+
+	.news_article_wrap{
+
+		position: relative;
+		border-top: solid 2px $headerText;
+		margin-bottom: 30px;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+
+		&:before{
+			content: "";
+			position: absolute;
+			@include css-gradient-top-down($headerText, $accent);
+			z-index: 0;
+			width: 100%;
+			height: 100%;
+			max-height: 300px;
+		}
+
+		.news_article{
+
+			position: relative;
+			z-index: 10;
+			margin: 0 2px;
+			background-color: $accent;
+			padding: 20px;
+
+			header.article_header{
+
+				margin-bottom: 20px;
+
+				h3{
+
+					margin: 0;
+					font-size: 1.6em;
+					float: left;
+
+					a{
+						text-decoration: none;
+						&:hover{
+							text-decoration: underline;
+						}
+					}
+
+				}
+
+				span.article_date{
+					display: none;
+				}
+
+			}
+
+			.article_excerpt{
+
+				font-size: 1.15rem;
+				font-weight:300;
+
+				p{
+					margin: 0;
+				}
+
+			}
+
+			.article_content{
+
+				font-size: 1.5em;
+				font-weight: 300;
+
+				p{
+
+				}
+				ul, ol{
+					li{
+
+					}
+				}
+				ul{}
+				ol{}
+
+				pre{
+
+				}
+				code{
+
+				}
+
+			}
+
+			footer.article_footer{
+
+				padding: 80px 0;
+
+				ul.share_links{
+
+					margin: 0;
+					padding: 0;
+					text-align: center;
+
+					li{
+
+						list-style-type: none;
+						display: inline-block;
+						text-transform: uppercase;
+
+						a{
+
+							text-decoration: none;
+							display: block;
+							padding: 0 10px;
+							font-size: 24px;
+
+							&:hover{
+								color: $white;
+							}
+
+							i{
+
+							}
+
+						}
+
+					}
+					li.share_label{
+						font-size: 20px;
+						margin-right:18px;
+						position: relative;
+						top: -2px;
+					}
+					li.twitter:hover a{
+						color: #00aced;
+					}
+					li.facebook:hover a{
+						color: #3b5998;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+/* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
+.tooltipster-default {
+
+	border: none;
+	background: none;
+	color: $white;
+
+	.tooltipster-content {
+
+		font-family: $opensans;
+		font-size: 13px;
+		padding: 0;
+		overflow: hidden;
+
+		.fill{
+			padding: 8px 12px;
+			border-radius: 3px; 
+		}
+		.fill.tweet{
+			background: #00aced;
+		}
+
+		.fill.like{
+			background: #3b5998;
+		}
+
+	}
+
+}
+
+/* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
+.tooltipster-default .tooltipster-arrow .tooltipster-arrow-border {
+	/* border-color: ... !important; */
+}
 
 /*************************************
-SHOWS
+SHOWS - BANDSINTOWN
 *************************************/
-.shows_section{}
+.bit-widget-container{
 
+	th, td{
+		padding: 20px;
+		font-size: 1.2rem;
+	}
+	th{
+		font-family: $montserrat;
+		text-transform: uppercase;
+		font-size: 1rem;
+	}
+
+}
+td.bit-description-links{
+
+}
+td.bit-date{
+	padding: 20px;
+	font-family: $montserrat;
+	font-weight: 900;
+}
+td.bit-venue{
+	font-family: $opensans;
+}
+td.bit-location{
+
+}
+td.bit-tickets{
+
+}
+td.bit-rsvp{
+
+}
+#bit-events td .bit-uiButton{
+	background-color: $accent;
+	background-image: none;
+}
+
+
+/*************************************
+SHOWS - CUSTOM
+*************************************/
+.shows_section{
+
+	padding-bottom: 40px;
+
+}
 table.tour_dates{
 
 	width:100%;
-	font-family: 'Montserrat', sans-serif;
+	font-family: $montserrat;
 	font-weight: 300;
 	border-collapse: separate;
 
 	tr{
 
 		&:first-child td{
-			border-top: solid 2px transparentize(#382A3B, 0.7);
+			border-top: solid 2px transparentize($textColor, 0.7);
 		}
 		td{
-			border-bottom: solid 2px transparentize(#382A3B, 0.7);
+			border-bottom: solid 2px transparentize($textColor, 0.7);
 		}
 
 		td{
 
+			
 			font-size: 12px;
 
 			.cell_wrap{
@@ -430,8 +677,12 @@ table.tour_dates{
 			.venue, .city{
 				display: block;
 			}
-			.venue{}
-			.city{}
+			.venue{
+
+			}
+			.city{
+
+			}
 
 		}
 		td.tickets{
@@ -454,6 +705,9 @@ table.tour_dates{
 VIDEOS
 *************************************/
 .videos_section{
+
+	background-color: $videoSectionBackground;
+	padding: 40px 0;
 
 	.wrap{}
 
@@ -520,14 +774,20 @@ TEXT SECTION
 .text_section{
 
 	.wrap{}
-	.section_header{}
+	.section_header{
+
+	}
 
 	.text_content{
+
+		padding: 0 0 80px 0;
 
 		& > :first-child{ margin-top: 0; }
 		& > :last-child{ margin-bottom: 0; }
 
-		p{}
+		p{
+
+		}
 
 	}
 
@@ -539,27 +799,28 @@ FOOTER
 *************************************/
 .site_footer{
 
+	color: $footerText;
 	padding: 40px 0;
-	position: relative;
+	background-color: $footerBackground;
 
 	.wrap{}
 
 	.credits{
 
-		font-family: 'Montserrat', sans-serif;
+		font-family: $montserrat;
 		text-align: center;
 		padding-top: 40px;
+		color: $footerText;
 
 		p{
 			margin: 10px 0;
 		}
 		a{
-
+			color: $footerText;
 			text-decoration: none;
 			&:hover{
-				
+				color: $textColor;
 			}
-
 		}
 
 	}
@@ -569,16 +830,16 @@ FOOTER
 
 	text-align: center;
 	padding: 0 0 40px 0;
-	font-family: 'Montserrat', sans-serif;
+	font-family: $montserrat;
 
 	.mailing_list_title, form{
 		display: block;
-		color: #382A3B;
+		color: $footerText;
 	}
 
 	.mailing_list_title{
 		text-transform: uppercase;
-		font-size: 22px;
+		font-size: 1.4em;
 		margin: 0 0 20px 0;
 	}
 
@@ -588,95 +849,39 @@ FOOTER
 		overflow: hidden;
 
 		input{
-			border: solid 2px #382A3B;
+			border: solid 2px $footerText;
 			display: block;
 			padding: 15px;
 			outline: none;
 		}
-		input[type="email"]{
+		input[type="text"]{
 			width: 100%;
 			background: none;
 			margin-bottom: 10px;
-			color: #382A3B;
+			color: $footerText;
 		}
 		input[type="submit"]{
 
 			text-transform: uppercase;
-			background-color: #382A3B;
-			color: #ffffff;
+			background-color: $footerText;
+			color: $footerBackground;
 			width: 100%;
 
 			&:hover{
-				opacity: 0.8;
+				background-color: lighten($footerText, 4%);
 			}
 
 		}
 
-		::-webkit-input-placeholder { color: #382A3B; }
-		:-moz-placeholder { color: #382A3B; }
-		::-moz-placeholder { color: #382A3B; }
-		:-ms-input-placeholder { color: #382A3B; }
-		label.placeholder{ color: #382A3B; }
-
-	}
-
-	#mc_embed_signup{
-
-		background: none;
-		clear: none;
-		font: 18px "Montserrat",sans-serif;
-
-		form{
-			text-align: center;
-			padding: 0;
-			font-size: 18px;
-			overflow: hidden;
-		}
-
-		label[for="mce-EMAIL"]{
-			text-transform: uppercase;
-			font-size: 22px;
-			margin: 0 0 20px 0;
-			display: block;
-
-		}
-
-		input[type="email"]{}
-
-		input[type="submit"]{}
+		::-webkit-input-placeholder { color: $footerText; }
+		:-moz-placeholder { color: $footerText; }
+		::-moz-placeholder { color: $footerText; }
+		:-ms-input-placeholder { color: $footerText; }
+		label.placeholder{ color: $footerText; }
 
 	}
 		
 }
-
-#FbridgeSGWidget #attribution{
-	display: none;
-}
-.fanbridge_mailing_list_widget{
-
-	> h2{
-
-	}
-
-	fieldset{
-
-		label, input, textarea{
-			
-		}
-		label{
-			text-align: left;
-		}
-		input{
-
-		}
-		input[type="text"]{
-
-		}
-
-	}
-
-}
-
 .social_links{
 
 	ul{
@@ -695,17 +900,30 @@ FOOTER
 
 				display: block;
 				padding: 10px 14px;
-				background-color: none;
+				background-color: $socialIconsBackground;
 				font-size: 28px;
 				text-decoration: none;
-				color: #382A3B;
+				color: $footerText;
 
-				i{}
+				i{
+
+				}
 
 			}
-			a:hover, a:hover{ color: lighten(#382A3B, 20%); }
+			a:hover, a:hover{ color: $textColor; }
 
 		}
+
+		//turn these on for social-brand-specific colors on hover
+
+		//li.twitter a:hover{ color:#00aced; }
+		//li.facebook a:hover{ color:#3b5998; }
+		//li.googleplus a:hover{ color:#dd4b39; }
+		//li.instagram a:hover{ color:#517fa4; }
+		//li.tumblr a:hover{ color:#32506d; }
+		//li.soundcloud a:hover{ color:#f76f00; }
+		//li.youtube a:hover{ color:#b31217; }
+		//li.bandcamp a:hover{ color:#5f99a9; }
 
 	}
 
@@ -719,6 +937,137 @@ PAGE STYLES
 
 	padding: 30px 0;
 
-	&.top_offset{}
+	&.top_offset{
+
+	}
+
+}
+
+/*************************************
+MUSIC PAGE
+*************************************/
+
+/*************************************
+NEWS PAGE
+*************************************/
+
+/*************************************
+SHOWS PAGE
+*************************************/
+
+/*************************************
+VIDEOS PAGE
+*************************************/
+#page_content.videos_section > .wrap{
+	background-color: $videoSectionBackground;
+}
+.video_list{
+
+	.video_embed{
+		margin-bottom: 40px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+/*************************************
+CONTACT STYLES
+*************************************/
+.contact_section{
+
+	.wrap{}
+
+}
+form.contact_form{
+
+	color: $footerText;
+
+	ul{
+
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+
+		li{
+
+			list-style-type: none;
+			float: left;
+			display: block;
+			margin-bottom: 30px;
+
+		}
+		li:last-child{
+			margin-bottom: 0;
+		}
+
+		li.half{ width: 100%; margin-right: 0%; }
+		li.full{ width: 100%; }
+		li.last{ margin-right: 0; }
+
+	}
+
+	label{
+		display: block;
+		font-family: $montserrat;
+		text-transform: uppercase;
+		font-size: 1.3em;
+		margin-bottom: 10px;
+	}
+	input, textarea{
+		display: block;
+		border: solid 2px $footerText;
+		background: none;
+		font-size: 1.5em;
+		padding: 20px;
+		outline: none;
+		color: $textColor;
+		width: 100%;
+	}
+	textarea{
+		min-height: 300px;
+		resize: none;
+	}
+	input[type="text"]{
+
+	}
+	input[type="textarea"]{
+
+	}
+	input[type="submit"]{
+
+		font-family: $montserrat;
+		background-color: $footerText;
+		color: $accent;
+		padding: 20px 30px;
+		border: none;
+		@include transition(background-color 0.05s linear);
+
+		&:hover{
+			background-color: lighten($footerText, 10%);
+		}
+
+	}
+
+	::-webkit-input-placeholder { color: $footerText; }
+	:-moz-placeholder { color: $footerText; }
+	::-moz-placeholder { color: $footerText; }
+	:-ms-input-placeholder { color: $footerText; }
+	label.placeholder{ color: $footerText; }
+
+}
+
+p.alert{
+
+	color: $accent;
+	text-align: center;
+	padding: 6px;
+	font-size: 1.1em;
+	@include rounded(4px);
+
+	&.success{ background-color: #2BB673; }
+	&.warning{ background-color: #FBB040; }
+	&.error{ background-color: #EF4136; }
 
 }

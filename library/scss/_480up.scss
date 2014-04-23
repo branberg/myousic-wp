@@ -1,23 +1,43 @@
-/********************************************************************
+ /********************************************************************
 *** GLOBALS
 *********************************************************************/
-html, body{}
+html, body{
 
-a{}
+	
 
-h1, h2, h3, h4, h5, h6{}
+}
 
-#site_wrap{}
+a{
+	
+}
+
+h1, h2, h3, h4, h5, h6{
+	
+}
+
+#site_wrap{
+	
+}
 
 #mobile_menu{
 
+	
+
 	ul{
+
+		
 
 		li{
 
-			a{}
+			
 
-			ul{}
+			a{
+				
+			}
+
+			ul{
+				
+			}
 
 		}
 
@@ -27,39 +47,129 @@ h1, h2, h3, h4, h5, h6{}
 
 #mobile_header{
 
-	#mobile_menu_toggle{}
+	
 
-	#mobile_site_title{}
+	#mobile_menu_toggle{
+
+		
+
+		svg{
+			
+		}
+
+	}
+
+	#mobile_site_title{
+		
+	}
 
 }
 
 .site_header{
 
-	#header_overlay_color{}
+	
 
-	.wrap{}
+	#header_overlay_color{
+		
+	}
+
+	.wrap{
+		
+	}
+
 	
 	#logo_wrap{
 
 		#logo{
 
-			img{}
+			
+
+			img{
+				
+			}
 
 		}
 
 	}
 
-	#header_nav{}
+	#header_nav{  }
 
-	#page_title{}
+	#page_title{
+
+		
+
+	}
+
+	
+
+}
+
+body.home{
+
+	.site_header{
+
+		#logo_wrap{
+
+			
+			#logo{
+
+				font-size: 3em;
+
+				img{
+
+				}
+
+			}
+
+		}
+
+		#header_nav{
+
+			ul{
+
+				li{
+
+					a{
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
 
 }
 
 .page_section{
 
-	padding: 40px 0;
+	
 
 	.wrap{}
+
+	.section_header{
+
+		
+
+		h2{
+			
+		}
+		&, a{
+			
+		}
+		a{
+
+			
+
+			&:after{
+				
+			}
+
+		}
+
+	}
 
 }
 
@@ -76,11 +186,15 @@ MUSIC/ALBUMS
 
 		margin-bottom: 40px;
 
-		&:last-child{}
+		&:last-child{
+			
+		}
 
 		.soundcloud_embed{
 
-			iframe{}
+			iframe{
+				
+			}
 
 		}
 
@@ -88,20 +202,87 @@ MUSIC/ALBUMS
 
 			.album_info{
 
-				.album_type{}
-
-				.album_title{}
-
+				.album_type{
+					
+				}
+				.album_title{
+					
+				}
 				.album_description{
 
-					& > :first-child{}
-					& > :last-child{}
+					& > :first-child{  }
+					& > :last-child{  }
+					p{
+
+					}
+
+				}
+				.album_button{
 					
-					p{}
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+/*************************************
+NEWS SECTION
+*************************************/
+.news_section{
+
+	.wrap{}
+
+	.section_header{}
+
+	.news_article_wrap{
+
+		margin-bottom: 40px;
+
+		&:last-child{
+			
+		}
+
+		
+
+		&:before{
+			
+		}
+
+		.news_article{
+
+			
+
+			header.article_header{
+
+				
+
+				h3{
+
+					
+
+					a{
+						
+					}
 
 				}
 
-				.album_button{}
+				span.article_date{
+					
+				}
+
+			}
+
+			.article_excerpt{
+
+				
+
+				p{
+					
+				}
 
 			}
 
@@ -113,43 +294,73 @@ MUSIC/ALBUMS
 
 
 /*************************************
-SHOWS
+SHOWS - CUSTOM
 *************************************/
-.shows_section{}
+.shows_section{
 
+	
+
+}
 table.tour_dates{
 
 	tr{
 
-		td{}
+		td{
+			
+		}
 
 		td.date{
 
-			.month, .day{}
+			
 
-			.month{}
+			.month, .day{
+				
+			}
+			.month{
+				
+			}
+			.day{
+				
+			}
 
-			.day{}
+			/*&:after{
+				content: "";
+				border-right: solid 1px $textColor;
+				width: 1px;
+				position: absolute;
+				right: 0;
+				top: 10px;
+				bottom: 10px;
+			}*/
 
 		}
 		td.location{
 
-			a{}
+			
 
-			.venue, .city{}
+			a{
+				
+			}
 
-			.venue{}
+			.venue, .city{
+				
+			}
+			.venue{
 
-			.city{}
+			}
+			.city{
+
+			}
 
 		}
-		td.tickets{}
+		td.tickets{
 
+			
+
+		}
 		td.rsvp{
-
 			display: table-cell;
 			text-align: right;
-
 		}
 
 	}
@@ -157,15 +368,56 @@ table.tour_dates{
 }
 
 /*************************************
+SHOWS - BANDSINTOWN
+*************************************/
+.bit-widget-container{
+
+	th, td{
+		
+	}
+	th{
+		
+	}
+
+}
+td.bit-description-links{
+
+}
+td.bit-date{
+	
+}
+td.bit-venue{
+	
+}
+td.bit-location{
+
+}
+td.bit-tickets{
+
+}
+td.bit-rsvp{
+
+}
+#bit-events td .bit-uiButton{
+	
+}
+
+/*************************************
 VIDEOS
 *************************************/
 .videos_section{
 
+	
+
 	.wrap{}
 
-	.section_header{}
+	.section_header{
+		
+	}
 
-	.video_embed{}
+	.video_embed{
+		
+	}
 
 }
 
@@ -183,15 +435,24 @@ PHOTOS SECTION
 
 	ul{
 
+		
+
 		li{
+
+			width: 33.333%;
 
 			a{
 
-				&:hover{}
+				
+
+				&:hover{
+					
+				}
 
 			}
-
-			img{}
+			img{
+				
+			}
 
 		}
 
@@ -200,13 +461,14 @@ PHOTOS SECTION
 }
 
 /*************************************
-TEXT SECTION
+PHOTOS SECTION
 *************************************/
 .text_section{
 
 	.wrap{}
+	.section_header{
 
-	.section_header{}
+	}
 
 	.text_content{
 
@@ -215,7 +477,9 @@ TEXT SECTION
 		& > :first-child{}
 		& > :last-child{}
 
-		p{}
+		p{
+
+		}
 
 	}
 
@@ -231,26 +495,40 @@ FOOTER
 
 	.wrap{}
 
-	.credits{}
+	.credits{
+
+	}
 
 }
 .mailing_list{
 
 	padding: 0 0 60px 0;
 
-	.mailing_list_title, form{}
+	.mailing_list_title, form{
+		
+	}
 
-	.mailing_list_title{}
+	.mailing_list_title{
+		
+	}
 
 	form{
 
-		input{}
+		
 
-		input[type="email"]{}
-
+		input{
+			
+		}
+		input[type="text"]{
+			
+		}
 		input[type="submit"]{
 
-			&:hover{}
+			
+
+			&:hover{
+				
+			}
 
 		}
 
@@ -266,12 +544,136 @@ FOOTER
 
 	ul{
 
+		
+
 		li{
 
-			a{}
+			
+
+			a{
+
+				
+
+				svg{
+
+					
+
+					path{
+
+						
+
+					}
+
+				}
+
+			}
+			a:hover path{}
 
 		}
 
 	}
+
+}
+
+
+/*************************************
+PAGE STYLES
+*************************************/
+#page_content{
+
+	padding: 40px 0;
+	&.top_offset{
+
+	}
+
+}
+
+/*************************************
+MUSIC PAGE
+*************************************/
+
+/*************************************
+NEWS PAGE
+*************************************/
+
+/*************************************
+SHOWS PAGE
+*************************************/
+
+/*************************************
+VIDEOS PAGE
+*************************************/
+.video_list{
+
+	.video_embed{
+		
+		&:last-child{
+			
+		}
+	}
+
+}
+
+/*************************************
+CONTACT STYLES
+*************************************/
+.contact_section{
+
+	.wrap{}
+
+}
+form.contact_form{
+
+	
+
+	ul{
+
+		
+
+		li{
+
+			
+
+		}
+		li:last-child{
+			
+		}
+
+		li.half{  }
+		li.full{  }
+		li.last{  }
+
+	}
+
+	label{
+		
+	}
+	input, textarea{
+		
+	}
+	textarea{
+		
+	}
+	input[type="text"]{
+
+	}
+	input[type="textarea"]{
+
+	}
+	input[type="submit"]{
+
+		
+
+		&:hover{
+			
+		}
+
+	}
+
+	::-webkit-input-placeholder {  }
+	:-moz-placeholder {  }
+	::-moz-placeholder {  }
+	:-ms-input-placeholder {  }
+	label.placeholder{ }
 
 }

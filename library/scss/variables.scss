@@ -1,0 +1,47 @@
+/*********************
+COLORS
+*********************/
+
+//gloabal styles
+$black:						#000;
+$white:						#fff;
+$accent:					#263c4a;
+$selectionColor:			#C8A999;
+
+//header styles
+$headerOverlay:				#00243b;
+$headerOverlayOpacity:		0.7;
+$headerText:				#9dabb3;
+$headerTextHover:			lighten($headerText, 15%);
+$textColor:					#9dabb3;
+
+//logo (text) styles
+$logoColor:					#ffffff;
+$logoShadow:				rgba(0, 36, 59, 0.5);
+
+//album styles
+$albumBackground:			#335062;
+$albumButtonBackground:		#5c7381;
+$albumButtonText:			#263c4a;
+$albumType:					#5c7381;
+$albumText:					#9dabb3;
+$albumTitle:				#ffffff;
+
+//video styles
+$videoSectionBackground:	#000000;
+
+//social icon styles
+$socialIconsColor:			#5c7381;
+$socialIconsBackground:		#1d2d38;
+
+//footer styles
+$footerBackground:			#1d2d38;
+$footerText:				#5c7381;
+
+
+/*********************
+TYPOGRAPHY
+*********************/
+
+$opensans:		'Open Sans', sans-serif;
+$montserrat:	'Montserrat', sans-serif;
