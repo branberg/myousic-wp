@@ -78,6 +78,23 @@
 
 			<?php elseif( get_row_layout() == 'photo_gallery' ): ?>
 
+				<div class="page_section photos_section">
+					<div class="wrap">
+
+						<?php if( get_sub_field( 'section_heading_link' ) == 'External Link' ): ?>
+							<header class="section_header"><h2><a href="<?php the_sub_field('external_link'); ?>">Photos</a></h2></header>
+						<?php elseif( get_sub_field( 'section_heading_link' ) == 'Interior Page Link' ): ?>
+							<header class="section_header"><h2><a href="<?php the_sub_field('interior_page_link'); ?>">Photos</a></h2></header>
+						<?php else: ?>
+							<header class="section_header"><h2>Photos</h2></header>
+						<?php endif; ?>
+
+					</div>
+					
+					<?php get_template_part( 'snippets/section', 'photos' ); ?>
+
+				</div>
+
 			<?php elseif( get_row_layout() == 'custom_text_section' ): ?>
 
 			<?php endif; ?>
