@@ -42,6 +42,22 @@
 
 			<?php elseif( get_row_layout() == 'show_listings' ): ?>
 
+				<div class="page_section shows_section shows_custom">
+					<div class="wrap">
+						
+						<?php if( get_sub_field( 'section_heading_link' ) == 'External Link' ): ?>
+							<header class="section_header"><h2><a href="<?php the_sub_field('external_link'); ?>">Shows</a></h2></header>
+						<?php elseif( get_sub_field( 'section_heading_link' ) == 'Interior Page Link' ): ?>
+							<header class="section_header"><h2><a href="<?php the_sub_field('interior_page_link'); ?>">Shows</a></h2></header>
+						<?php else: ?>
+							<header class="section_header"><h2>Shows</h2></header>
+						<?php endif; ?>
+
+						<?php get_template_part( 'snippets/section', 'shows' ); ?>
+						
+					</div>
+				</div>
+
 			<?php elseif( get_row_layout() == 'video_embed' ): ?>
 
 			<?php elseif( get_row_layout() == 'photo_gallery' ): ?>
