@@ -60,6 +60,16 @@
 
 			<?php elseif( get_row_layout() == 'video_embed' ): ?>
 
+				<div class="page_section videos_section">
+					<div class="wrap">
+						<header class="section_header"><h2><a href="http://youtube.com/foxandcoyoteband/" target="_blank">Videos</a></h2></header>
+						<div class="video_embed">
+							<?php //this is responsive thanks to fitvids! ?>
+							<iframe width="560" height="315" src="//www.youtube.com/embed/eIODjkhvYMo" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+
 			<?php elseif( get_row_layout() == 'photo_gallery' ): ?>
 
 			<?php elseif( get_row_layout() == 'custom_text_section' ): ?>

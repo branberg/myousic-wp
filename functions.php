@@ -8,6 +8,7 @@ include_once( 'plugins/acf-gallery/acf-gallery.php' ); //ACF Gallery
 include_once( 'plugins/acf-flexible-content/acf-flexible-content.php' ); //ACF Flexible Content Field
 include_once( 'plugins/acf-repeater/acf-repeater.php' ); //ACF Repeater Field
 include_once( 'plugins/acf-options-page/acf-options-page.php' ); //ACF Options Page
+include_once( 'plugins/acf-oembed-field/acf-oembed.php'); //oembed field - https://github.com/dmsqd/acf-oembed-field
 
 
 /*********************************************************************************************************
