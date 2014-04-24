@@ -97,6 +97,24 @@
 
 			<?php elseif( get_row_layout() == 'custom_text_section' ): ?>
 
+				<div class="page_section text_section">
+					<div class="wrap">
+
+						<?php $title = get_sub_field( 'text_section_title' ); ?>
+
+						<?php if( get_sub_field( 'section_heading_link' ) == 'External Link' ): ?>
+							<header class="section_header"><h2><a href="<?php the_sub_field('external_link'); ?>"><?php echo $title; ?></a></h2></header>
+						<?php elseif( get_sub_field( 'section_heading_link' ) == 'Interior Page Link' ): ?>
+							<header class="section_header"><h2><a href="<?php the_sub_field('interior_page_link'); ?>"><?php echo $title; ?></a></h2></header>
+						<?php else: ?>
+							<header class="section_header"><h2><?php echo $title; ?></h2></header>
+						<?php endif; ?>
+
+						<?php get_template_part( 'snippets/section', 'text' ); ?>
+
+					</div>
+				</div>
+
 			<?php endif; ?>
 
 		<?php endwhile; ?>
