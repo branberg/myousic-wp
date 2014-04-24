@@ -62,11 +62,17 @@
 
 				<div class="page_section videos_section">
 					<div class="wrap">
-						<header class="section_header"><h2><a href="http://youtube.com/foxandcoyoteband/" target="_blank">Videos</a></h2></header>
-						<div class="video_embed">
-							<?php //this is responsive thanks to fitvids! ?>
-							<iframe width="560" height="315" src="//www.youtube.com/embed/eIODjkhvYMo" frameborder="0" allowfullscreen></iframe>
-						</div>
+						
+						<?php if( get_sub_field( 'section_heading_link' ) == 'External Link' ): ?>
+							<header class="section_header"><h2><a href="<?php the_sub_field('external_link'); ?>">Videos</a></h2></header>
+						<?php elseif( get_sub_field( 'section_heading_link' ) == 'Interior Page Link' ): ?>
+							<header class="section_header"><h2><a href="<?php the_sub_field('interior_page_link'); ?>">Videos</a></h2></header>
+						<?php else: ?>
+							<header class="section_header"><h2>Videos</h2></header>
+						<?php endif; ?>
+
+						<?php get_template_part( 'snippets/section', 'videos' ); ?>
+						
 					</div>
 				</div>
 

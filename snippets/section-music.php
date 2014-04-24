@@ -1,10 +1,10 @@
 <?php
 	
 	//get ID of post from Home page
-	$musicObject = get_sub_field('music_embed');
+	$music_object = get_sub_field('music_embed');
 	
 	//get all fields for that post ID
-	$fields = get_fields($musicObject->ID);
+	$fields = get_fields($music_object->ID);
 
 	//assign vars to each needed piece of info
 	$music_iframe = $fields['soundcloud_iframe_code'];
