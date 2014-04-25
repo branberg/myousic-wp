@@ -49,7 +49,9 @@
 				
 				<?php wp_nav_menu(array( 'theme_location' => 'main-nav', 'container' => 'nav', 'container_id' => 'header_nav' )); ?>
 
-				<?php if( !is_front_page() ): ?>
+				<?php if( is_home() ): ?>
+					<span id="page_title">NEWS</span>
+				<?php elseif( !is_front_page() ): ?>
 					<span id="page_title"><?php the_title(); ?></span>
 				<?php endif; ?>
 
