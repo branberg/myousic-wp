@@ -100,6 +100,7 @@
 								$permalink = get_permalink();
 								$date = get_the_time( 'M d' );
 								$excerpt = get_the_excerpt();
+								$content = get_the_content();
 								//reset postdata
 								wp_reset_postdata();
 
@@ -112,6 +113,7 @@
 								$permalink = get_permalink();
 								$date = get_the_time( 'M d' );
 								$excerpt = get_the_excerpt();
+								$content = get_the_content();
 								//reset postdata
 								wp_reset_postdata();
 

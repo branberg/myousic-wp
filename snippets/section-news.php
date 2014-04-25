@@ -5,7 +5,7 @@
 			<span class="article_date"><?php echo $date; ?></span>
 		</header>
 		<div class="article_excerpt">
-			<?php if( is_home() ): ?>
+			<?php if( is_home() || is_front_page() ): ?>
 				<p><?php echo $excerpt; ?></p>
 				<a href="<?php echo $permalink; ?>" class="read_more_link">Read More &raquo;</a>
 			<?php else: ?>
