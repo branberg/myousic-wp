@@ -53,7 +53,9 @@
 							<a href="<?php echo $rsvp_link; ?>">RSVP</a>
 						</div>
 					</td>
-					<td><a href="<?php the_permalink(); ?>"><i class="icon-info-circle"></i></a></td>
+					<td class="info">
+						<a href="<?php the_permalink(); ?>"><i class="icon-info-circle"></i></a>
+					</td>
 				</tr>
 
 			<?php endforeach; ?>
