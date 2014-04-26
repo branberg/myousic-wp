@@ -66,5 +66,3 @@
 
 	</tbody>
 </table>
-
-<?php wp_reset_query(); ?>
