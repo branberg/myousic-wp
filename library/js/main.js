@@ -187,6 +187,7 @@ jQuery(document).ready(function($) {
 	****************************************************************/
 	$('#mobile_menu_toggle').click(function(){
 
+		var windowWidth = $(window).width();
 		var rightOffset = windowWidth - 60;
 		
 		if( $('#mobile_menu_toggle').hasClass('expanded') ) {
