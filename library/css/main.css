@@ -479,16 +479,24 @@ h1, h2, h3, h4, h5, h6 {
   .site_header #header_nav {
     display: none; }
   .site_header #page_title {
-    display: block;
     text-align: center;
     padding: 116px 20px 60px 20px;
-    font-size: 2em;
-    margin: 0 auto;
-    text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
-    color: white;
-    text-decoration: none;
-    text-shadow: 1px 1px 0 rgba(0, 36, 59, 0.5); }
+    margin: 0 auto; }
+    .site_header #page_title h1 {
+      display: block;
+      font-size: 2em;
+      text-transform: uppercase;
+      color: white;
+      text-decoration: none;
+      text-shadow: 1px 1px 0 rgba(0, 36, 59, 0.5); }
+    .site_header #page_title .back_to_blog {
+      display: block;
+      font-size: 16px;
+      margin-top: 10px;
+      text-decoration: none; }
+      .site_header #page_title .back_to_blog:hover {
+        text-decoration: underline; }
 
 body.home .site_header #logo_wrap {
   display: block;
@@ -589,9 +597,6 @@ MUSIC/ALBUMS
 /*************************************
 NEWS SECTION
 *************************************/
-body.single .news_section .news_article_wrap .news_article header.article_header h3 {
-  font-size: 2.4em; }
-
 .news_section .news_article_wrap {
   position: relative;
   border-top: solid 2px #9dabb3;
@@ -621,7 +626,7 @@ body.single .news_section .news_article_wrap .news_article header.article_header
       margin-bottom: 20px; }
       .news_section .news_article_wrap .news_article header.article_header h3 {
         margin: 0;
-        font-size: 1.6em;
+        font-size: 2.4em;
         float: left; }
         .news_section .news_article_wrap .news_article header.article_header h3 a {
           text-decoration: none; }
@@ -629,17 +634,14 @@ body.single .news_section .news_article_wrap .news_article header.article_header
             text-decoration: underline; }
       .news_section .news_article_wrap .news_article header.article_header span.article_date {
         display: none; }
-    .news_section .news_article_wrap .news_article .article_excerpt {
-      font-size: 1.15rem;
-      font-weight: 300; }
-      .news_section .news_article_wrap .news_article .article_excerpt p {
-        margin: 0; }
+    .news_section .news_article_wrap .news_article .article_excerpt p {
+      margin: 0; }
     .news_section .news_article_wrap .news_article .article_content {
       font-size: 1.5em;
       font-weight: 300; }
     .news_section .news_article_wrap .news_article a.read_more_link {
       display: block;
-      padding: 10px 14px;
+      padding: 10px 20px;
       text-decoration: none;
       background-color: #1d2e39;
       text-align: center;
@@ -647,63 +649,59 @@ body.single .news_section .news_article_wrap .news_article header.article_header
       font-size: 18px; }
       .news_section .news_article_wrap .news_article a.read_more_link:hover {
         background-color: #152128; }
-    .news_section .news_article_wrap .news_article footer.article_footer {
-      padding: 20px 0;
-      margin: 20px 0;
-      border-top: dashed 1px #345265;
-      border-bottom: dashed 1px #345265; }
-      .news_section .news_article_wrap .news_article footer.article_footer ul.share_links {
-        margin: 0 0 20px 0;
-        padding: 0;
-        text-align: center; }
-        .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li {
-          list-style-type: none;
-          display: inline-block;
-          text-transform: uppercase; }
-          .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li a {
-            text-decoration: none;
-            display: block;
-            padding: 0 10px;
-            font-size: 24px; }
-            .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li a:hover {
-              color: white; }
-        .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li.share_label {
-          font-size: 20px;
-          margin-right: 18px;
-          position: relative;
-          top: -2px; }
-        .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li.twitter:hover a {
-          color: #00aced; }
-        .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li.facebook:hover a {
-          color: #3b5998; }
-      .news_section .news_article_wrap .news_article footer.article_footer .post_meta {
-        font-weight: 300; }
-        .news_section .news_article_wrap .news_article footer.article_footer .post_meta p {
-          margin: 10px 0;
-          font-size: 14px; }
-          .news_section .news_article_wrap .news_article footer.article_footer .post_meta p:first-child {
-            margin-top: 0; }
-          .news_section .news_article_wrap .news_article footer.article_footer .post_meta p:last-child {
-            margin-bottom: 0; }
-        .news_section .news_article_wrap .news_article footer.article_footer .post_meta a {
-          text-decoration: none; }
-          .news_section .news_article_wrap .news_article footer.article_footer .post_meta a:hover {
-            text-decoration: underline; }
-        .news_section .news_article_wrap .news_article footer.article_footer .post_meta i {
-          font-size: 18px;
-          position: relative;
-          top: 2px;
-          margin-right: 3px; }
-        .news_section .news_article_wrap .news_article footer.article_footer .post_meta p.author {
-          overflow: hidden; }
-          .news_section .news_article_wrap .news_article footer.article_footer .post_meta p.author .user {
-            display: inline-block;
-            float: left; }
-            .news_section .news_article_wrap .news_article footer.article_footer .post_meta p.author .user a {
-              margin-left: 6px; }
-          .news_section .news_article_wrap .news_article footer.article_footer .post_meta p.author .post_date {
-            display: inline-block;
-            float: right; }
+    .news_section .news_article_wrap .news_article footer.article_footer ul.share_links {
+      margin: 40px 0 20px 0;
+      padding: 0;
+      text-align: center; }
+      .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li {
+        list-style-type: none;
+        display: inline-block;
+        text-transform: uppercase; }
+        .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li a {
+          text-decoration: none;
+          display: block;
+          padding: 0 10px;
+          font-size: 24px; }
+          .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li a:hover {
+            color: white; }
+      .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li.share_label {
+        font-size: 20px;
+        margin-right: 18px;
+        position: relative;
+        top: -2px; }
+      .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li.twitter:hover a {
+        color: #00aced; }
+      .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li.facebook:hover a {
+        color: #3b5998; }
+.news_section ul.post_meta {
+  font-weight: 300;
+  padding: 10px 0;
+  margin: 0 0 20px 0;
+  border-top: dashed 1px #345265;
+  border-bottom: dashed 1px #345265;
+  display: block;
+  clear: both; }
+  .news_section ul.post_meta li {
+    list-style-type: none;
+    margin: 10px 0;
+    font-size: 14px; }
+    .news_section ul.post_meta li:first-child {
+      margin-top: 0; }
+    .news_section ul.post_meta li:last-child {
+      margin-bottom: 0; }
+  .news_section ul.post_meta a {
+    text-decoration: none; }
+    .news_section ul.post_meta a:hover {
+      text-decoration: underline; }
+  .news_section ul.post_meta i {
+    font-size: 18px;
+    position: relative;
+    top: 2px;
+    margin-right: 3px; }
+  .news_section ul.post_meta li.author {
+    overflow: hidden; }
+    .news_section ul.post_meta li.author a {
+      margin-left: 6px; }
 
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
@@ -1046,6 +1044,8 @@ p.alert {
   *************************************/
   .news_section .news_article_wrap {
     margin-bottom: 40px; }
+    .news_section .news_article_wrap .news_article footer.article_footer {
+      margin-top: 40px; }
 
   /*************************************
   SHOWS - CUSTOM
@@ -1213,9 +1213,10 @@ p.alert {
           display: block; }
     .site_header #page_title {
       padding: 80px 0 300px 0;
-      font-size: 2em;
-      clear: both;
-      text-shadow: 3px 3px 0 rgba(0, 36, 59, 0.5); }
+      clear: both; }
+      .site_header #page_title h1 {
+        font-size: 2em;
+        text-shadow: 3px 3px 0 rgba(0, 36, 59, 0.5); }
 
   body.home .site_header #logo_wrap {
     padding: 200px 0;
@@ -1285,6 +1286,11 @@ p.alert {
         margin-top: 10px; }
       .news_section .news_article_wrap .news_article .article_excerpt {
         font-size: 1.5rem; }
+      .news_section .news_article_wrap .news_article a.read_more_link {
+        display: inline-block; }
+  .news_section ul.post_meta li {
+    display: inline;
+    margin: 0 30px 20px 0; }
 
   /*************************************
   SHOWS - CUSTOM
@@ -1412,8 +1418,9 @@ p.alert {
   *** GLOBALS
   *********************************************************************/
   .site_header #page_title {
-    padding: 100px 0 350px 0;
-    font-size: 3em; }
+    padding: 100px 0 350px 0; }
+    .site_header #page_title h1 {
+      font-size: 3em; }
 
   body.home .site_header #logo_wrap #logo {
     font-size: 6em; }

@@ -153,9 +153,20 @@ h1, h2, h3, h4, h5, h6{
 	#page_title{
 
 		padding: 80px 0 300px 0;
-		font-size: 2em;
 		clear: both;
-		text-shadow: 3px 3px 0 $logoShadow;
+
+		h1{
+			font-size: 2em;
+			text-shadow: 3px 3px 0 $logoShadow;
+		}
+
+		.back_to_blog{
+
+			&:hover{
+				
+			}
+
+		}
 
 	}
 
@@ -365,6 +376,102 @@ NEWS SECTION
 					
 				}
 
+			}
+
+			a.read_more_link{
+
+				display: inline-block;
+
+				&:hover{
+					
+				}
+
+			}
+
+			footer.article_footer{
+
+				
+
+				ul.share_links{
+
+					
+
+					li{
+
+						
+
+						a{
+
+							
+
+							&:hover{
+								
+							}
+
+							i{
+
+							}
+
+						}
+
+					}
+					li.share_label{
+						
+					}
+					li.twitter:hover a{
+						
+					}
+					li.facebook:hover a{
+						
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	ul.post_meta{
+
+		
+
+		li{
+			
+			display: inline;
+			margin: 0 30px 20px 0;
+
+			&:first-child{}
+			&:last-child{}
+
+		}
+
+		a{
+			
+
+			&:hover{
+				
+			}
+
+		}
+
+		i{
+			
+		}
+
+		li.author{
+
+			
+
+			.user{
+				
+				a{
+					
+				}
+			}
+			.post_date{
+				
 			}
 
 		}

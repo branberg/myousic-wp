@@ -49,11 +49,47 @@
 				
 				<?php wp_nav_menu(array( 'theme_location' => 'main-nav', 'container' => 'nav', 'container_id' => 'header_nav' )); ?>
 
-				<?php if( is_home() ): ?>
-					<span id="page_title">NEWS</span>
-				<?php elseif( !is_front_page() ): ?>
-					<span id="page_title"><?php the_title(); ?></span>
-				<?php endif; ?>
+				<div id="page_title">
+					<?php
+						/*
+						Set up all our page titles for different page types
+						*/
+					?>
+					<?php if( is_home() ): ?>
+
+						<h1>NEWS</h1>
+
+					<?php elseif( is_single() ): ?>
+
+						<?php $posts_page = get_option('page_for_posts'); $posts_page = get_permalink($posts_page); ?>
+						<h1><?php the_title(); ?></h1>
+						<a href="<?php echo site_url('/' . $posts_page) ?>" class="back_to_blog">&larr; Back to Blog</a>
+
+					<?php elseif( is_tag() ): ?>
+
+						<h1><i class="icon-tag" title="Post Tags"></i> <?php single_tag_title(); ?></h1>
+						<span class="sub_title">Showing posts tagged as "<?php single_tag_title(); ?>"</span>
+
+					<?php elseif( is_category() ): ?>
+
+						<h1><i class="icon-archive" title="Post Categories"></i> <?php single_cat_title(); ?></h1>
+						<span class="sub_title">Showing posts categorized as "<?php single_cat_title(); ?>"</span>
+
+					<?php elseif( is_author() ): ?>
+
+						<h1><i class="icon-user" title="Post Categories"></i> <?php the_author(); ?></h1>
+						<span class="sub_title">Showing posts written by "<?php the_author(); ?>"</span>
+
+					<?php elseif( is_archive() ): ?>
+
+						<h1>Archive:</h1>
+
+					<?php else: ?>
+
+						<h1><?php the_title(); ?></h1>
+
+					<?php endif; ?>
+				</div>
 
 			</div>
 		</header>

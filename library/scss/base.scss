@@ -194,16 +194,38 @@ h1, h2, h3, h4, h5, h6{
 
 	#page_title{
 
-		display: block;
 		text-align: center;
 		padding: 116px 20px 60px 20px;
-		font-size: 2em;
-		margin: 0 auto;
-		text-transform: uppercase;
 		font-family: $montserrat;
-		color: $logoColor;
-		text-decoration: none;
-		text-shadow: 1px 1px 0 $logoShadow;
+		margin: 0 auto;
+
+		h1{
+
+			display: block;
+			font-size: 2em;
+			text-transform: uppercase;
+			color: $logoColor;
+			text-decoration: none;
+			text-shadow: 1px 1px 0 $logoShadow;
+
+		}
+
+		.back_to_blog{
+
+			display: block;
+			font-size: 16px;
+			margin-top: 10px;
+			text-decoration: none;
+
+			&:hover{
+				text-decoration: underline;
+			}
+
+		}
+
+		.sub_title{
+
+		}
 
 	}
 
@@ -378,10 +400,6 @@ MUSIC/ALBUMS
 /*************************************
 NEWS SECTION
 *************************************/
-body.single .news_section .news_article_wrap .news_article header.article_header h3{
-	font-size: 2.4em;
-}
-
 .news_section{
 
 	.wrap{}
@@ -423,7 +441,7 @@ body.single .news_section .news_article_wrap .news_article header.article_header
 				h3{
 
 					margin: 0;
-					font-size: 1.6em;
+					font-size: 2.4em;
 					float: left;
 
 					a{
@@ -443,8 +461,7 @@ body.single .news_section .news_article_wrap .news_article header.article_header
 
 			.article_excerpt{
 
-				font-size: 1.15rem;
-				font-weight:300;
+				
 
 				p{
 					margin: 0;
@@ -480,7 +497,7 @@ body.single .news_section .news_article_wrap .news_article header.article_header
 			a.read_more_link{
 
 				display: block;
-				padding: 10px 14px;
+				padding: 10px 20px;
 				text-decoration: none;
 				background-color: darken($accent, 5%);
 				text-align: center;
@@ -495,14 +512,11 @@ body.single .news_section .news_article_wrap .news_article header.article_header
 
 			footer.article_footer{
 
-				padding: 20px 0;
-				margin: 20px 0;
-				border-top: dashed 1px lighten($accent, 8%);
-				border-bottom: dashed 1px lighten($accent, 8%);
+				
 
 				ul.share_links{
 
-					margin: 0 0 20px 0;
+					margin: 40px 0 20px 0;
 					padding: 0;
 					text-align: center;
 
@@ -545,55 +559,55 @@ body.single .news_section .news_article_wrap .news_article header.article_header
 
 				}
 
-				.post_meta{
+			}
 
-					font-weight: 300;
+		}
 
-					p{
-						margin: 10px 0;
-						font-size: 14px;
+	}
 
-						&:first-child{margin-top:0;}
-						&:last-child{margin-bottom:0;}
+	ul.post_meta{
 
-					}
+		font-weight: 300;
+		padding: 10px 0;
+		margin: 0 0 20px 0;
+		border-top: dashed 1px lighten($accent, 8%);
+		border-bottom: dashed 1px lighten($accent, 8%);
+		display: block;
+		clear: both;
 
-					a{
-						text-decoration: none;
+		li{
 
-						&:hover{
-							text-decoration: underline;
-						}
+			list-style-type: none;
+			margin: 10px 0;
+			font-size: 14px;
 
-					}
+			&:first-child{margin-top:0;}
+			&:last-child{margin-bottom:0;}
 
-					i{
-						font-size: 18px;
-						position:relative;
-						top: 2px;
-						margin-right: 3px;
-					}
+		}
 
-					p.author{
+		a{
+			text-decoration: none;
 
-						overflow: hidden;
+			&:hover{
+				text-decoration: underline;
+			}
 
-						.user{
-							display: inline-block;
-							float: left;
-							a{
-								margin-left: 6px;
-							}
-						}
-						.post_date{
-							display: inline-block;
-							float: right;
-						}
+		}
 
-					}
+		i{
+			font-size: 18px;
+			position:relative;
+			top: 2px;
+			margin-right: 3px;
+		}
 
-				}
+		li.author{
 
+			overflow: hidden;
+
+			a{
+				margin-left: 6px;
 			}
 
 		}

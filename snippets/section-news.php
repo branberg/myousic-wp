@@ -1,4 +1,5 @@
 <div class="news_article_wrap">
+
 	<div class="news_article">
 
 		<header class="article_header clearfix">
@@ -9,12 +10,13 @@
 				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 			<?php endif; ?>
 
-			<span class="article_date"><?php echo get_the_time( 'M d' ); ?></span>
+			<span class="article_date"><time datetime="<?php echo get_the_time( 'Y-m-d' ); ?>"><?php echo get_the_time( 'M d' ); ?></time></span>
+
 		</header>
 
 		<div class="article_content">
 
-			<?php if( is_home() || is_front_page() ): ?>
+			<?php if( is_home() || is_front_page() || is_archive() ): ?>
 
 				<p class="article_excerpt"><?php the_excerpt_max_charlength(250); ?></p>
 				<a href="<?php the_permalink(); ?>" class="read_more_link">Read More &raquo;</a>
@@ -28,6 +30,13 @@
 		</div>
 
 		<footer class="article_footer">
+
+			<ul class="post_meta">
+				<li class="author"><i class="icon-user" title="Post Author"></i><?php the_author_posts_link(); ?></li>
+				<li class="categories"><i class="icon-archive" title="Post Categories"></i> <?php the_category( ', ' ); ?></li>
+				<?php the_tags( '<li class="tags"><i class="icon-tag" title="Post Tags"></i> ', ', ', '</li>' ); ?>
+				<li class="post_date"><i class="icon-clock-o"></i> <time datetime="<?php echo get_the_time( 'Y-m-d' ); ?>"><?php echo get_the_time( 'M d' ); ?></time></li>
+			</ul>
 
 			<?php if( is_single() ): ?>
 				<ul class="share_links">
@@ -44,15 +53,6 @@
 					</li>
 				</ul>
 			<?php endif; ?>
-
-			<div class="post_meta">
-				<p class="author">
-					<span class="user"><i class="icon-user"></i><?php the_author_posts_link(); ?></span>
-					<span class="post_date"><i class="icon-clock-o"></i> <?php echo get_the_time( 'm/d/Y' ); ?></span>
-				</p>
-				<p class="categories"><i class="icon-archive"></i> <?php the_category( ', ' ); ?></p>
-				<?php the_tags( '<p class="tags"><i class="icon-tag"></i> ', ', ', '</p>' ); ?>
-			</div>
 
 		</footer>
 

@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6{
 
 	#page_title{
 
-		
+		h1{}
 
 	}
 
@@ -285,6 +285,90 @@ NEWS SECTION
 				}
 
 			}
+
+			a.read_more_link{
+
+				
+
+				&:hover{
+					
+				}
+
+			}
+
+			footer.article_footer{
+
+				margin-top: 40px;
+
+				ul.share_links{
+
+					
+
+					li{
+
+						
+
+						a{
+
+							
+
+							&:hover{
+								
+							}
+
+							i{
+
+							}
+
+						}
+
+					}
+					li.share_label{
+						
+					}
+					li.twitter:hover a{
+						
+					}
+					li.facebook:hover a{
+						
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	ul.post_meta{
+
+		
+
+		li{
+			
+
+			&:first-child{}
+			&:last-child{}
+
+		}
+
+		a{
+			
+
+			&:hover{
+				
+			}
+
+		}
+
+		i{
+			
+		}
+
+		li.author{
+
+			
 
 		}
 
