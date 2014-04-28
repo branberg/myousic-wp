@@ -673,6 +673,34 @@ NEWS SECTION
         color: #00aced; }
       .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li.facebook:hover a {
         color: #3b5998; }
+.news_section .news_article_wrap.sticky {
+  border-top: solid 2px #fbb03b; }
+  .news_section .news_article_wrap.sticky:before {
+    background-color: #263c4a;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fbb03b), to(#263c4a));
+    background-image: -webkit-linear-gradient(top, #fbb03b, #263c4a);
+    background-image: -moz-linear-gradient(top, #fbb03b, #263c4a);
+    background-image: -o-linear-gradient(top, #fbb03b, #263c4a);
+    background-image: linear-gradient(to bottom, #fbb03b, #263c4a); }
+  .news_section .news_article_wrap.sticky .sticky_post_header {
+    position: relative;
+    display: block;
+    color: #263c4a;
+    padding: 10px;
+    text-align: center; }
+  .news_section .news_article_wrap.sticky .news_article {
+    padding-top: 80px; }
+    .news_section .news_article_wrap.sticky .news_article:before {
+      content: 'Promoted Post';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      color: #263c4a;
+      background-color: #fbb03b; }
 .news_section ul.post_meta {
   font-weight: 300;
   padding: 10px 0;
@@ -724,6 +752,25 @@ NEWS SECTION
 /* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
 .tooltipster-default .tooltipster-arrow .tooltipster-arrow-border {
   /* border-color: ... !important; */ }
+
+nav#pagination {
+  overflow: hidden; }
+  nav#pagination .nav_previous,
+  nav#pagination .nav_next {
+    float: left;
+    width: 50%;
+    text-align: center; }
+    nav#pagination .nav_previous a,
+    nav#pagination .nav_next a {
+      display: block;
+      text-decoration: none;
+      background-color: #1d2e39;
+      padding: 10px; }
+      nav#pagination .nav_previous a:hover,
+      nav#pagination .nav_next a:hover {
+        background-color: #152128; }
+  nav#pagination .nav_next {
+    float: right; }
 
 /*************************************
 SHOWS - BANDSINTOWN
@@ -1046,6 +1093,17 @@ p.alert {
     margin-bottom: 40px; }
     .news_section .news_article_wrap .news_article footer.article_footer {
       margin-top: 40px; }
+
+  nav#pagination .nav_previous,
+  nav#pagination .nav_next {
+    width: 45%; }
+    nav#pagination .nav_previous a,
+    nav#pagination .nav_next a {
+      padding: 20px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -o-border-radius: 4px;
+      border-radius: 4px; }
 
   /*************************************
   SHOWS - CUSTOM

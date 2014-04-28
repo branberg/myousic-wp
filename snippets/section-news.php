@@ -1,4 +1,4 @@
-<div class="news_article_wrap">
+<div id="post-<?php the_ID(); ?>" <?php post_class('news_article_wrap'); ?>>
 
 	<div class="news_article">
 

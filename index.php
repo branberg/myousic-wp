@@ -17,8 +17,21 @@
 
 				?>
 
+				
 
-			<?php endwhile; else: ?>
+				<?php endwhile; ?>
+
+				<nav id="pagination">
+					<?php if ( get_next_posts_link() ) : ?>
+						<div class="nav_previous"><?php next_posts_link( __( '<span class="meta_nav">&larr;</span> Older posts', 'myousic' ) ); ?></div>
+					<?php endif; ?>
+
+					<?php if ( get_previous_posts_link() ) : ?>
+						<div class="nav_next"><?php previous_posts_link( __( 'Newer posts <span class="meta_nav">&rarr;</span>', 'myousic' ) ); ?></div>
+					<?php endif; ?>
+				</nav>
+
+			<?php else: ?>
 				<p>Sorry, this page has no content or does not exist yet...</p>
 			<?php endif; ?>
 

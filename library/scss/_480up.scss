@@ -376,6 +376,36 @@ NEWS SECTION
 
 }
 
+nav#pagination{
+
+	
+
+	.nav_previous,
+	.nav_next{
+
+		width: 45%;
+
+		a{
+
+			padding: 20px;
+			@include rounded(4px);
+
+			&:hover{
+				
+			}
+
+		}
+
+	}
+	.nav_previous{
+
+	}
+	.nav_next{
+
+	}
+
+}
+
 
 /*************************************
 SHOWS - CUSTOM

@@ -78,7 +78,11 @@
 					<?php elseif( is_author() ): ?>
 
 						<h1><i class="icon-user" title="Post Categories"></i> <?php the_author(); ?></h1>
-						<span class="sub_title">Showing posts written by "<?php the_author(); ?>"</span>
+						<?php if( get_the_author_posts() == 1 ): ?>
+							<span class="sub_title">Showing 1 post written by "<?php the_author(); ?>"</span>
+						<?php elseif( get_the_author_posts() > 1 ): ?>
+							<span class="sub_title">Showing <?php the_author_posts(); ?> posts written by "<?php the_author(); ?>"</span>
+						<?php endif; ?>
 
 					<?php elseif( is_archive() ): ?>
 

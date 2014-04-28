@@ -565,6 +565,43 @@ NEWS SECTION
 
 	}
 
+
+	.news_article_wrap.sticky{
+
+		border-top: solid 2px #fbb03b;
+
+		&:before{
+			@include css-gradient-top-down(#fbb03b, $accent);
+		}
+
+		.sticky_post_header{
+			position:relative;
+			display: block;
+			color: $accent;
+			padding: 10px;
+			text-align: center;
+		}
+
+		.news_article{
+
+			padding-top: 80px;
+
+			&:before{
+				content: 'Promoted Post';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 40px;
+				line-height:40px;
+				text-align: center;
+				color: $accent;
+				background-color: #fbb03b;
+			}
+
+		}
+	}
+
 	ul.post_meta{
 
 		font-weight: 300;
@@ -648,6 +685,40 @@ NEWS SECTION
 /* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
 .tooltipster-default .tooltipster-arrow .tooltipster-arrow-border {
 	/* border-color: ... !important; */
+}
+
+nav#pagination{
+
+	overflow: hidden;
+
+	.nav_previous,
+	.nav_next{
+
+		float: left;
+		width: 50%;
+		text-align: center;
+
+		a{
+
+			display: block;
+			text-decoration: none;
+			background-color: darken($accent, 5%);
+			padding: 10px;
+
+			&:hover{
+				background-color: darken($accent, 10%);
+			}
+
+		}
+
+	}
+	.nav_previous{
+
+	}
+	.nav_next{
+		float: right;
+	}
+
 }
 
 /*************************************
