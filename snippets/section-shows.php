@@ -54,7 +54,9 @@
 						</div>
 					</td>
 					<td class="info">
-						<a href="<?php the_permalink(); ?>"><i class="icon-info-circle"></i></a>
+						<div class="cell_wrap">
+							<a href="<?php the_permalink(); ?>"><i class="icon-info-circle"></i></a>
+						</div>
 					</td>
 				</tr>
 

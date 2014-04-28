@@ -695,6 +695,16 @@ table.tour_dates{
 			display: none;
 
 		}
+		td.info{
+
+			text-align: right;
+
+			a:hover{
+				text-decoration: none;
+				color: lighten($textColor, 10%);
+			}
+
+		}
 
 	}
 

@@ -747,6 +747,11 @@ table.tour_dates {
     text-align: right; }
   table.tour_dates tr td.rsvp {
     display: none; }
+  table.tour_dates tr td.info {
+    text-align: right; }
+    table.tour_dates tr td.info a:hover {
+      text-decoration: none;
+      color: #bac4c9; }
 
 /*************************************
 VIDEOS
