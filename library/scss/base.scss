@@ -722,6 +722,77 @@ nav#pagination{
 }
 
 /*************************************
+COMMENTS
+*************************************/
+#comments{
+
+}
+.comment-list{
+
+	margin: 0;
+	padding: 0;
+
+}
+.comment{
+
+	list-style: none;
+	//padding: 20px;
+	background-color: lighten($accent, 10%);
+
+	.comment-body{
+
+		.comment-author{
+
+			background-color: $accent;
+			position: relative;
+			padding-bottom: 20px;
+
+			img{
+				display: inline-block;
+				width: 60px;
+				height: 60px;
+				margin-right: 14px;
+				@include rounded(30px);
+			}
+			.fn,
+			.says{
+
+				font-family: $montserrat;
+				font-style: normal;
+				position: relative;
+				top: -22px;
+
+				a{
+					text-decoration: none;
+				}
+
+			}
+			.fn{
+				display: inline-block;
+			}
+			.says{
+				display: inline-block;
+			}
+
+			&:after{
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 15px;
+				@include triangle( up, 15px, lighten($accent, 10%) );
+			}
+
+		}
+		.comment-meta{
+
+		}
+
+	}
+
+}
+
+
+/*************************************
 SHOWS - BANDSINTOWN
 *************************************/
 .bit-widget-container{

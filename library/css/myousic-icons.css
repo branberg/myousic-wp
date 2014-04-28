@@ -29,8 +29,14 @@
 .icon-envelope-o:before {
   content: "\f003"; }
 
+.icon-heart:before {
+  content: "\f004"; }
+
 .icon-star:before {
   content: "\f005"; }
+
+.icon-star-o:before {
+  content: "\f006"; }
 
 .icon-user:before {
   content: "\f007"; }
@@ -52,6 +58,21 @@
 
 .icon-eye:before {
   content: "\f06e"; }
+
+.icon-comment:before {
+  content: "\f075"; }
+
+.icon-comments:before {
+  content: "\f086"; }
+
+.icon-star-half:before {
+  content: "\f089"; }
+
+.icon-heart-o:before {
+  content: "\f08a"; }
+
+.icon-thumb-tack:before {
+  content: "\f08d"; }
 
 .icon-external-link:before {
   content: "\f08e"; }
@@ -116,6 +137,9 @@
 .icon-folder-o:before {
   content: "\f114"; }
 
+.icon-star-half-empty:before {
+  content: "\f123"; }
+
 .icon-html5:before {
   content: "\f13b"; }
 
@@ -142,6 +166,9 @@
 
 .icon-dribbble:before {
   content: "\f17d"; }
+
+.icon-comment2:before {
+  content: "\e603"; }
 
 .icon-archive:before {
   content: "\e602"; }

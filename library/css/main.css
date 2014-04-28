@@ -773,6 +773,53 @@ nav#pagination {
     float: right; }
 
 /*************************************
+COMMENTS
+*************************************/
+.comment-list {
+  margin: 0;
+  padding: 0; }
+
+.comment {
+  list-style: none;
+  background-color: #37576c; }
+  .comment .comment-body .comment-author {
+    background-color: #263c4a;
+    position: relative;
+    padding-bottom: 20px; }
+    .comment .comment-body .comment-author img {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      margin-right: 14px;
+      -moz-border-radius: 30px;
+      -webkit-border-radius: 30px;
+      -o-border-radius: 30px;
+      border-radius: 30px; }
+    .comment .comment-body .comment-author .fn,
+    .comment .comment-body .comment-author .says {
+      font-family: "Montserrat", sans-serif;
+      font-style: normal;
+      position: relative;
+      top: -22px; }
+      .comment .comment-body .comment-author .fn a,
+      .comment .comment-body .comment-author .says a {
+        text-decoration: none; }
+    .comment .comment-body .comment-author .fn {
+      display: inline-block; }
+    .comment .comment-body .comment-author .says {
+      display: inline-block; }
+    .comment .comment-body .comment-author:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 15px solid #37576c; }
+
+/*************************************
 SHOWS - BANDSINTOWN
 *************************************/
 .bit-widget-container th, .bit-widget-container td {

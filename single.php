@@ -7,6 +7,8 @@
 
 				<?php include('snippets/section-news.php'); ?>
 
+				<?php comments_template( '', true ); ?>
+
 			<?php endwhile; else: ?>
 				<p>Sorry, this page has no content or does not exist yet...</p>
 			<?php endif; ?>

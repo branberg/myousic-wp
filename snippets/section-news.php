@@ -36,6 +36,7 @@
 				<li class="categories"><i class="icon-archive" title="Post Categories"></i> <?php the_category( ', ' ); ?></li>
 				<?php the_tags( '<li class="tags"><i class="icon-tag" title="Post Tags"></i> ', ', ', '</li>' ); ?>
 				<li class="post_date"><i class="icon-clock-o"></i> <time datetime="<?php echo get_the_time( 'Y-m-d' ); ?>"><?php echo get_the_time( 'M d' ); ?></time></li>
+				<li class="comments"><i class="icon-comment"></i> <a href="<?php comments_link(); ?>"><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></a></li>
 			</ul>
 
 			<?php if( is_single() ): ?>
