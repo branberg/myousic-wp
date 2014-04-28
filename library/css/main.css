@@ -589,6 +589,9 @@ MUSIC/ALBUMS
 /*************************************
 NEWS SECTION
 *************************************/
+body.single .news_section .news_article_wrap .news_article header.article_header h3 {
+  font-size: 2.4em; }
+
 .news_section .news_article_wrap {
   position: relative;
   border-top: solid 2px #9dabb3;
@@ -634,10 +637,23 @@ NEWS SECTION
     .news_section .news_article_wrap .news_article .article_content {
       font-size: 1.5em;
       font-weight: 300; }
+    .news_section .news_article_wrap .news_article a.read_more_link {
+      display: block;
+      padding: 10px 14px;
+      text-decoration: none;
+      background-color: #1d2e39;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px; }
+      .news_section .news_article_wrap .news_article a.read_more_link:hover {
+        background-color: #152128; }
     .news_section .news_article_wrap .news_article footer.article_footer {
-      padding: 80px 0; }
+      padding: 20px 0;
+      margin: 20px 0;
+      border-top: dashed 1px #345265;
+      border-bottom: dashed 1px #345265; }
       .news_section .news_article_wrap .news_article footer.article_footer ul.share_links {
-        margin: 0;
+        margin: 0 0 20px 0;
         padding: 0;
         text-align: center; }
         .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li {
@@ -660,6 +676,34 @@ NEWS SECTION
           color: #00aced; }
         .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li.facebook:hover a {
           color: #3b5998; }
+      .news_section .news_article_wrap .news_article footer.article_footer .post_meta {
+        font-weight: 300; }
+        .news_section .news_article_wrap .news_article footer.article_footer .post_meta p {
+          margin: 10px 0;
+          font-size: 14px; }
+          .news_section .news_article_wrap .news_article footer.article_footer .post_meta p:first-child {
+            margin-top: 0; }
+          .news_section .news_article_wrap .news_article footer.article_footer .post_meta p:last-child {
+            margin-bottom: 0; }
+        .news_section .news_article_wrap .news_article footer.article_footer .post_meta a {
+          text-decoration: none; }
+          .news_section .news_article_wrap .news_article footer.article_footer .post_meta a:hover {
+            text-decoration: underline; }
+        .news_section .news_article_wrap .news_article footer.article_footer .post_meta i {
+          font-size: 18px;
+          position: relative;
+          top: 2px;
+          margin-right: 3px; }
+        .news_section .news_article_wrap .news_article footer.article_footer .post_meta p.author {
+          overflow: hidden; }
+          .news_section .news_article_wrap .news_article footer.article_footer .post_meta p.author .user {
+            display: inline-block;
+            float: left; }
+            .news_section .news_article_wrap .news_article footer.article_footer .post_meta p.author .user a {
+              margin-left: 6px; }
+          .news_section .news_article_wrap .news_article footer.article_footer .post_meta p.author .post_date {
+            display: inline-block;
+            float: right; }
 
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {

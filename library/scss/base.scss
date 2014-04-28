@@ -378,6 +378,10 @@ MUSIC/ALBUMS
 /*************************************
 NEWS SECTION
 *************************************/
+body.single .news_section .news_article_wrap .news_article header.article_header h3{
+	font-size: 2.4em;
+}
+
 .news_section{
 
 	.wrap{}
@@ -473,13 +477,32 @@ NEWS SECTION
 
 			}
 
+			a.read_more_link{
+
+				display: block;
+				padding: 10px 14px;
+				text-decoration: none;
+				background-color: darken($accent, 5%);
+				text-align: center;
+				margin-top: 20px;
+				font-size: 18px;
+
+				&:hover{
+					background-color: darken($accent, 10%);
+				}
+
+			}
+
 			footer.article_footer{
 
-				padding: 80px 0;
+				padding: 20px 0;
+				margin: 20px 0;
+				border-top: dashed 1px lighten($accent, 8%);
+				border-bottom: dashed 1px lighten($accent, 8%);
 
 				ul.share_links{
 
-					margin: 0;
+					margin: 0 0 20px 0;
 					padding: 0;
 					text-align: center;
 
@@ -518,6 +541,55 @@ NEWS SECTION
 					}
 					li.facebook:hover a{
 						color: #3b5998;
+					}
+
+				}
+
+				.post_meta{
+
+					font-weight: 300;
+
+					p{
+						margin: 10px 0;
+						font-size: 14px;
+
+						&:first-child{margin-top:0;}
+						&:last-child{margin-bottom:0;}
+
+					}
+
+					a{
+						text-decoration: none;
+
+						&:hover{
+							text-decoration: underline;
+						}
+
+					}
+
+					i{
+						font-size: 18px;
+						position:relative;
+						top: 2px;
+						margin-right: 3px;
+					}
+
+					p.author{
+
+						overflow: hidden;
+
+						.user{
+							display: inline-block;
+							float: left;
+							a{
+								margin-left: 6px;
+							}
+						}
+						.post_date{
+							display: inline-block;
+							float: right;
+						}
+
 					}
 
 				}

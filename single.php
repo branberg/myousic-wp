@@ -13,6 +13,7 @@
 					$date = get_the_time( 'M d' );
 					$excerpt = get_the_excerpt();
 					$content = get_the_content();
+					$content = apply_filters( 'the_content', $content );
 
 					include('snippets/section-news.php');
 

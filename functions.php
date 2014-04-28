@@ -259,6 +259,26 @@ add_filter('show_admin_bar', '__return_false');
 }
 add_action( 'widgets_init', 'boombox_widgets_init' );*/
 
+//Custom excerpt lengths
+function the_excerpt_max_charlength($charlength) {
+	$excerpt = get_the_excerpt();
+	$charlength++;
+
+	if ( mb_strlen( $excerpt ) > $charlength ) {
+		$subex = mb_substr( $excerpt, 0, $charlength - 5 );
+		$exwords = explode( ' ', $subex );
+		$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+		if ( $excut < 0 ) {
+			echo mb_substr( $subex, 0, $excut );
+		} else {
+			echo $subex;
+		}
+		echo '...';
+	} else {
+		echo $excerpt;
+	}
+}
+
 
 /*********************************************************************************************************
 Custom style for the wordpress editor

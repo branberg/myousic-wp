@@ -32,8 +32,17 @@
 .icon-star:before {
   content: "\f005"; }
 
+.icon-user:before {
+  content: "\f007"; }
+
+.icon-clock-o:before {
+  content: "\f017"; }
+
 .icon-download:before {
   content: "\f019"; }
+
+.icon-tag:before {
+  content: "\f02b"; }
 
 .icon-share-square-o:before {
   content: "\f045"; }
@@ -55,6 +64,12 @@
 
 .icon-certificate:before {
   content: "\f0a3"; }
+
+.icon-filter:before {
+  content: "\f0b0"; }
+
+.icon-paperclip:before {
+  content: "\f0c6"; }
 
 .icon-bars:before {
   content: "\f0c9"; }
@@ -83,6 +98,9 @@
 .icon-linkedin:before {
   content: "\f0e1"; }
 
+.icon-file-text-o:before {
+  content: "\f0f6"; }
+
 .icon-desktop:before {
   content: "\f108"; }
 
@@ -94,6 +112,9 @@
 
 .icon-mobile-phone:before {
   content: "\f10b"; }
+
+.icon-folder-o:before {
+  content: "\f114"; }
 
 .icon-html5:before {
   content: "\f13b"; }
@@ -121,3 +142,6 @@
 
 .icon-dribbble:before {
   content: "\f17d"; }
+
+.icon-archive:before {
+  content: "\e602"; }

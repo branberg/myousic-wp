@@ -95,12 +95,10 @@
 								$id = $post['ID'];
 								$post = get_post( $id );
 								setup_postdata($post);
-								//set post vars for below
-								$title = get_the_title();
-								$permalink = get_permalink();
-								$date = get_the_time( 'M d' );
-								$excerpt = get_the_excerpt();
-								$content = get_the_content();
+
+								//load up the news embed snippet
+								include( 'snippets/section-news.php' );
+
 								//reset postdata
 								wp_reset_postdata();
 
@@ -108,19 +106,14 @@
 
 								$post = get_sub_field('custom_post');
 								setup_postdata($post);
-								//set post vars for below
-								$title = get_the_title();
-								$permalink = get_permalink();
-								$date = get_the_time( 'M d' );
-								$excerpt = get_the_excerpt();
-								$content = get_the_content();
+
+								//load up the news embed snippet
+								include( 'snippets/section-news.php' );
+
 								//reset postdata
 								wp_reset_postdata();
 
 							}
-
-							//load up the news embed snippet
-							include( 'snippets/section-news.php' );
 
 						?>
 						
