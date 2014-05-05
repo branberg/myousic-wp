@@ -1369,7 +1369,9 @@ p.alert {
         .music_section .album .album_info_wrapper .album_info .album_title {
           font-size: 2.375rem; }
         .music_section .album .album_info_wrapper .album_info .album_description {
-          font-size: 1.15em; }
+          font-size: 1.15em;
+          height: 100px;
+          overflow-y: auto; }
         .music_section .album .album_info_wrapper .album_info .album_button {
           position: absolute;
           bottom: 40px;
@@ -1535,6 +1537,9 @@ p.alert {
   /*************************************
   MUSIC/ALBUMS
   *************************************/
+  .music_section .album .album_info_wrapper .album_info .album_description {
+    height: 187px; }
+
   /*************************************
   NEWS SECTION
   *************************************/
