@@ -736,8 +736,6 @@ COMMENTS
 .comment{
 
 	list-style: none;
-	//padding: 20px;
-	background-color: lighten($accent, 10%);
 
 	.comment-body{
 
@@ -772,14 +770,6 @@ COMMENTS
 			}
 			.says{
 				display: inline-block;
-			}
-
-			&:after{
-				content: '';
-				position: absolute;
-				bottom: 0;
-				left: 15px;
-				@include triangle( up, 15px, lighten($accent, 10%) );
 			}
 
 		}
@@ -1308,4 +1298,21 @@ p.alert{
 	&.warning{ background-color: #FBB040; }
 	&.error{ background-color: #EF4136; }
 
+}
+
+//form error and success messages
+.error,
+.success{
+	padding: 20px;
+	margin-bottom: 40px;
+}
+
+.error{
+	border: 2px solid #EF4136;
+	color: #EF4136;
+}
+
+.success{
+	border: 2px solid #2BB673;
+	color: #2BB673;
 }

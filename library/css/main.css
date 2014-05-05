@@ -780,8 +780,7 @@ COMMENTS
   padding: 0; }
 
 .comment {
-  list-style: none;
-  background-color: #37576c; }
+  list-style: none; }
   .comment .comment-body .comment-author {
     background-color: #263c4a;
     position: relative;
@@ -808,16 +807,6 @@ COMMENTS
       display: inline-block; }
     .comment .comment-body .comment-author .says {
       display: inline-block; }
-    .comment .comment-body .comment-author:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 15px;
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 15px solid #37576c; }
 
 /*************************************
 SHOWS - BANDSINTOWN
@@ -1122,6 +1111,19 @@ p.alert {
     background-color: #FBB040; }
   p.alert.error {
     background-color: #EF4136; }
+
+.error,
+.success {
+  padding: 20px;
+  margin-bottom: 40px; }
+
+.error {
+  border: 2px solid #EF4136;
+  color: #EF4136; }
+
+.success {
+  border: 2px solid #2BB673;
+  color: #2BB673; }
 
 @media only screen and (min-width: 480px) {
   body.home .site_header #logo_wrap #logo {

@@ -21,10 +21,10 @@ if ( post_password_required() )
 			<?php
 				wp_list_comments( array(
 					'style'       => 'ol',
-					'max_depth'	  => 1,
+					'max_depth'	  => 5,
 					'short_ping'  => true,
-					'avatar_size' => 74,
-					'format'	  => 'htm5',
+					'avatar_size' => 75,
+					'format'	  => 'html5',
 				) );
 			?>
 		</ol><!-- .comment-list -->

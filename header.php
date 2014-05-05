@@ -49,7 +49,7 @@
 				
 				<?php wp_nav_menu(array( 'theme_location' => 'main-nav', 'container' => 'nav', 'container_id' => 'header_nav' )); ?>
 
-				<?php if( ! is_front_page() ): ?>
+				<?php if( ! is_front_page() ): //only do this fancy-pancy title stuff if it is NOT the home page. ?>
 
 					<div id="page_title">
 						<?php
