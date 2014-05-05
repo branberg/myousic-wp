@@ -15,7 +15,7 @@
 
 	-->
 	<meta charset="UTF-8">
-	<title><?php the_title(); ?> | <?php bloginfo('name'); ?></title>
+	<title><?php wp_title( '|', 'true', 'right' ); ?><?php bloginfo('name'); ?></title>
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/library/img/favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- Social meta tags -->
@@ -49,51 +49,55 @@
 				
 				<?php wp_nav_menu(array( 'theme_location' => 'main-nav', 'container' => 'nav', 'container_id' => 'header_nav' )); ?>
 
-				<div id="page_title">
-					<?php
-						/*
-						Set up all our page titles for different page types
-						*/
-					?>
-					<?php if( is_home() ): ?>
+				<?php if( ! is_front_page() ): ?>
 
-						<h1>NEWS</h1>
+					<div id="page_title">
+						<?php
+							/*
+							Set up all our page titles for different page types
+							*/
+						?>
+						<?php if( is_home() ): ?>
 
-					<?php elseif( is_single() ): ?>
+							<h1>NEWS</h1>
 
-						<?php $posts_page = get_option('page_for_posts'); $posts_page = get_permalink($posts_page); ?>
-						<h1><?php the_title(); ?></h1>
-						<a href="<?php echo site_url('/' . $posts_page) ?>" class="back_to_blog">&larr; Back to Blog</a>
+						<?php elseif( is_single() ): ?>
 
-					<?php elseif( is_tag() ): ?>
+							<?php $posts_page = get_option('page_for_posts'); $posts_page = get_permalink($posts_page); ?>
+							<h1><?php the_title(); ?></h1>
+							<a href="<?php echo site_url('/' . $posts_page) ?>" class="back_to_blog">&larr; Back to Blog</a>
 
-						<h1><i class="icon-tag" title="Post Tags"></i> <?php single_tag_title(); ?></h1>
-						<span class="sub_title">Showing posts tagged as "<?php single_tag_title(); ?>"</span>
+						<?php elseif( is_tag() ): ?>
 
-					<?php elseif( is_category() ): ?>
+							<h1><i class="icon-tag" title="Post Tags"></i> <?php single_tag_title(); ?></h1>
+							<span class="sub_title">Showing posts tagged as "<?php single_tag_title(); ?>"</span>
 
-						<h1><i class="icon-archive" title="Post Categories"></i> <?php single_cat_title(); ?></h1>
-						<span class="sub_title">Showing posts categorized as "<?php single_cat_title(); ?>"</span>
+						<?php elseif( is_category() ): ?>
 
-					<?php elseif( is_author() ): ?>
+							<h1><i class="icon-archive" title="Post Categories"></i> <?php single_cat_title(); ?></h1>
+							<span class="sub_title">Showing posts categorized as "<?php single_cat_title(); ?>"</span>
 
-						<h1><i class="icon-user" title="Post Categories"></i> <?php the_author(); ?></h1>
-						<?php if( get_the_author_posts() == 1 ): ?>
-							<span class="sub_title">Showing 1 post written by "<?php the_author(); ?>"</span>
-						<?php elseif( get_the_author_posts() > 1 ): ?>
-							<span class="sub_title">Showing <?php the_author_posts(); ?> posts written by "<?php the_author(); ?>"</span>
+						<?php elseif( is_author() ): ?>
+
+							<h1><i class="icon-user" title="Post Categories"></i> <?php the_author(); ?></h1>
+							<?php if( get_the_author_posts() == 1 ): ?>
+								<span class="sub_title">Showing 1 post written by "<?php the_author(); ?>"</span>
+							<?php elseif( get_the_author_posts() > 1 ): ?>
+								<span class="sub_title">Showing <?php the_author_posts(); ?> posts written by "<?php the_author(); ?>"</span>
+							<?php endif; ?>
+
+						<?php elseif( is_archive() ): ?>
+
+							<h1>Archive:</h1>
+
+						<?php else: ?>
+
+							<h1><?php the_title(); ?></h1>
+
 						<?php endif; ?>
+					</div>
 
-					<?php elseif( is_archive() ): ?>
-
-						<h1>Archive:</h1>
-
-					<?php else: ?>
-
-						<h1><?php the_title(); ?></h1>
-
-					<?php endif; ?>
-				</div>
+				<?php endif; ?>
 
 			</div>
 		</header>
