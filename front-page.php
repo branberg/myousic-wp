@@ -182,6 +182,8 @@
 							//load up the shows embed snippet
 							include( 'snippets/section-shows.php' );
 
+							wp_reset_query();
+
 						?>
 						
 					</div>
