@@ -1440,7 +1440,7 @@ p.alert {
   table.tour_dates tr td.location .venue {
     text-transform: uppercase;
     font-weight: 700; }
-  table.tour_dates tr td.rsvp .cell_wrap {
+  table.tour_dates tr td.info .cell_wrap {
     padding-right: 40px; }
 
   /*************************************

@@ -36,7 +36,7 @@
 
 							//get ID of post from Home page
 							$music_object = get_sub_field('music_embed');
-							
+
 							//get all fields for that post ID
 							$fields = get_fields($music_object->ID);
 
@@ -75,7 +75,7 @@
 
 				<div class="page_section news_section">
 					<div class="wrap">
-						
+
 						<?php if( get_sub_field( 'section_heading_link' ) == 'External Link' ): ?>
 							<header class="section_header"><h2><a href="<?php the_sub_field('external_link'); ?>">News</a></h2></header>
 						<?php elseif( get_sub_field( 'section_heading_link' ) == 'Interior Page Link' ): ?>
@@ -116,7 +116,7 @@
 							}
 
 						?>
-						
+
 					</div>
 				</div>
 
@@ -139,7 +139,7 @@
 
 				<div class="page_section shows_section shows_custom">
 					<div class="wrap">
-						
+
 						<?php if( get_sub_field( 'section_heading_link' ) == 'External Link' ): ?>
 							<header class="section_header"><h2><a href="<?php the_sub_field('external_link'); ?>">Shows</a></h2></header>
 						<?php elseif( get_sub_field( 'section_heading_link' ) == 'Interior Page Link' ): ?>
@@ -152,16 +152,25 @@
 
 							$show_count = get_sub_field( 'shows' ); //get show count
 							$show_count = intval($show_count); //convert to integer
+							$today = date('Ymd', strtotime('-1 day'));
 
 							if( $show_count ){ //if show count is set, show X amt of posts...
 
 								$posts = get_posts(
 									array(
 										'post_type' => 'shows',
-										'posts_per_page' => $show_count,
 										'meta_key' => 'date',
+										'posts_per_page' => $show_count,
 										'orderby' => 'meta_value_num',
-										'order' => 'ASC'
+										'order' => 'ASC',
+										'meta_query' => array(
+											array(
+												'key' => 'date',
+												'compare' => '>=',
+												'value' => $today,
+												'type' => 'DATE'
+											)
+										)
 									)
 								);
 
@@ -170,10 +179,18 @@
 								$posts = get_posts(
 									array(
 										'post_type' => 'shows',
-										'posts_per_page' => 5,
 										'meta_key' => 'date',
+										'posts_per_page' => 5,
 										'orderby' => 'meta_value_num',
-										'order' => 'ASC'
+										'order' => 'ASC',
+										'meta_query' => array(
+											array(
+												'key' => 'date',
+												'compare' => '>=',
+												'value' => $today,
+												'type' => 'DATE'
+											)
+										)
 									)
 								);
 
@@ -185,7 +202,7 @@
 							wp_reset_query();
 
 						?>
-						
+
 					</div>
 				</div>
 
@@ -208,7 +225,7 @@
 
 				<div class="page_section videos_section">
 					<div class="wrap">
-						
+
 						<?php if( get_sub_field( 'section_heading_link' ) == 'External Link' ): ?>
 							<header class="section_header"><h2><a href="<?php the_sub_field('external_link'); ?>">Videos</a></h2></header>
 						<?php elseif( get_sub_field( 'section_heading_link' ) == 'Interior Page Link' ): ?>
@@ -220,7 +237,7 @@
 						<?php
 							//get ID of post from Home page
 							$video_object = get_sub_field('video_embed');
-							
+
 							//get all fields for that post ID
 							$fields = get_fields($video_object->ID);
 
@@ -232,7 +249,7 @@
 							include( 'snippets/section-videos.php' );
 
 						?>
-						
+
 					</div>
 				</div>
 
@@ -263,7 +280,7 @@
 							<header class="section_header"><h2>Photos</h2></header>
 						<?php endif; ?>
 					</div>
-					
+
 					<?php $photos = get_sub_field( 'photo_gallery' ); ?>
 					<?php if( $photos ): ?>
 					<div class="photo_gallery">

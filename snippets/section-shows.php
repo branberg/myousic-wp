@@ -3,7 +3,7 @@
 
 		<?php if( $posts ): ?>
 			<?php foreach( $posts as $post): ?>
-				
+
 				<?php
 
 					//date stuff

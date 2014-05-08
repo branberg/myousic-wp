@@ -573,9 +573,14 @@ table.tour_dates{
 		td.rsvp{
 
 			.cell_wrap{
-				padding-right: 40px;
+				//padding-right: 40px;
 			}
 
+		}
+		td.info{
+			.cell_wrap{
+				padding-right: 40px;
+			}
 		}
 
 	}
