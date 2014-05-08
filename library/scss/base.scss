@@ -143,7 +143,7 @@ h1, h2, h3, h4, h5, h6{
 .site_header{
 
 	position: relative;
-	background: url('../img/header_background.jpg') no-repeat center center scroll; 
+	background: url('../img/header_background.jpg') no-repeat center center scroll;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -343,7 +343,7 @@ MUSIC/ALBUMS
 			color: $textColor;
 
 			.album_info{
-				
+
 				padding: 20px;
 
 				.album_type{
@@ -461,7 +461,7 @@ NEWS SECTION
 
 			.article_excerpt{
 
-				
+
 
 				p{
 					margin: 0;
@@ -512,7 +512,7 @@ NEWS SECTION
 
 			footer.article_footer{
 
-				
+
 
 				ul.share_links{
 
@@ -668,7 +668,7 @@ NEWS SECTION
 
 		.fill{
 			padding: 8px 12px;
-			border-radius: 3px; 
+			border-radius: 3px;
 		}
 		.fill.tweet{
 			background: #00aced;
@@ -726,60 +726,230 @@ COMMENTS
 *************************************/
 #comments{
 
-}
-.comment-list{
+	border-top: solid 2px #9dabb3;
 
-	margin: 0;
-	padding: 0;
-
-}
-.comment{
-
-	list-style: none;
-
-	.comment-body{
-
-		.comment-author{
-
-			background-color: $accent;
-			position: relative;
-			padding-bottom: 20px;
-
-			img{
-				display: inline-block;
-				width: 60px;
-				height: 60px;
-				margin-right: 14px;
-				@include rounded(30px);
-			}
-			.fn,
-			.says{
-
-				font-family: $montserrat;
-				font-style: normal;
-				position: relative;
-				top: -22px;
-
-				a{
-					text-decoration: none;
-				}
-
-			}
-			.fn{
-				display: inline-block;
-			}
-			.says{
-				display: inline-block;
-			}
-
-		}
-		.comment-meta{
-
-		}
+	.comments-title{
 
 	}
 
-}
+	.comment-list{
+
+		margin: 0;
+		padding: 0;
+
+		> .comment{
+			background: darken($accent, 5%);
+			margin-bottom: 30px;
+			@include rounded(6px);
+		}
+		.comment{
+
+			list-style: none;
+
+			.comment-body{
+
+				.comment-meta{
+
+					overflow: hidden;
+					background: darken($accent, 7%);
+					padding: 20px;
+					@include border-radius(6px, 6px, 0, 0);
+
+					.comment-author{
+
+						position: relative;
+						float: left;
+
+						img{
+							display: inline-block;
+							vertical-align: middle;
+							width: 60px;
+							height: 60px;
+							margin-right: 14px;
+							@include rounded(30px);
+						}
+						.fn,
+						.says{
+
+							font-family: $montserrat;
+							font-style: normal;
+
+							a{
+								text-decoration: none;
+							}
+
+						}
+						.fn{
+							display: inline-block;
+						}
+						.says{
+							display: inline-block;
+						}
+
+					}
+					.comment-metadata{
+
+						float: right;
+						margin-top: 20px;
+						font-size: 14px;
+
+
+						a{
+
+							color: lighten($accent, 5%);
+							text-decoration: none;
+
+							&:hover{
+								text-decoration: underline;
+							}
+
+							time{
+
+							}
+
+						}
+
+					}
+
+				} // .comment-meta
+
+				.comment-content{
+
+					padding: 20px;
+
+					> :first-child{ margin-top: 0; }
+					> :last-child{ margin-bottom: 0; }
+
+				} // .comment-content
+
+				.reply{
+
+					padding: 0;
+
+					a.comment-reply-link{
+						font-size: 14px;
+						display: inline-block;
+						text-decoration: none;
+						padding: 4px 8px;
+						margin: 0 0 20px 20px;
+						background-color: darken($accent, 8%);
+						@include rounded(3px);
+						&:hover{
+							background-color: darken($accent, 15%);
+						}
+					}
+
+				} // .reply
+
+			} // .comment-body
+
+			.children{
+
+				padding: 0 0 20px 0px;
+
+				li{
+
+					border: solid 2px darken($accent, 7%);
+					@include rounded(6px);
+					margin: 20px 20px 0 20px;
+
+				}
+
+			}
+
+		} // .comment
+
+	} // .comment-list
+
+	#respond{
+
+		border-top: dashed 2px lighten($accent, 10%);
+		#reply-title{
+
+			small{
+
+			}
+
+		}
+
+		form{
+
+			.logged-in-as{
+
+				a{
+
+					text-decoration: none;
+
+					&:hover{
+						text-decoration: underline;
+					}
+
+				}
+
+			}
+
+			.comment-form-comment{
+
+				background-color: darken($accent, 5%);
+				padding: 20px;
+				margin: 0;
+				@include border-radius( 6px, 6px, 0, 0 );
+
+				label{
+
+					margin-bottom: 20px;
+					display: block;
+
+				}
+				textarea{
+
+					display: block;
+					background: $accent;
+					border: none;
+					width: 100%;
+					outline: none;
+					padding: 20px;
+					color: $white;
+
+					&:focus{
+						background-color: lighten($accent, 1%);
+					}
+
+				}
+
+			}
+
+			.form-allowed-tags{
+				background-color: darken($accent, 5%);
+				margin: 0;
+				padding: 0 20px 20px 20px;
+				color: lighten($accent, 5%);
+				font-size: 14px;
+				@include border-radius( 0, 0, 6px, 6px );
+			}
+
+			.form-submit{
+
+				#submit{
+					display: inline-block;
+					background-color: darken($accent, 5%);
+					border: none;
+					color: $textColor;
+					padding: 20px 30px;
+					font-size: 1.4em;
+					@include rounded(6px);
+					&:hover{
+						background-color: darken($accent, 7%);
+					}
+				}
+
+			}
+
+		}
+
+	} // #respond
+
+} // #comments
 
 
 /*************************************
@@ -850,7 +1020,7 @@ table.tour_dates{
 
 		td{
 
-			
+
 			font-size: 12px;
 
 			.cell_wrap{
@@ -1108,7 +1278,7 @@ FOOTER
 		label.placeholder{ color: $footerText; }
 
 	}
-		
+
 }
 .social_links{
 
