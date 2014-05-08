@@ -775,141 +775,139 @@ nav#pagination {
 /*************************************
 COMMENTS
 *************************************/
-#comments {
-  border-top: solid 2px #9dabb3; }
-  #comments .comment-list {
-    margin: 0;
-    padding: 0; }
-    #comments .comment-list > .comment {
-      background: #1d2e39;
-      margin-bottom: 30px;
-      -moz-border-radius: 6px;
-      -webkit-border-radius: 6px;
-      -o-border-radius: 6px;
-      border-radius: 6px; }
-    #comments .comment-list .comment {
-      list-style: none; }
-      #comments .comment-list .comment .comment-body .comment-meta {
-        overflow: hidden;
-        background: #1a2932;
-        padding: 20px;
-        -moz-border-radius: 6px 6px 0 0;
-        -webkit-border-radius: 6px 6px 0 0;
-        -o-border-radius: 6px 6px 0 0;
-        border-radius: 6px 6px 0 0; }
-        #comments .comment-list .comment .comment-body .comment-meta .comment-author {
-          position: relative;
-          float: left; }
-          #comments .comment-list .comment .comment-body .comment-meta .comment-author img {
-            display: inline-block;
-            vertical-align: middle;
-            width: 60px;
-            height: 60px;
-            margin-right: 14px;
-            -moz-border-radius: 30px;
-            -webkit-border-radius: 30px;
-            -o-border-radius: 30px;
-            border-radius: 30px; }
-          #comments .comment-list .comment .comment-body .comment-meta .comment-author .fn,
-          #comments .comment-list .comment .comment-body .comment-meta .comment-author .says {
-            font-family: "Montserrat", sans-serif;
-            font-style: normal; }
-            #comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a,
-            #comments .comment-list .comment .comment-body .comment-meta .comment-author .says a {
-              text-decoration: none; }
-          #comments .comment-list .comment .comment-body .comment-meta .comment-author .fn {
-            display: inline-block; }
-          #comments .comment-list .comment .comment-body .comment-meta .comment-author .says {
-            display: inline-block; }
-        #comments .comment-list .comment .comment-body .comment-meta .comment-metadata {
-          float: right;
-          margin-top: 20px;
-          font-size: 14px; }
-          #comments .comment-list .comment .comment-body .comment-meta .comment-metadata a {
-            color: #2f4a5b;
-            text-decoration: none; }
-            #comments .comment-list .comment .comment-body .comment-meta .comment-metadata a:hover {
-              text-decoration: underline; }
-      #comments .comment-list .comment .comment-body .comment-content {
-        padding: 20px; }
-        #comments .comment-list .comment .comment-body .comment-content > :first-child {
-          margin-top: 0; }
-        #comments .comment-list .comment .comment-body .comment-content > :last-child {
-          margin-bottom: 0; }
-      #comments .comment-list .comment .comment-body .reply {
-        padding: 0; }
-        #comments .comment-list .comment .comment-body .reply a.comment-reply-link {
-          font-size: 14px;
-          display: inline-block;
-          text-decoration: none;
-          padding: 4px 8px;
-          margin: 0 0 20px 20px;
-          background-color: #18262f;
-          -moz-border-radius: 3px;
-          -webkit-border-radius: 3px;
-          -o-border-radius: 3px;
-          border-radius: 3px; }
-          #comments .comment-list .comment .comment-body .reply a.comment-reply-link:hover {
-            background-color: #0c1317; }
-      #comments .comment-list .comment .children {
-        padding: 0 0 20px 0px; }
-        #comments .comment-list .comment .children li {
-          border: solid 2px #1a2932;
-          -moz-border-radius: 6px;
-          -webkit-border-radius: 6px;
-          -o-border-radius: 6px;
-          border-radius: 6px;
-          margin: 20px 20px 0 20px; }
-  #comments #respond {
-    border-top: dashed 2px #37576c; }
-    #comments #respond form .logged-in-as a {
-      text-decoration: none; }
-      #comments #respond form .logged-in-as a:hover {
-        text-decoration: underline; }
-    #comments #respond form .comment-form-comment {
-      background-color: #1d2e39;
+#comments .comment-list {
+  margin: 0;
+  padding: 0; }
+  #comments .comment-list > .comment {
+    background: #1d2e39;
+    margin-bottom: 30px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px; }
+  #comments .comment-list .comment {
+    list-style: none; }
+    #comments .comment-list .comment .comment-body .comment-meta {
+      overflow: hidden;
+      background: #1a2932;
       padding: 20px;
-      margin: 0;
       -moz-border-radius: 6px 6px 0 0;
       -webkit-border-radius: 6px 6px 0 0;
       -o-border-radius: 6px 6px 0 0;
       border-radius: 6px 6px 0 0; }
-      #comments #respond form .comment-form-comment label {
-        margin-bottom: 20px;
-        display: block; }
-      #comments #respond form .comment-form-comment textarea {
-        display: block;
-        background: #263c4a;
-        border: none;
-        width: 100%;
-        outline: none;
-        padding: 20px;
-        color: white; }
-        #comments #respond form .comment-form-comment textarea:focus {
-          background-color: #283f4d; }
-    #comments #respond form .form-allowed-tags {
-      background-color: #1d2e39;
-      margin: 0;
-      padding: 0 20px 20px 20px;
-      color: #2f4a5b;
-      font-size: 14px;
-      -moz-border-radius: 0 0 6px 6px;
-      -webkit-border-radius: 0 0 6px 6px;
-      -o-border-radius: 0 0 6px 6px;
-      border-radius: 0 0 6px 6px; }
-    #comments #respond form .form-submit #submit {
-      display: inline-block;
-      background-color: #1d2e39;
+      #comments .comment-list .comment .comment-body .comment-meta .comment-author {
+        position: relative;
+        float: left; }
+        #comments .comment-list .comment .comment-body .comment-meta .comment-author img {
+          display: inline-block;
+          vertical-align: middle;
+          width: 60px;
+          height: 60px;
+          margin-right: 14px;
+          -moz-border-radius: 30px;
+          -webkit-border-radius: 30px;
+          -o-border-radius: 30px;
+          border-radius: 30px; }
+        #comments .comment-list .comment .comment-body .comment-meta .comment-author .fn,
+        #comments .comment-list .comment .comment-body .comment-meta .comment-author .says {
+          font-family: "Montserrat", sans-serif;
+          font-style: normal; }
+          #comments .comment-list .comment .comment-body .comment-meta .comment-author .fn a,
+          #comments .comment-list .comment .comment-body .comment-meta .comment-author .says a {
+            text-decoration: none; }
+        #comments .comment-list .comment .comment-body .comment-meta .comment-author .fn {
+          display: inline-block; }
+        #comments .comment-list .comment .comment-body .comment-meta .comment-author .says {
+          display: inline-block; }
+      #comments .comment-list .comment .comment-body .comment-meta .comment-metadata {
+        float: right;
+        margin-top: 20px;
+        font-size: 14px; }
+        #comments .comment-list .comment .comment-body .comment-meta .comment-metadata a {
+          color: #2f4a5b;
+          text-decoration: none; }
+          #comments .comment-list .comment .comment-body .comment-meta .comment-metadata a:hover {
+            text-decoration: underline; }
+    #comments .comment-list .comment .comment-body .comment-content {
+      padding: 20px; }
+      #comments .comment-list .comment .comment-body .comment-content > :first-child {
+        margin-top: 0; }
+      #comments .comment-list .comment .comment-body .comment-content > :last-child {
+        margin-bottom: 0; }
+    #comments .comment-list .comment .comment-body .reply {
+      padding: 0; }
+      #comments .comment-list .comment .comment-body .reply a.comment-reply-link {
+        font-size: 14px;
+        display: inline-block;
+        text-decoration: none;
+        padding: 4px 8px;
+        margin: 0 0 20px 20px;
+        background-color: #18262f;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px; }
+        #comments .comment-list .comment .comment-body .reply a.comment-reply-link:hover {
+          background-color: #0c1317; }
+    #comments .comment-list .comment .children {
+      padding: 0 0 20px 0px; }
+      #comments .comment-list .comment .children li {
+        border: solid 2px #1a2932;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -o-border-radius: 6px;
+        border-radius: 6px;
+        margin: 20px 20px 0 20px; }
+#comments #respond {
+  border-top: dashed 2px #37576c; }
+  #comments #respond form .logged-in-as a {
+    text-decoration: none; }
+    #comments #respond form .logged-in-as a:hover {
+      text-decoration: underline; }
+  #comments #respond form .comment-form-comment {
+    background-color: #1d2e39;
+    padding: 20px;
+    margin: 0;
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    -o-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0; }
+    #comments #respond form .comment-form-comment label {
+      margin-bottom: 20px;
+      display: block; }
+    #comments #respond form .comment-form-comment textarea {
+      display: block;
+      background: #263c4a;
       border: none;
-      color: #9dabb3;
-      padding: 20px 30px;
-      font-size: 1.4em;
-      -moz-border-radius: 6px;
-      -webkit-border-radius: 6px;
-      -o-border-radius: 6px;
-      border-radius: 6px; }
-      #comments #respond form .form-submit #submit:hover {
-        background-color: #1a2932; }
+      width: 100%;
+      outline: none;
+      padding: 20px;
+      color: white; }
+      #comments #respond form .comment-form-comment textarea:focus {
+        background-color: #283f4d; }
+  #comments #respond form .form-allowed-tags {
+    background-color: #1d2e39;
+    margin: 0;
+    padding: 0 20px 20px 20px;
+    color: #2f4a5b;
+    font-size: 14px;
+    -moz-border-radius: 0 0 6px 6px;
+    -webkit-border-radius: 0 0 6px 6px;
+    -o-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px; }
+  #comments #respond form .form-submit #submit {
+    display: inline-block;
+    background-color: #1d2e39;
+    border: none;
+    color: #9dabb3;
+    padding: 20px 30px;
+    font-size: 1.4em;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px; }
+    #comments #respond form .form-submit #submit:hover {
+      background-color: #1a2932; }
 
 /*************************************
 SHOWS - BANDSINTOWN
