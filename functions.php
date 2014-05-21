@@ -17,10 +17,16 @@ ADD CUSTOM ACF OPTIONS + TOGGLE ACF CONFIG PANEL IN DASHBOARD
 //include_once( 'includes/theme_options.php' );
 
 //set default values for fields
-include_once( 'includes/default_options.php' );
+//include_once( 'includes/default_options.php' );
 
 // change this value to false to view custom field editor in Wordpress and make modifications.
 define( 'ACF_LITE' , false );
+
+
+/*********************************************************************************************************
+WORDPRESS CUSTOMIZER OPTIONS
+*********************************************************************************************************/
+include_once( 'includes/customizer_options.php' );
 
 
 /*********************************************************************************************************
@@ -28,7 +34,7 @@ ADD SUB-OPTIONS PAGES
 *********************************************************************************************************/
 if( function_exists('acf_add_options_sub_page') ) {
 
-   acf_add_options_sub_page( 'Design' );
+   //acf_add_options_sub_page( 'Design' );
    acf_add_options_sub_page( 'Social Icons' );
    acf_add_options_sub_page( 'Mailing List' );
 
@@ -62,9 +68,9 @@ function hex2rgba($color, $opacity = false) {
 
 	//Return default if no color provided
 	if(empty($color))
-          return $default; 
+          return $default;
 
-	//Sanitize $color if "#" is provided 
+	//Sanitize $color if "#" is provided
         if ($color[0] == '#' ) {
         	$color = substr( $color, 1 );
         }
@@ -151,7 +157,7 @@ function boombox_custom_webfonts(){
 			$fontFamily = "http://fonts.googleapis.com/css?family=$body_font";
 
 		}
-		
+
 		//only add script if at least one is a Google Font
 		if( $heading_font_type == "Google Font" || $body_font_type == "Google Font" ){
 			wp_register_style( 'custom-fonts', $fontFamily, array(), '', 'all' );
@@ -171,14 +177,14 @@ function boombox_styles_and_scripts(){
 
 	global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 	if (!is_admin()) {
-	
+
 		// register scripts
 		wp_register_script( 'tooltipster', get_stylesheet_directory_uri() . '/library/js/jquery.tooltipster.min.js', array('jquery'), '3.0.4', true );
 		wp_register_script( 'fitvids', get_stylesheet_directory_uri() . '/library/js/jquery.fitvids.js', array('jquery'), '1.1', true );
 		wp_register_script( 'swipebox', get_stylesheet_directory_uri() . '/library/js/jquery.swipebox.min.js', array('jquery'), '1.2.4', true );
 		wp_register_script( 'nivo', get_stylesheet_directory_uri() . '/library/js/jquery.nivo-lightbox.min.js', array('jquery'), '1.0', true );
 		wp_register_script( 'main-js', get_stylesheet_directory_uri() . '/library/js/main.js', array( 'jquery' ), '', true );
-		
+
 		// register stylesheets
 		wp_register_style( 'default', get_stylesheet_directory_uri() . '/style.css', array(), '', 'all' );
 		wp_register_style( 'swipebox', get_stylesheet_directory_uri() . '/library/css/swipebox/swipebox.css', array(), '', 'all' );
@@ -188,7 +194,7 @@ function boombox_styles_and_scripts(){
 		wp_register_style( 'stylesheet', get_stylesheet_directory_uri() . '/library/css/main.css', array(), '', 'all' );
 		wp_register_style( 'normalize', get_stylesheet_directory_uri() . '/library/css/normalize.css', array(), '', 'all' );
 		wp_register_style( 'ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
-		
+
 		// enqueue styles
 		wp_enqueue_style( 'tooltipster' );
 		wp_enqueue_style( 'swipebox' );
@@ -199,7 +205,7 @@ function boombox_styles_and_scripts(){
 		wp_enqueue_style( 'stylesheet' );
 		wp_enqueue_style('ie-only');
 		$wp_styles->add_data( 'ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
-		
+
 		//enqueue scripts
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'fitvids' );
@@ -207,7 +213,7 @@ function boombox_styles_and_scripts(){
 		wp_enqueue_script( 'swipebox' );
 		wp_enqueue_script( 'nivo' );
 		wp_enqueue_script( 'main-js' );
-	
+
 	}
 
 }

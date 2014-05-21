@@ -2,14 +2,14 @@
 <html>
 <head>
 	<!--
-	
-	  __  __ __     __ ____   _    _   _____  _____  _____ 
+
+	  __  __ __     __ ____   _    _   _____  _____  _____
 	 |  \/  |\ \   / // __ \ | |  | | / ____||_   _|/ ____|
-	 | \  / | \ \_/ /| |  | || |  | || (___    | | | |     
-	 | |\/| |  \   / | |  | || |  | | \___ \   | | | |     
-	 | |  | |   | |  | |__| || |__| | ____) | _| |_| |____ 
+	 | \  / | \ \_/ /| |  | || |  | || (___    | | | |
+	 | |\/| |  \   / | |  | || |  | | \___ \   | | | |
+	 | |  | |   | |  | |__| || |__| | ____) | _| |_| |____
 	 |_|  |_|   |_|   \____/  \____/ |_____/ |_____|\_____|
-	                                                       
+
 	  Theme: Myousic
 	  Author: Branberg (http://branberg.com)
 
@@ -27,9 +27,18 @@
 
 	<?php wp_head(); ?>
 
+	<?php
+		$content_text_color = get_option('content_text_color');
+		$content_link_color = get_option('content_link_color');
+	?>
+	<style>
+		body{ color: <?php echo $content_text_color; ?> }
+		body a{ color: <?php echo $content_link_color; ?> }
+	</style>
+
 </head>
 <body <?php body_class(); ?>>
-	
+
 	<?php // mobile site menu is generated via javascript ?>
 
 	<div id="site_wrap">
@@ -46,7 +55,7 @@
 				<div id="logo_wrap">
 					<a href="<?php echo site_url(); ?>" id="logo" class="logo_img"><img src="<?php echo get_template_directory_uri(); ?>/library/img/logo.png" alt="fox &amp; coyote" /></a>
 				</div>
-				
+
 				<?php wp_nav_menu(array( 'theme_location' => 'main-nav', 'container' => 'nav', 'container_id' => 'header_nav' )); ?>
 
 				<?php if( ! is_front_page() ): //only do this fancy-pancy title stuff if it is NOT the home page. ?>
