@@ -30,6 +30,20 @@
 	<?php
 		$content_text_color = get_option('content_text_color');
 		$content_link_color = get_option('content_link_color');
+		//Header
+	    	//Link color
+
+	    	//Logo image
+			$header_logo_image = get_theme_mod('myousic_logo_image');
+			var_dump($header_logo_image);
+
+			//Favicon Image
+	    	//text logo color
+	    	//$header_text_logo_color = get_option('text_logo_color');
+	    	//var_dump($header_text_logo_color);
+	    	//background image
+	    	//background image overlay color
+	    	//background image overlay opacity
 	?>
 	<style>
 		body{ color: <?php echo $content_text_color; ?> }
