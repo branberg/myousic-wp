@@ -444,7 +444,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .site_header {
   position: relative;
-  background: url("../img/header_background.jpg") no-repeat center center scroll;
+  background: no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -520,11 +520,11 @@ body.home .site_header #logo_wrap {
       text-decoration: none;
       position: relative;
       padding-right: 24px;
-      -webkit-transition: color 0.05s linear;
-      -ms-transition: color 0.05s linear;
-      -o-transition: color 0.05s linear;
-      -transition: color 0.05s linear;
-      transition: color 0.05s linear; }
+      -webkit-transition: opacity 0.05s linear;
+      -ms-transition: opacity 0.05s linear;
+      -o-transition: opacity 0.05s linear;
+      -transition: opacity 0.05s linear;
+      transition: opacity 0.05s linear; }
       .page_section .section_header a:after {
         content: "»";
         font-weight: 300;
@@ -538,7 +538,7 @@ body.home .site_header #logo_wrap {
         height: 25px;
         line-height: 16px; }
       .page_section .section_header a:hover {
-        color: #c8d0d4; }
+        opacity: 0.6; }
 
 /*************************************
 MUSIC/ALBUMS
@@ -560,10 +560,9 @@ MUSIC/ALBUMS
       padding: 20px; }
       .music_section .album .album_info_wrapper .album_info .album_type {
         font-family: "Montserrat", sans-serif;
-        color: #9dabb3;
         text-transform: uppercase;
         font-size: 0.85rem;
-        color: #5c7381; }
+        opacity: 0.7; }
       .music_section .album .album_info_wrapper .album_info .album_title {
         font-size: 1.625rem;
         font-weight: 500;
@@ -586,13 +585,13 @@ MUSIC/ALBUMS
         color: #263c4a;
         text-decoration: none;
         padding: 20px;
-        -webkit-transition: background-color 0.05s linear;
-        -ms-transition: background-color 0.05s linear;
-        -o-transition: background-color 0.05s linear;
-        -transition: background-color 0.05s linear;
-        transition: background-color 0.05s linear; }
+        -webkit-transition: opacity 0.05s linear;
+        -ms-transition: opacity 0.05s linear;
+        -o-transition: opacity 0.05s linear;
+        -transition: opacity 0.05s linear;
+        transition: opacity 0.05s linear; }
         .music_section .album .album_info_wrapper .album_info .album_button:hover {
-          background-color: #748d9c; }
+          opacity: 0.7; }
 
 /*************************************
 NEWS SECTION
@@ -1036,15 +1035,11 @@ FOOTER
   .site_footer .credits {
     font-family: "Montserrat", sans-serif;
     text-align: center;
-    padding-top: 40px;
-    color: #5c7381; }
+    padding-top: 40px; }
     .site_footer .credits p {
       margin: 10px 0; }
     .site_footer .credits a {
-      color: #5c7381;
       text-decoration: none; }
-      .site_footer .credits a:hover {
-        color: #9dabb3; }
 
 .mailing_list {
   text-align: center;
@@ -1076,17 +1071,7 @@ FOOTER
       color: #1d2d38;
       width: 100%; }
       .mailing_list form input[type="submit"]:hover {
-        background-color: #647e8d; }
-    .mailing_list form ::-webkit-input-placeholder {
-      color: #5c7381; }
-    .mailing_list form :-moz-placeholder {
-      color: #5c7381; }
-    .mailing_list form ::-moz-placeholder {
-      color: #5c7381; }
-    .mailing_list form :-ms-input-placeholder {
-      color: #5c7381; }
-    .mailing_list form label.placeholder {
-      color: #5c7381; }
+        opacity: 0.7; }
 
 .social_links ul {
   margin: 0;
@@ -1099,12 +1084,8 @@ FOOTER
     .social_links ul li a {
       display: block;
       padding: 10px 14px;
-      background-color: #1d2d38;
       font-size: 28px;
-      text-decoration: none;
-      color: #5c7381; }
-    .social_links ul li a:hover, .social_links ul li a:hover {
-      color: #9dabb3; }
+      text-decoration: none; }
 
 /*************************************
 PAGE STYLES
@@ -1384,13 +1365,13 @@ p.alert {
               height: 0;
               border-left: 14px solid transparent;
               border-right: 14px solid transparent;
-              border-bottom: 14px solid #263c4a;
+              border-bottom: 14px solid #333333;
               position: absolute;
               left: 50%;
               top: 0;
               margin-left: -14px; }
             .site_header #header_nav ul li ul.sub-menu li {
-              background-color: #263c4a;
+              background-color: #333333;
               display: block;
               text-align: center; }
               .site_header #header_nav ul li ul.sub-menu li a {
@@ -1402,21 +1383,20 @@ p.alert {
             .site_header #header_nav ul li ul.sub-menu li:last-child a {
               padding-bottom: 28px; }
           .site_header #header_nav ul li a {
-            color: white;
+            color: #aaaaaa;
             display: inline-block;
-            opacity: 0.3;
             text-decoration: none;
             padding: 10px 16px;
             font-weight: 300;
             -webkit-backface-visibility: hidden;
-            -webkit-transition: opacity 0.15s linear;
-            -ms-transition: opacity 0.15s linear;
-            -o-transition: opacity 0.15s linear;
-            -transition: opacity 0.15s linear;
-            transition: opacity 0.15s linear; }
+            -webkit-transition: color 0.15s linear;
+            -ms-transition: color 0.15s linear;
+            -o-transition: color 0.15s linear;
+            -transition: color 0.15s linear;
+            transition: color 0.15s linear; }
         .site_header #header_nav ul li.current-menu-item > a,
         .site_header #header_nav ul li a:hover {
-          opacity: 1; }
+          color: #ffffff; }
         .site_header #header_nav ul li:hover ul.sub-menu {
           display: block; }
     .site_header #page_title {
@@ -1492,7 +1472,7 @@ p.alert {
         display: block;
         float: right;
         text-transform: uppercase;
-        color: #9dabb3;
+        opacity: 0.7;
         margin-top: 10px; }
       .news_section .news_article_wrap .news_article .article_excerpt {
         font-size: 1.5rem; }
@@ -1578,7 +1558,6 @@ p.alert {
       padding: 20px; }
     .mailing_list form input[type="text"] {
       width: 280px;
-      border-right: none;
       margin-bottom: 0; }
     .mailing_list form input[type="submit"] {
       width: 150px; }

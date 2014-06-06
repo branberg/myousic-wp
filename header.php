@@ -16,7 +16,7 @@
 	-->
 	<meta charset="UTF-8">
 	<title><?php wp_title( '|', 'true', 'right' ); ?><?php bloginfo('name'); ?></title>
-	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/library/img/favicon.png" />
+	<link rel="icon" type="image/png" href="<?php echo get_theme_mod( 'favicon_image', get_template_directory_uri().'/library/img/favicon.png' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- Social meta tags -->
 	<meta name="description" content="<?php bloginfo('description'); ?>" />
@@ -27,28 +27,7 @@
 
 	<?php wp_head(); ?>
 
-	<?php
-		$content_text_color = get_option('content_text_color');
-		$content_link_color = get_option('content_link_color');
-		//Header
-	    	//Link color
-
-	    	//Logo image
-			$header_logo_image = get_theme_mod('myousic_logo_image');
-			var_dump($header_logo_image);
-
-			//Favicon Image
-	    	//text logo color
-	    	//$header_text_logo_color = get_option('text_logo_color');
-	    	//var_dump($header_text_logo_color);
-	    	//background image
-	    	//background image overlay color
-	    	//background image overlay opacity
-	?>
-	<style>
-		body{ color: <?php echo $content_text_color; ?> }
-		body a{ color: <?php echo $content_link_color; ?> }
-	</style>
+	<?php include_once('includes/custom_styles.php'); ?>
 
 </head>
 <body <?php body_class(); ?>>
@@ -63,11 +42,23 @@
 			</div>
 			<span id="mobile_site_title">Fox &amp; Coyote</span>
 		</div>
-		<header id="main_header" class="site_header">
+		<header id="main_header" class="site_header" style="background-image: url('<?php header_image(); ?>');">
 			<div id="header_overlay_color"></div>
 			<div class="wrap">
 				<div id="logo_wrap">
-					<a href="<?php echo site_url(); ?>" id="logo" class="logo_img"><img src="<?php echo get_template_directory_uri(); ?>/library/img/logo.png" alt="fox &amp; coyote" /></a>
+					<a href="<?php echo site_url(); ?>" id="logo" class="logo_text">
+
+						<?php if( get_theme_mod('logo_image') ): ?>
+
+							<img src="<?php echo get_theme_mod('logo_image') ?>" alt="<?php echo get_theme_mod( 'logo_text', get_bloginfo('name')) ?>" />
+
+						<?php else: ?>
+
+							<?php echo get_theme_mod('logo_text', get_bloginfo('name')); ?>
+
+						<?php endif; ?>
+
+					</a>
 				</div>
 
 				<?php wp_nav_menu(array( 'theme_location' => 'main-nav', 'container' => 'nav', 'container_id' => 'header_nav' )); ?>

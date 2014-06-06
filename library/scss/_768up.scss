@@ -3,16 +3,16 @@
 *********************************************************************/
 html, body{
 
-	
+
 
 }
 
 a{
-	
+
 }
 
 h1, h2, h3, h4, h5, h6{
-	
+
 }
 
 #site_wrap{
@@ -29,14 +29,14 @@ h1, h2, h3, h4, h5, h6{
 	padding-top: 30px;
 
 	#header_overlay_color{
-		
+
 	}
 
 	.wrap{
-		
+
 	}
 
-	
+
 
 	#logo_wrap{
 
@@ -48,12 +48,12 @@ h1, h2, h3, h4, h5, h6{
 
 			font-size: 1.6em;
 			text-shadow: 0 0 4px $logoShadow;
-			
+
 			-webkit-backface-visibility: hidden; //to fix the Chrome moving bug on transition hover
 			@include transition(opacity 0.15s linear);
 
 			img{
-				
+
 			}
 
 			&:hover{
@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6{
 
 					&:before{
 						content: "";
-						@include triangle(up, 14px, $accent);
+						@include triangle(up, 14px, #333333);
 						position: absolute;
 						left: 50%;
 						top:0;
@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5, h6{
 
 					li{
 
-						background-color: $accent;
+						background-color: #333333;
 						display: block;
 						text-align: center;
 
@@ -126,21 +126,20 @@ h1, h2, h3, h4, h5, h6{
 
 				a{
 
-					color: $white;
+					color: #aaaaaa;
 					display: inline-block;
-					opacity: 0.3;
 					text-decoration: none;
 					padding: 10px 16px;
 					font-weight: 300;
 					-webkit-backface-visibility: hidden; //to fix the Chrome moving bug on transition hover
-					@include transition(opacity 0.15s linear);
+					@include transition(color 0.15s linear);
 
 				}
 
 			}
 			li.current-menu-item > a,
 			li a:hover{
-				opacity: 1;
+				color: #ffffff;
 			}
 			li:hover ul.sub-menu{
 				display: block;
@@ -163,7 +162,7 @@ h1, h2, h3, h4, h5, h6{
 		.back_to_blog{
 
 			&:hover{
-				
+
 			}
 
 		}
@@ -226,7 +225,7 @@ body.home{
 
 .page_section{
 
-	
+
 
 	.wrap{}
 
@@ -238,7 +237,7 @@ body.home{
 			font-size: 1.85rem;
 		}
 		&, a{
-			
+
 		}
 		a{
 
@@ -267,7 +266,7 @@ MUSIC/ALBUMS
 		margin-bottom: 40px;
 
 		&:last-child{
-			
+
 		}
 
 		.soundcloud_embed{
@@ -276,7 +275,7 @@ MUSIC/ALBUMS
 			width: 50%;
 
 			iframe{
-				
+
 			}
 
 		}
@@ -339,7 +338,7 @@ NEWS SECTION
 		margin-bottom: 60px;
 
 		&:before{
-			
+
 		}
 
 		.news_article{
@@ -348,14 +347,14 @@ NEWS SECTION
 
 			header.article_header{
 
-				
+
 
 				h3{
 
 					font-size: 2.3em;
 
 					a{
-						
+
 					}
 
 				}
@@ -364,7 +363,7 @@ NEWS SECTION
 					display: block;
 					float: right;
 					text-transform: uppercase;
-					color: $headerText;
+					opacity: 0.7;
 					margin-top: 10px;
 				}
 
@@ -375,7 +374,7 @@ NEWS SECTION
 				font-size: 1.5rem;
 
 				p{
-					
+
 				}
 
 			}
@@ -385,29 +384,29 @@ NEWS SECTION
 				display: inline-block;
 
 				&:hover{
-					
+
 				}
 
 			}
 
 			footer.article_footer{
 
-				
+
 
 				ul.share_links{
 
-					
+
 
 					li{
 
-						
+
 
 						a{
 
-							
+
 
 							&:hover{
-								
+
 							}
 
 							i{
@@ -418,13 +417,13 @@ NEWS SECTION
 
 					}
 					li.share_label{
-						
+
 					}
 					li.twitter:hover a{
-						
+
 					}
 					li.facebook:hover a{
-						
+
 					}
 
 				}
@@ -437,10 +436,10 @@ NEWS SECTION
 
 	ul.post_meta{
 
-		
+
 
 		li{
-			
+
 			display: inline;
 			margin: 0 30px 20px 0;
 
@@ -450,30 +449,30 @@ NEWS SECTION
 		}
 
 		a{
-			
+
 
 			&:hover{
-				
+
 			}
 
 		}
 
 		i{
-			
+
 		}
 
 		li.author{
 
-			
+
 
 			.user{
-				
+
 				a{
-					
+
 				}
 			}
 			.post_date{
-				
+
 			}
 
 		}
@@ -518,7 +517,7 @@ table.tour_dates{
 				width: 120px;
 
 				.month, .day{
-					
+
 				}
 				.month{
 					font-size: 22px;
@@ -554,7 +553,7 @@ table.tour_dates{
 			}
 
 			.venue, .city{
-				
+
 			}
 			.venue{
 				text-transform: uppercase;
@@ -567,7 +566,7 @@ table.tour_dates{
 		}
 		td.tickets{
 
-			
+
 
 		}
 		td.rsvp{
@@ -593,10 +592,10 @@ SHOWS - BANDSINTOWN
 .bit-widget-container{
 
 	th, td{
-		
+
 	}
 	th{
-		
+
 	}
 
 }
@@ -604,10 +603,10 @@ td.bit-description-links{
 
 }
 td.bit-date{
-	
+
 }
 td.bit-venue{
-	
+
 }
 td.bit-location{
 
@@ -619,7 +618,7 @@ td.bit-rsvp{
 
 }
 #bit-events td .bit-uiButton{
-	
+
 }
 
 /*************************************
@@ -627,16 +626,16 @@ VIDEOS
 *************************************/
 .videos_section{
 
-	
+
 
 	.wrap{}
 
 	.section_header{
-		
+
 	}
 
 	.video_embed{
-		
+
 	}
 
 }
@@ -655,7 +654,7 @@ PHOTOS SECTION
 
 	ul{
 
-		
+
 
 		li{
 
@@ -663,15 +662,15 @@ PHOTOS SECTION
 
 			a{
 
-				
+
 
 				&:hover{
-					
+
 				}
 
 			}
 			img{
-				
+
 			}
 
 		}
@@ -711,7 +710,7 @@ FOOTER
 *************************************/
 .site_footer{
 
-	
+
 
 	.wrap{}
 
@@ -722,7 +721,7 @@ FOOTER
 }
 .mailing_list{
 
-	
+
 
 	.mailing_list_title, form{
 		display: inline-block;
@@ -744,7 +743,6 @@ FOOTER
 		}
 		input[type="text"]{
 			width: 280px;
-			border-right: none;
 			margin-bottom: 0;
 		}
 		input[type="submit"]{
@@ -761,7 +759,7 @@ FOOTER
 		:-ms-input-placeholder {}
 
 	}
-		
+
 }
 .social_links{
 
@@ -775,7 +773,7 @@ FOOTER
 
 					path{
 
-						
+
 
 					}
 
@@ -830,9 +828,9 @@ VIDEOS PAGE
 .video_list{
 
 	.video_embed{
-		
+
 		&:last-child{
-			
+
 		}
 	}
 
@@ -848,11 +846,11 @@ CONTACT STYLES
 }
 form.contact_form{
 
-	
+
 
 	ul{
 
-		
+
 
 		li{
 
@@ -860,7 +858,7 @@ form.contact_form{
 
 		}
 		li:last-child{
-			
+
 		}
 
 		li.half{ width: 47.5%; margin-right: 5%; }
@@ -870,13 +868,13 @@ form.contact_form{
 	}
 
 	label{
-		
+
 	}
 	input, textarea{
-		
+
 	}
 	textarea{
-		
+
 	}
 	input[type="text"]{
 
@@ -886,10 +884,10 @@ form.contact_form{
 	}
 	input[type="submit"]{
 
-		
+
 
 		&:hover{
-			
+
 		}
 
 	}

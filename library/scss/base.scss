@@ -143,7 +143,7 @@ h1, h2, h3, h4, h5, h6{
 .site_header{
 
 	position: relative;
-	background: url('../img/header_background.jpg') no-repeat center center scroll;
+	background: no-repeat center center scroll;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -281,7 +281,7 @@ body.home{
 			text-decoration: none;
 			position: relative;
 			padding-right: 24px;
-			@include transition(color 0.05s linear);
+			@include transition(opacity 0.05s linear);
 
 			&:after{
 				content: "»";
@@ -298,7 +298,7 @@ body.home{
 			}
 
 			&:hover{
-				color: $headerTextHover;
+				opacity: 0.6;
 			}
 
 		}
@@ -348,10 +348,9 @@ MUSIC/ALBUMS
 
 				.album_type{
 					font-family: $montserrat;
-					color: $headerText;
 					text-transform: uppercase;
 					font-size: 0.85rem;
-					color: $albumType;
+					opacity: 0.7;
 				}
 				.album_title{
 					font-size: 1.625rem;
@@ -381,10 +380,10 @@ MUSIC/ALBUMS
 					color: $albumButtonText;
 					text-decoration: none;
 					padding: 20px;
-					@include transition(background-color 0.05s linear);
+					@include transition(opacity 0.05s linear);
 
 					&:hover{
-						background-color: lighten($albumButtonBackground, 10%);
+						opacity: 0.7;
 					}
 
 				}
@@ -1206,16 +1205,14 @@ FOOTER
 		font-family: $montserrat;
 		text-align: center;
 		padding-top: 40px;
-		color: $footerText;
 
 		p{
 			margin: 10px 0;
 		}
 		a{
-			color: $footerText;
 			text-decoration: none;
 			&:hover{
-				color: $textColor;
+
 			}
 		}
 
@@ -1264,16 +1261,10 @@ FOOTER
 			width: 100%;
 
 			&:hover{
-				background-color: lighten($footerText, 4%);
+				opacity: 0.7;
 			}
 
 		}
-
-		::-webkit-input-placeholder { color: $footerText; }
-		:-moz-placeholder { color: $footerText; }
-		::-moz-placeholder { color: $footerText; }
-		:-ms-input-placeholder { color: $footerText; }
-		label.placeholder{ color: $footerText; }
 
 	}
 
@@ -1296,17 +1287,14 @@ FOOTER
 
 				display: block;
 				padding: 10px 14px;
-				background-color: $socialIconsBackground;
 				font-size: 28px;
 				text-decoration: none;
-				color: $footerText;
 
 				i{
 
 				}
 
 			}
-			a:hover, a:hover{ color: $textColor; }
 
 		}
 

@@ -1,300 +1,568 @@
 <?php
- 
-function myousic_customize_register($wp_customize){
-    
-    //Header
-    	//Link color
-    	//Logo image
-		//Favicon Image
-    	//text logo color
-    	//background image
-    	//background image overlay color
-    	//background image overlay opacity
 
-	$wp_customize->add_section('myousic_header_options', array(
-		'title'    => __('Header', 'myousic'),
-		'priority' => 120,
-		'description' => 'Change site-wide settings for the header'
-	));
-
-		/*********************
-		** Logo Image
-		*********************/
-		$wp_customize->add_setting('myousic_logo_image', array(
-	        'default'           => 'image.jpg',
-	        'capability'        => 'edit_theme_options',
-	        'type'           => 'option',
-	 
-	    ));
- 
-	    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'myousic_logo_image', array(
-	        'label'    => __('Logo Image', 'myousic'),
-	        'section'  => 'myousic_header_options',
-	        'settings' => 'myousic_logo_image',
-	    )));
-
-	    /*********************
-		** Favicon Image
-		*********************/
-		$wp_customize->add_setting('myousic_theme_options[favicon_image]', array(
-	        'default'           => 'image.jpg',
-	        'capability'        => 'edit_theme_options',
-	        'type'           => 'option',
-	 
-	    ));
- 
-	    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'favicon_image', array(
-	        'label'    => __('Favicon Image', 'myousic'),
-	        'section'  => 'myousic_header_options',
-	        'settings' => 'myousic_theme_options[favicon_image]',
-	    )));
-
-	    /*********************
-		** Text Logo Color
-		*********************/
-	    $wp_customize->add_setting('myousic_theme_options[text_logo_color]', array(
-	        'default'           => 'ffffff',
-	        'sanitize_callback' => 'sanitize_hex_color',
-	        'capability'        => 'edit_theme_options',
-	        'type'           => 'option',
-	 
-	    ));
-	 
-	    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'text_logo_color', array(
-	        'label'    => __('Text Logo Color', 'myousic'),
-	        'section'  => 'myousic_header_options',
-	        'settings' => 'myousic_theme_options[text_logo_color]',
-	    )));
-
-	    /*********************
-		** Background Image
-		*********************/
-		$wp_customize->add_setting('myousic_theme_options[header_background_image]', array(
-	        'default'           => 'image.jpg',
-	        'capability'        => 'edit_theme_options',
-	        'type'           => 'option',
-	 
-	    ));
- 
-	    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'header_background_image', array(
-	        'label'    => __('Header Background Image', 'myousic'),
-	        'section'  => 'myousic_header_options',
-	        'settings' => 'myousic_theme_options[header_background_image]',
-	    )));
-
-	    /*********************
-		** Header image overlay color
-		*********************/
-	    $wp_customize->add_setting('myousic_theme_options[header_background_overlay_color]', array(
-	        'default'           => '263c4a',
-	        'sanitize_callback' => 'sanitize_hex_color',
-	        'capability'        => 'edit_theme_options',
-	        'type'           => 'option',
-	 
-	    ));
-	 
-	    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'header_background_overlay_color', array(
-	        'label'    => __('Header Background Overlay Color', 'myousic'),
-	        'section'  => 'myousic_header_options',
-	        'settings' => 'myousic_theme_options[header_background_overlay_color]',
-	    )));
-
-	    /*********************
-		** Header image overlay opacity
-		*********************/
-	    $wp_customize->add_setting('myousic_theme_options[header_background_overlay_opacity]', array(
-	        'default'        => '0.7',
-	        'capability'     => 'edit_theme_options',
-	        'type'           => 'option',
-	 
-	    ));
-	 
-	    $wp_customize->add_control('header_background_overlay_opacity', array(
-	        'label'      => __('Header Background Overlay Opacity', 'myousic'),
-	        'section'    => 'myousic_header_options',
-	        'settings'   => 'myousic_theme_options[header_background_overlay_opacity]',
-	    ));
-
-	    /*********************
-		** Menu Link Color
-		*********************/
-	    $wp_customize->add_setting('myousic_theme_options[menu_link_color]', array(
-	        'default'           => 'ffffff',
-	        'sanitize_callback' => 'sanitize_hex_color',
-	        'capability'        => 'edit_theme_options',
-	        'type'           => 'option',
-	 
-	    ));
-	 
-	    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'menu_link_color', array(
-	        'label'    => __('Menu Link Color', 'myousic'),
-	        'section'  => 'myousic_header_options',
-	        'settings' => 'myousic_theme_options[menu_link_color]',
-	    )));
-
-    //Site-wide colors
-    	//Page Background color
-    	//Heading color
-    	//Main text color
-    	//secondary text color
-    	//Main link color
-    //Music sections
-    	//Music embed background color
-    	//Music embed title color
-    	//music embed text color
-    	//music embed button background
-    	//music embed button text
-    //Video sections
-    	//video background color
-    //footer
-    	//footer background color
-    	//footer text color
-    	//copyright text
-
-
-
-    //  =============================
-    //  = Text Input                =
-    //  =============================
-    $wp_customize->add_setting('myousic_theme_options[text_test]', array(
-        'default'        => 'Arse!',
-        'capability'     => 'edit_theme_options',
-        'type'           => 'option',
- 
-    ));
- 
-    $wp_customize->add_control('myousic_text_test', array(
-        'label'      => __('Text Test', 'myousic'),
-        'section'    => 'myousic_heade_options',
-        'settings'   => 'myousic_theme_options[text_test]',
-    ));
- 
-    //  =============================
-    //  = Radio Input               =
-    //  =============================
-    $wp_customize->add_setting('myousic_theme_options[color_scheme]', array(
-        'default'        => 'value2',
-        'capability'     => 'edit_theme_options',
-        'type'           => 'option',
-    ));
- 
-    $wp_customize->add_control('myousic_color_scheme', array(
-        'label'      => __('Color Scheme', 'myousic'),
-        'section'    => 'myousic_color_scheme',
-        'settings'   => 'myousic_theme_options[color_scheme]',
-        'type'       => 'radio',
-        'choices'    => array(
-            'value1' => 'Choice 1',
-            'value2' => 'Choice 2',
-            'value3' => 'Choice 3',
-        ),
-    ));
- 
-    //  =============================
-    //  = Checkbox                  =
-    //  =============================
-    $wp_customize->add_setting('myousic_theme_options[checkbox_test]', array(
-        'capability' => 'edit_theme_options',
-        'type'       => 'option',
-    ));
- 
-    $wp_customize->add_control('display_header_text', array(
-        'settings' => 'myousic_theme_options[checkbox_test]',
-        'label'    => __('Display Header Text'),
-        'section'  => 'myousic_color_scheme',
-        'type'     => 'checkbox',
-    ));
- 
- 
-    //  =============================
-    //  = Select Box                =
-    //  =============================
-     $wp_customize->add_setting('myousic_theme_options[header_select]', array(
-        'default'        => 'value2',
-        'capability'     => 'edit_theme_options',
-        'type'           => 'option',
- 
-    ));
-    $wp_customize->add_control( 'example_select_box', array(
-        'settings' => 'myousic_theme_options[header_select]',
-        'label'   => 'Select Something:',
-        'section' => 'myousic_color_scheme',
-        'type'    => 'select',
-        'choices'    => array(
-            'value1' => 'Choice 1',
-            'value2' => 'Choice 2',
-            'value3' => 'Choice 3',
-        ),
-    ));
- 
- 
-    //  =============================
-    //  = Image Upload              =
-    //  =============================
-    $wp_customize->add_setting('myousic_theme_options[image_upload_test]', array(
-        'default'           => 'image.jpg',
-        'capability'        => 'edit_theme_options',
-        'type'           => 'option',
- 
-    ));
- 
-    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'image_upload_test', array(
-        'label'    => __('Image Upload Test', 'myousic'),
-        'section'  => 'myousic_color_scheme',
-        'settings' => 'myousic_theme_options[image_upload_test]',
-    )));
- 
-    //  =============================
-    //  = File Upload               =
-    //  =============================
-    $wp_customize->add_setting('myousic_theme_options[upload_test]', array(
-        'default'           => 'arse',
-        'capability'        => 'edit_theme_options',
-        'type'           => 'option',
- 
-    ));
- 
-    $wp_customize->add_control( new WP_Customize_Upload_Control($wp_customize, 'upload_test', array(
-        'label'    => __('Upload Test', 'myousic'),
-        'section'  => 'myousic_color_scheme',
-        'settings' => 'myousic_theme_options[upload_test]',
-    )));
- 
- 
-    //  =============================
-    //  = Color Picker              =
-    //  =============================
-    $wp_customize->add_setting('myousic_theme_options[link_color]', array(
-        'default'           => '000',
-        'sanitize_callback' => 'sanitize_hex_color',
-        'capability'        => 'edit_theme_options',
-        'type'           => 'option',
- 
-    ));
- 
-    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'link_color', array(
-        'label'    => __('Link Color', 'myousic'),
-        'section'  => 'myousic_color_scheme',
-        'settings' => 'myousic_theme_options[link_color]',
-    )));
- 
- 
-    //  =============================
-    //  = Page Dropdown             =
-    //  =============================
-    $wp_customize->add_setting('myousic_theme_options[page_test]', array(
-        'capability'     => 'edit_theme_options',
-        'type'           => 'option',
- 
-    ));
- 
-    $wp_customize->add_control('myousic_page_test', array(
-        'label'      => __('Page Test', 'myousic'),
-        'section'    => 'myousic_color_scheme',
-        'type'    => 'dropdown-pages',
-        'settings'   => 'myousic_theme_options[page_test]',
-    ));
- 
+function myousic_sanitize_text ($input) {
+	return wp_kses_post( force_balance_tags($input) );
 }
- 
-add_action('customize_register', 'myousic_customize_register');
+function myousic_sanitize_overlay_opacity( $input ) {
+
+	if( is_numeric($input) ){
+		return $input;
+	} else {
+		return '';
+	}
+
+}
+
+function myousic_theme_customizer( $wp_customize ) {
+
+	// Let's create a custom class to use a cooler number field for the opacity
+	class Example_Customize_Number_Control extends WP_Customize_Control {
+		public $type = 'number';
+
+		public function render_content() {
+			?>
+				<label>
+					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+					<input type="number" <?php $this->link(); ?> min="0" max="100" step="1" value="<?php echo intval( $this->value() ); ?>" style="width:98%;" />
+				</label>
+			<?php
+		}
+	}
+
+	/****************************************************
+
+		THEME CUSTOMIZER OPTIONS
+
+		1. Logo
+			a. Logo Text
+			b. Logo Text Color
+			c. Logo Image
+			d. Favicon Image
+
+		2. Header Image
+			a. Default Header Image fields
+			b. Image Overlay Color
+			c. Image overlay opacity
+
+		3. Navigation
+
+		4. Colors
+			a. Menu Link Color
+			b. Menu link hover color
+			c. Dropdown menu background color
+			d. Website background color
+			e. Heading font color
+			f. Main text color
+			g. Link color
+			h. Footer Background color
+			i. Footer text color
+
+		5. Music Embeds
+			a. Embed background color
+			b. Embed title color
+			c. Embed text color
+			d. Embed button background color
+
+		6. Videos
+			a. Video background color
+			b. Video text color (title)
+
+	****************************************************/
+
+
+	/****************************************************
+
+	1. Logo
+
+	****************************************************/
+	$wp_customize->add_section(
+		'logo_section',
+		array(
+			'title' => 'Logo',
+			'description' => 'Settings for the logo section.',
+			'priority' => 1,
+		)
+	);
+
+		/****************************************************
+		1a. Logo Text
+		****************************************************/
+		$wp_customize->add_setting(
+			'logo_text',
+			array(
+				'default' => get_bloginfo('name'),
+				'sanitize_callback' => 'myousic_sanitize_text'
+			)
+		);
+		$wp_customize->add_control(
+		'logo_text',
+			array(
+				'label' => 'Logo Text',
+				'section' => 'logo_section',
+				'type' => 'text',
+			)
+		);
+
+		/****************************************************
+		1b. Logo Text Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'logo_text_color',
+			array(
+				'default' => '#ffffff',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'logo_text_color',
+				array(
+					'label' => 'Text Logo Color',
+					'section' => 'logo_section',
+					'settings' => 'logo_text_color',
+				)
+			)
+		);
+
+		/****************************************************
+		1c. Logo Image
+		****************************************************/
+		$wp_customize->add_setting( 'logo_image' );
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				'logo_image',
+				array(
+					'label' => 'Logo Image',
+					'section' => 'logo_section',
+					'settings' => 'logo_image'
+				)
+			)
+		);
+
+		/****************************************************
+		1c. Favicon Image
+		****************************************************/
+		$wp_customize->add_setting( 'favicon_image' );
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				'favicon_image',
+				array(
+					'label' => 'Favicon Image',
+					'section' => 'logo_section',
+					'settings' => 'favicon_image'
+				)
+			)
+		);
+
+
+	/****************************************************
+
+	2. Header Image
+
+	****************************************************/
+	//Section already exists by default... No need to define it
+	// Let's change the title though
+	$wp_customize->get_section('header_image')->title = __( 'Header Image' );
+	//and reprioritize it
+	$wp_customize->get_section('header_image')->priority = 2;
+
+		/****************************************************
+		2a. Default Header Image fields
+		****************************************************/
+		//Added by Wordpress, no options for it.
+
+		/****************************************************
+		2b. Header Image Overlay Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'header_image_overlay_color',
+			array(
+				'default' => '#00243b',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'header_image_overlay_color',
+				array(
+					'label' => 'Header Image Overlay Color',
+					'section' => 'header_image',
+					'settings' => 'header_image_overlay_color',
+					'priority' => 1
+				)
+			)
+		);
+
+		/****************************************************
+		2c. Header Image Overlay Opacity
+		****************************************************/
+		$wp_customize->add_setting(
+			'header_image_overlay_opacity',
+			array(
+				'default' => '70',
+				'sanitize_callback' => 'myousic_sanitize_overlay_opacity'
+			)
+		);
+		$wp_customize->add_control(
+			new Example_Customize_Number_Control(
+				$wp_customize,
+				'header_image_overlay_opacity',
+				array(
+					'label' => 'Header Image Overlay Opacity',
+					'section' => 'header_image',
+					'settings' => 'header_image_overlay_opacity',
+					'priority' => 2
+				)
+			)
+		);
+
+
+	/****************************************************
+
+	3. Navigation
+
+	****************************************************/
+	$wp_customize->get_section('nav')->title = __( 'Menu Links' );
+	$wp_customize->get_section('nav')->priority = 3;
+
+
+	/****************************************************
+
+	4. Colors
+
+	****************************************************/
+	$wp_customize->get_section('colors')->priority = 4;
+	// remove automatically added header_textcolor
+	$wp_customize->remove_control('header_textcolor');
+
+		/****************************************************
+		4a. Menu Link Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'menu_link_color',
+			array(
+				'default' => '#aaaaaa',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'menu_link_color',
+				array(
+					'label' => 'Menu Link Color',
+					'section' => 'colors',
+					'settings' => 'menu_link_color',
+					'priority' => 1
+				)
+			)
+		);
+
+		/****************************************************
+		4b. Menu link hover color
+		****************************************************/
+		$wp_customize->add_setting(
+			'menu_link_hover_color',
+			array(
+				'default' => '#ffffff',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'menu_link_hover_color',
+				array(
+					'label' => 'Menu Link Hover Color',
+					'section' => 'colors',
+					'settings' => 'menu_link_hover_color',
+					'priority' => 2
+				)
+			)
+		);
+
+		/****************************************************
+		4c. Dropdown Menu Background Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'menu_dropdown_background_color',
+			array(
+				'default' => '#333333',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'menu_dropdown_background_color',
+				array(
+					'label' => 'Dropdown Menu Background Color',
+					'section' => 'colors',
+					'settings' => 'menu_dropdown_background_color',
+					'priority' => 3
+				)
+			)
+		);
+
+		/****************************************************
+		4d. Website Background Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'website_background_color',
+			array(
+				'default' => '#ffffff',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'website_background_color',
+				array(
+					'label' => 'Website Background Color',
+					'section' => 'colors',
+					'settings' => 'website_background_color',
+					'priority' => 4
+				)
+			)
+		);
+
+		/****************************************************
+		4e. Heading Font Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'heading_font_color',
+			array(
+				'default' => '#000000',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'heading_font_color',
+				array(
+					'label' => 'Heading Font Color',
+					'section' => 'colors',
+					'settings' => 'heading_font_color',
+					'priority' => 5
+				)
+			)
+		);
+
+		/****************************************************
+		4f. Main Text Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'main_text_color',
+			array(
+				'default' => '#444444',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'main_text_color',
+				array(
+					'label' => 'Main Text Color',
+					'section' => 'colors',
+					'settings' => 'main_text_color',
+					'priority' => 6
+				)
+			)
+		);
+
+		/****************************************************
+		4g. Link Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'link_color',
+			array(
+				'default' => '#547adc',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'link_color',
+				array(
+					'label' => 'Link Color',
+					'section' => 'colors',
+					'settings' => 'link_color',
+					'priority' => 7
+				)
+			)
+		);
+
+		/****************************************************
+		4h. Footer Background Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'footer_background_color',
+			array(
+				'default' => '#333333',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'footer_background_color',
+				array(
+					'label' => 'Footer Background Color',
+					'section' => 'colors',
+					'settings' => 'footer_background_color',
+					'priority' => 8
+				)
+			)
+		);
+
+		/****************************************************
+		4i. Footer Text Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'footer_text_color',
+			array(
+				'default' => '#999999',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'footer_text_color',
+				array(
+					'label' => 'Footer Text Color',
+					'section' => 'colors',
+					'settings' => 'footer_text_color',
+					'priority' => 9
+				)
+			)
+		);
+
+	/****************************************************
+
+	5. Music Embeds
+
+	****************************************************/
+	$wp_customize->add_section(
+		'music_embeds',
+		array(
+			'title' => 'Music Embeds',
+			'description' => 'Controls the style options for the music sections throughout the site',
+			'priority' => 5,
+		)
+	);
+
+		/****************************************************
+		5a. Embed Background Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'embed_background_color',
+			array(
+				'default' => '#212121',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'embed_background_color',
+				array(
+					'label' => 'Embed Background Color',
+					'section' => 'music_embeds',
+					'settings' => 'embed_background_color',
+					'priority' => 1
+				)
+			)
+		);
+
+		/****************************************************
+		5b. Embed Title Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'embed_title_color',
+			array(
+				'default' => '#eeeeee',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'embed_title_color',
+				array(
+					'label' => 'Embed Title Color',
+					'section' => 'music_embeds',
+					'settings' => 'embed_title_color',
+					'priority' => 2
+				)
+			)
+		);
+
+		/****************************************************
+		5c. Embed Text Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'embed_text_color',
+			array(
+				'default' => '#999999',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'embed_text_color',
+				array(
+					'label' => 'Embed Text Color',
+					'section' => 'music_embeds',
+					'settings' => 'embed_text_color',
+					'priority' => 3
+				)
+			)
+		);
+
+		/****************************************************
+		5d. Embed Button Background Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'embed_button_background_color',
+			array(
+				'default' => '#ffffff',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'embed_button_background_color',
+				array(
+					'label' => 'Embed Button Background Color',
+					'section' => 'music_embeds',
+					'settings' => 'embed_button_background_color',
+					'priority' => 4
+				)
+			)
+		);
+
+
+
+	/****************************************************
+	A little bit of cleanup
+	****************************************************/
+	//Remove static front page section
+	$wp_customize->remove_section('static_front_page');
+
+	//remove site title/tagline section
+	$wp_customize->remove_section('title_tagline');
+
+}
+
+add_action( 'customize_register', 'myousic_theme_customizer' );
