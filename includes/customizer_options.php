@@ -707,6 +707,61 @@ function myousic_theme_customizer( $wp_customize ) {
 	9. Videos Sections
 
 	****************************************************/
+	$wp_customize->add_section(
+		'videos_section',
+		array(
+			'title' => 'Videos Sections',
+			'description' => '',
+			'priority' => 9,
+		)
+	);
+
+		/****************************************************
+		9a. Video Section Background Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'video_background_color',
+			array(
+				'default' => '#000000',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'video_background_color',
+				array(
+					'label' => 'Video Section Background Color',
+					'section' => 'videos_section',
+					'settings' => 'video_background_color',
+					'priority' => 1
+				)
+			)
+		);
+
+		/****************************************************
+		9b. Video Section Heading Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'video_heading_color',
+			array(
+				'default' => '#ffffff',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'video_heading_color',
+				array(
+					'label' => 'Video Section Heading Color',
+					'section' => 'videos_section',
+					'settings' => 'video_heading_color',
+					'priority' => 2
+				)
+			)
+		);
+
 
 	/****************************************************
 

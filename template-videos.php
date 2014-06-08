@@ -5,7 +5,7 @@ Template Name: Videos Page
 ?>
 <?php get_header(); ?>
 
-	<div id="page_content" class="page_section news_section">
+	<div id="page_content" class="page_section videos_section">
 		<div class="wrap">
 
 			<div class="video_list">

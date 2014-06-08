@@ -1054,14 +1054,14 @@ table.tour_dates {
 /*************************************
 VIDEOS
 *************************************/
-.videos_section {
+.page_section.videos_section {
   background-color: black;
   padding: 40px 0; }
-  .videos_section .section_header {
+  .page_section.videos_section .section_header {
     margin: 0 0 40px 0; }
-    .videos_section .section_header a {
+    .page_section.videos_section .section_header a {
       color: white; }
-  .videos_section .video_embed {
+  .page_section.videos_section .video_embed {
     padding: 0; }
 
 /*************************************
