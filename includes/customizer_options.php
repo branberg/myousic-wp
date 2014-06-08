@@ -660,10 +660,71 @@ function myousic_theme_customizer( $wp_customize ) {
 		'news_sections',
 		array(
 			'title' => 'News Sections',
-			'description' => 'Controls the styles associated with news sections',
+			'description' => '',
 			'priority' => 7,
 		)
 	);
+
+	/****************************************************
+
+	8. Shows Sections
+
+	****************************************************/
+	$wp_customize->add_section(
+		'shows_sections',
+		array(
+			'title' => 'Shows Sections',
+			'description' => '',
+			'priority' => 8,
+		)
+	);
+
+		/****************************************************
+		8a. Shows Border Color
+		****************************************************/
+		$wp_customize->add_setting(
+			'shows_border_color',
+			array(
+				'default' => '#eeeeee',
+				'sanitize_callback' => 'sanitize_hex_color'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'shows_border_color',
+				array(
+					'label' => 'Shows Border Color',
+					'section' => 'shows_sections',
+					'settings' => 'shows_border_color',
+					'priority' => 1
+				)
+			)
+		);
+
+	/****************************************************
+
+	9. Videos Sections
+
+	****************************************************/
+
+	/****************************************************
+
+	10. Photos Sections
+
+	****************************************************/
+
+	/****************************************************
+
+	11. Text Sections
+
+	****************************************************/
+
+	/****************************************************
+
+	12. Contact Sections
+
+	****************************************************/
 
 
 

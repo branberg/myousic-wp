@@ -1005,10 +1005,10 @@ table.tour_dates{
 	tr{
 
 		&:first-child td{
-			border-top: solid 2px $mainTextColor;
+			border-top: solid 2px $showsBorderColor;
 		}
 		td{
-			border-bottom: solid 2px $mainTextColor;
+			border-bottom: solid 2px $showsBorderColor;
 		}
 
 		td{
@@ -1022,7 +1022,8 @@ table.tour_dates{
 
 			a{
 
-				text-decoration: none;
+				text-decoration: underline;
+				color: $mainTextColor;
 
 				&:hover{
 					text-decoration: underline;

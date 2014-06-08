@@ -526,7 +526,7 @@ table.tour_dates{
 
 				&:after{
 					content: "";
-					border-right: solid 2px $mainTextColor;
+					border-right: solid 2px $showsBorderColor;
 					width: 1px;
 					position: absolute;
 					right: 0;
