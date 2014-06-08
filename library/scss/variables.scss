@@ -1,47 +1,155 @@
+/****************************************************
+
+	THEME CUSTOMIZER OPTIONS
+
+	1. Logo
+		a. Logo Text Color
+
+	2. Header Image
+		a. Image Overlay Color
+		b. Image overlay opacity
+
+	3. Navigation
+
+	4. Colors
+		a. Menu Link Color
+		b. Menu link hover color
+		c. Dropdown menu background color
+		d. Website background color
+		e. Heading font color
+		f. Main text color
+		g. Link color
+		h. Footer Background color
+		i. Footer text color
+	
+	5. Typography
+		a. Heading font
+		b. Body font
+
+	6. Music Embeds
+		a. Embed background color
+		b. Embed title color
+		c. Embed text color
+		d. Embed button background color
+
+	7. News Sections
+		a. Read more button background
+
+	8. Shows Sections
+
+	9. Videos
+		a. Video background color
+		b. Video text color (title)
+
+	10. Photos Sections
+
+	11. Text Sections
+
+	12. Contact Page
+
+****************************************************/
+
 /*********************
-COLORS
+1. Logo
+*********************/
+//1a. Logo color
+$logoColor:					#ffffff;
+
+
+/*********************
+2. Header Image
+*********************/
+//2a. Header overlay color
+$headerOverlay:				#00243b;
+
+//2b. Header overlay opacity
+$headerOverlayOpacity:		0.7;
+
+
+/*********************
+3. Navigation
 *********************/
 
-//gloabal styles
-$black:						#000;
-$white:						#fff;
-$accent:					#263c4a;
-$selectionColor:			#C8A999;
 
-//header styles
-$headerOverlay:				#00243b;
-$headerOverlayOpacity:		0.7;
-$headerText:				#9dabb3;
-$headerTextHover:			lighten($headerText, 15%);
-$textColor:					#9dabb3;
+/*********************
+4. Colors
+*********************/
+//4a. Menu Link Color
+$menuLink:					#ffffff;
 
-//logo (text) styles
-$logoColor:					#ffffff;
-$logoShadow:				rgba(0, 36, 59, 0.5);
+//4b. Menu link Hover
+$menuLinkHover:				#ba4343;
 
-//album styles
-$albumBackground:			#335062;
-$albumButtonBackground:		#5c7381;
-$albumButtonText:			#263c4a;
-$albumType:					#5c7381;
-$albumText:					#9dabb3;
-$albumTitle:				#ffffff;
+//4c. Dropdown menu background color
+$dropdownMenuBackground:	#333333;
 
-//video styles
+//4d. Website background color
+$websiteBackgroundColor:	#ffffff;
+
+//4e. Heading font color
+$headingColor:				#000000;
+
+//4f. Main text color
+$mainTextColor:				#444444;
+
+//4g. Link color
+$linkColor:					#ba4343;
+
+//4h. Footer Background color
+$footerBackground:			#333333;
+
+//4i. Footer text color
+$footerText:				#999999;
+
+
+/*********************
+5. Typography
+*********************/
+$headingFont:				'Montserrat', sans-serif;
+$bodyFont:					'Open Sans', sans-serif;
+
+/*********************
+6. Music Embeds
+*********************/
+//5a. Embed Background Color
+$albumBackground:			#212121;
+
+//5b. Embed Title Color
+$albumTitle:				#eeeeee;
+
+//5b. Embed Text Color
+$albumText:					#999999;
+
+//5c. Embed button background color
+$albumButton:				#ffffff;
+
+
+/*********************
+7. News Sections
+*********************/
+
+/*********************
+8. Shows Sections
+*********************/
+
+/*********************
+9. Video Sections
+*********************/
+//8a. video background color
 $videoSectionBackground:	#000000;
 
-//social icon styles
-$socialIconsColor:			#5c7381;
-$socialIconsBackground:		#1d2d38;
-
-//footer styles
-$footerBackground:			#1d2d38;
-$footerText:				#5c7381;
+//8b. Video Heading Color
+$videoSectionHeading:		#ffffff;
 
 
 /*********************
-TYPOGRAPHY
+10. Photos Sections
 *********************/
 
-$opensans:		'Open Sans', sans-serif;
-$montserrat:	'Montserrat', sans-serif;
+/*********************
+11. Text Sections
+*********************/
+
+/*********************
+12. Contact Sections
+*********************/

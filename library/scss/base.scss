@@ -4,32 +4,32 @@
 *********************************************************************/
 html, body{
 
-	font-family: $opensans;
+	font-family: $bodyFont;
 	font-weight: 500;
 	font-size: 1em;
-	color: $textColor;
+	color: $mainTextColor;
 	overflow-x: hidden;
 
 }
 
 a{
-	color: $textColor;
+	color: $mainTextColor;
 }
 
 h1, h2, h3, h4, h5, h6{
-	font-family: $montserrat;
+	font-family: $headingFont;
 	font-weight: 500;
 }
 
 #site_wrap{
 	position: relative;
-	background-color: darken($accent, 2%);
+	background-color: $headerOverlay;
 	@include box-shadow( 0, 0, 40px, 0.5 );
 }
 
 #mobile_menu{
 
-	background-color: darken($accent, 2%);
+	background-color: $headerOverlay;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6{
 	left: 0;
 	z-index: 0;
 	padding: 0 60px 0 0;
-	font-family: $montserrat;
+	font-family: $headingFont;
 
 	ul{
 
@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6{
 				font-size: 1.2em;
 				opacity: 0.55;
 				text-transform: uppercase;
-				color: $white;
+				color: $menuLink;
 				@include transition(opacity 0.05s linear);
 			}
 
@@ -91,8 +91,7 @@ h1, h2, h3, h4, h5, h6{
 
 	height: 56px;
 	width: 100%;
-	background-color: transparentize($accent, 0.2);
-	border-bottom: solid 1px darken($accent, 4%);
+	background-color: $headerOverlay;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -115,7 +114,7 @@ h1, h2, h3, h4, h5, h6{
 		i{
 			display: block;
 			font-size: 24px;
-			color: $white;
+			color: $menuLink;
 		}
 
 	}
@@ -127,7 +126,7 @@ h1, h2, h3, h4, h5, h6{
 		top: 0;
 		left: 0;
 		text-align: center;
-		color: $white;
+		color: $menuLink;
 		width: 100%;
 		font-size: 16px;
 		height: 56px;
@@ -170,10 +169,9 @@ h1, h2, h3, h4, h5, h6{
 		#logo{
 
 			display: block;
-			font-family: $montserrat;
+			font-family: $headingFont;
 			color: $logoColor;
 			text-decoration: none;
-			text-shadow: 5px 5px 0 $logoShadow;
 			font-size: 2em;
 			text-align: left;
 
@@ -193,7 +191,7 @@ h1, h2, h3, h4, h5, h6{
 
 		text-align: center;
 		padding: 116px 20px 60px 20px;
-		font-family: $montserrat;
+		font-family: $headingFont;
 		margin: 0 auto;
 
 		h1{
@@ -203,7 +201,6 @@ h1, h2, h3, h4, h5, h6{
 			text-transform: uppercase;
 			color: $logoColor;
 			text-decoration: none;
-			text-shadow: 1px 1px 0 $logoShadow;
 
 		}
 
@@ -255,7 +252,7 @@ body.home{
 
 .page_section{
 
-	background-color: $accent;
+	background-color: $websiteBackgroundColor;
 
 	.wrap{}
 
@@ -271,7 +268,7 @@ body.home{
 			margin: 0;
 		}
 		&, a{
-			color: $headerText;
+			color: $headingColor;
 		}
 		a{
 
@@ -283,7 +280,7 @@ body.home{
 			&:after{
 				content: "»";
 				font-weight: 300;
-				font-family: $opensans;
+				font-family: $bodyFont;
 				font-size: 1.4em;
 				display: block;
 				position: absolute;
@@ -337,14 +334,12 @@ MUSIC/ALBUMS
 
 		.album_info_wrapper{
 
-			color: $textColor;
-
 			.album_info{
 
 				padding: 20px;
 
 				.album_type{
-					font-family: $montserrat;
+					font-family: $headingFont;
 					text-transform: uppercase;
 					font-size: 0.85rem;
 					opacity: 0.7;
@@ -370,11 +365,11 @@ MUSIC/ALBUMS
 					font-size: 1.25rem;
 					display: block;
 					margin: 20px 0 0 0;
-					font-family: $montserrat;
+					font-family: $headingFont;
 					text-transform: uppercase;
 					text-align: center;
-					background-color: $albumButtonBackground;
-					color: $albumButtonText;
+					background-color: $albumButton;
+					color: $albumBackground;
 					text-decoration: none;
 					padding: 20px;
 					@include transition(opacity 0.05s linear);
@@ -405,7 +400,7 @@ NEWS SECTION
 	.news_article_wrap{
 
 		position: relative;
-		border-top: solid 2px $headerText;
+		border-top: solid 2px $headingColor;
 		margin-bottom: 30px;
 
 		&:last-child{
@@ -415,7 +410,7 @@ NEWS SECTION
 		&:before{
 			content: "";
 			position: absolute;
-			@include css-gradient-top-down($headerText, $accent);
+			@include css-gradient-top-down($headingColor, $websiteBackgroundColor);
 			z-index: 0;
 			width: 100%;
 			height: 100%;
@@ -427,7 +422,7 @@ NEWS SECTION
 			position: relative;
 			z-index: 10;
 			margin: 0 2px;
-			background-color: $accent;
+			background-color: $websiteBackgroundColor;
 			padding: 20px;
 
 			header.article_header{
@@ -495,7 +490,7 @@ NEWS SECTION
 				display: block;
 				padding: 10px 20px;
 				text-decoration: none;
-				border: solid 1px $accent;
+				border: solid 1px $mainTextColor;
 				text-align: center;
 				margin-top: 20px;
 				font-size: 18px;
@@ -531,7 +526,7 @@ NEWS SECTION
 							font-size: 24px;
 
 							&:hover{
-								color: $white;
+								color: $mainTextColor;
 							}
 
 							i{
@@ -548,10 +543,10 @@ NEWS SECTION
 						top: -2px;
 					}
 					li.twitter:hover a{
-						color: #00aced;
+						color: #00aced; //twitter blue
 					}
 					li.facebook:hover a{
-						color: #3b5998;
+						color: #3b5998; //facebook blue
 					}
 
 				}
@@ -565,16 +560,16 @@ NEWS SECTION
 
 	.news_article_wrap.sticky{
 
-		border-top: solid 2px #fbb03b;
+		border-top: solid 2px #fbb03b; //sticky yellow color
 
 		&:before{
-			@include css-gradient-top-down(#fbb03b, $accent);
+			@include css-gradient-top-down(#fbb03b, $websiteBackgroundColor);
 		}
 
 		.sticky_post_header{
 			position:relative;
 			display: block;
-			color: $accent;
+			color: $websiteBackgroundColor;
 			padding: 10px;
 			text-align: center;
 		}
@@ -592,7 +587,7 @@ NEWS SECTION
 				height: 40px;
 				line-height:40px;
 				text-align: center;
-				color: $accent;
+				color: $mainTextColor;
 				background-color: #fbb03b;
 			}
 
@@ -604,8 +599,8 @@ NEWS SECTION
 		font-weight: 300;
 		padding: 10px 0;
 		margin: 0 0 20px 0;
-		border-top: dashed 1px lighten($accent, 8%);
-		border-bottom: dashed 1px lighten($accent, 8%);
+		border-top: dashed 1px $mainTextColor;
+		border-bottom: dashed 1px $mainTextColor;
 		display: block;
 		clear: both;
 
@@ -654,11 +649,11 @@ NEWS SECTION
 
 	border: none;
 	background: none;
-	color: $white;
+	color: $websiteBackgroundColor;
 
 	.tooltipster-content {
 
-		font-family: $opensans;
+		font-family: $bodyFont;
 		font-size: 13px;
 		padding: 0;
 		overflow: hidden;
@@ -699,11 +694,12 @@ nav#pagination{
 
 			display: block;
 			text-decoration: none;
-			background-color: darken($accent, 5%);
+			background-color: $mainTextColor;
+			color: $websiteBackgroundColor;
 			padding: 10px;
 
 			&:hover{
-				background-color: darken($accent, 10%);
+				opacity: 0.7;
 			}
 
 		}
@@ -733,7 +729,7 @@ COMMENTS
 		padding: 0;
 
 		> .comment{
-			background: darken($accent, 5%);
+			background: $websiteBackgroundColor;
 			margin-bottom: 30px;
 			@include rounded(6px);
 		}
@@ -746,7 +742,8 @@ COMMENTS
 				.comment-meta{
 
 					overflow: hidden;
-					background: darken($accent, 7%);
+					background: $mainTextColor;
+					color: $websiteBackgroundColor;
 					padding: 20px;
 					@include border-radius(6px, 6px, 0, 0);
 
@@ -766,7 +763,7 @@ COMMENTS
 						.fn,
 						.says{
 
-							font-family: $montserrat;
+							font-family: $headingFont;
 							font-style: normal;
 
 							a{
@@ -791,7 +788,6 @@ COMMENTS
 
 						a{
 
-							color: lighten($accent, 5%);
 							text-decoration: none;
 
 							&:hover{
@@ -827,11 +823,14 @@ COMMENTS
 						text-decoration: none;
 						padding: 4px 8px;
 						margin: 0 0 20px 20px;
-						background-color: darken($accent, 8%);
+						background-color: $mainTextColor;
+						color: $websiteBackgroundColor;
 						@include rounded(3px);
+
 						&:hover{
-							background-color: darken($accent, 15%);
+							opacity: 0.7;
 						}
+
 					}
 
 				} // .reply
@@ -844,7 +843,7 @@ COMMENTS
 
 				li{
 
-					border: solid 2px darken($accent, 7%);
+					border: solid 2px $mainTextColor;
 					@include rounded(6px);
 					margin: 20px 20px 0 20px;
 
@@ -858,7 +857,7 @@ COMMENTS
 
 	#respond{
 
-		border-top: dashed 2px lighten($accent, 10%);
+		border-top: dashed 2px $mainTextColor;
 		#reply-title{
 
 			small{
@@ -885,7 +884,7 @@ COMMENTS
 
 			.comment-form-comment{
 
-				background-color: darken($accent, 5%);
+				background-color: $websiteBackgroundColor;
 				padding: 20px;
 				margin: 0;
 				@include border-radius( 6px, 6px, 0, 0 );
@@ -899,15 +898,15 @@ COMMENTS
 				textarea{
 
 					display: block;
-					background: $accent;
+					background: $websiteBackgroundColor;
 					border: none;
 					width: 100%;
 					outline: none;
 					padding: 20px;
-					color: $white;
+					color: $mainTextColor;
 
 					&:focus{
-						background-color: lighten($accent, 1%);
+						
 					}
 
 				}
@@ -915,10 +914,9 @@ COMMENTS
 			}
 
 			.form-allowed-tags{
-				background-color: darken($accent, 5%);
 				margin: 0;
 				padding: 0 20px 20px 20px;
-				color: lighten($accent, 5%);
+				color: $mainTextColor;
 				font-size: 14px;
 				@include border-radius( 0, 0, 6px, 6px );
 			}
@@ -927,14 +925,14 @@ COMMENTS
 
 				#submit{
 					display: inline-block;
-					background-color: darken($accent, 5%);
+					background-color: $mainTextColor;
 					border: none;
-					color: $textColor;
+					color: $websiteBackgroundColor;
 					padding: 20px 30px;
 					font-size: 1.4em;
 					@include rounded(6px);
 					&:hover{
-						background-color: darken($accent, 7%);
+						opacity: 0.7;
 					}
 				}
 
@@ -957,7 +955,7 @@ SHOWS - BANDSINTOWN
 		font-size: 1.2rem;
 	}
 	th{
-		font-family: $montserrat;
+		font-family: $headingFont;
 		text-transform: uppercase;
 		font-size: 1rem;
 	}
@@ -968,11 +966,11 @@ td.bit-description-links{
 }
 td.bit-date{
 	padding: 20px;
-	font-family: $montserrat;
+	font-family: $headingFont;
 	font-weight: 900;
 }
 td.bit-venue{
-	font-family: $opensans;
+	font-family: $bodyFont;
 }
 td.bit-location{
 
@@ -984,7 +982,7 @@ td.bit-rsvp{
 
 }
 #bit-events td .bit-uiButton{
-	background-color: $accent;
+	background-color: $websiteBackgroundColor;
 	background-image: none;
 }
 
@@ -1000,17 +998,17 @@ SHOWS - CUSTOM
 table.tour_dates{
 
 	width:100%;
-	font-family: $montserrat;
+	font-family: $headingFont;
 	font-weight: 300;
 	border-collapse: separate;
 
 	tr{
 
 		&:first-child td{
-			border-top: solid 2px transparentize($textColor, 0.7);
+			border-top: solid 2px $mainTextColor;
 		}
 		td{
-			border-bottom: solid 2px transparentize($textColor, 0.7);
+			border-bottom: solid 2px $mainTextColor;
 		}
 
 		td{
@@ -1084,7 +1082,7 @@ table.tour_dates{
 
 			a:hover{
 				text-decoration: none;
-				color: lighten($textColor, 10%);
+				opacity: 0.7;
 			}
 
 		}
@@ -1106,6 +1104,9 @@ VIDEOS
 
 	.section_header{
 		margin: 0 0 40px 0;
+		a{
+			color: $videoSectionHeading;
+		}
 	}
 
 	.video_embed{
@@ -1200,7 +1201,7 @@ FOOTER
 
 	.credits{
 
-		font-family: $montserrat;
+		font-family: $headingFont;
 		text-align: center;
 		padding-top: 40px;
 
@@ -1221,7 +1222,7 @@ FOOTER
 
 	text-align: center;
 	padding: 0 0 40px 0;
-	font-family: $montserrat;
+	font-family: $headingFont;
 
 	.mailing_list_title, form{
 		display: block;
@@ -1392,7 +1393,7 @@ form.contact_form{
 
 	label{
 		display: block;
-		font-family: $montserrat;
+		font-family: $headingFont;
 		text-transform: uppercase;
 		font-size: 1.3em;
 		margin-bottom: 10px;
@@ -1418,9 +1419,9 @@ form.contact_form{
 	}
 	input[type="submit"]{
 
-		font-family: $montserrat;
+		font-family: $headingFont;
 		background-color: $footerText;
-		color: $accent;
+		color: $mainTextColor;
 		padding: 20px 30px;
 		border: none;
 		@include transition(opacity 0.05s linear);
@@ -1435,7 +1436,7 @@ form.contact_form{
 
 p.alert{
 
-	color: $accent;
+	color: $mainTextColor;
 	text-align: center;
 	padding: 6px;
 	font-size: 1.1em;

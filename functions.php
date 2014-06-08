@@ -128,7 +128,7 @@ function boombox_custom_webfonts(){
 		STUFF FOR CUSTOM GOOGLE FONTS
 		*************************************/
 		//set variables for all fonts...
-		$fonts = array(
+		$font_stack = array(
 
 			//these keys need to match the keys in the options exactly
 			'Lato' => 'Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic',
@@ -148,37 +148,18 @@ function boombox_custom_webfonts(){
 
 		);
 
-		//get ACF values
-		$heading_font_type = get_field('heading_font_type','options');
-		$heading_font = get_field('heading_fonts', 'options');
-		$heading_font = $fonts[$heading_font];
+		//get Customizer values
+		$heading_font = get_theme_mod('heading_font');
+		$heading_font = $font_stack[$heading_font];
 
-		$body_font_type = get_field('body_font_type','options');
-		$body_font = get_field('body_fonts', 'options');
-		$body_font = $fonts[$body_font];
+		$body_font = get_theme_mod('body_font');
+		$body_font = $font_stack[$body_font];
 
-		$fontFamily = ''; //set to nothing for now
+		$fontFamily = "http://fonts.googleapis.com/css?family=$heading_font|$body_font";
 
-		//we only need to output google fonts, because custom ones will only be loaded in custom_styles.php
-		if( $heading_font_type == "Google Font" && $body_font_type == "Google Font" ){
-
-			$fontFamily = "http://fonts.googleapis.com/css?family=$heading_font|$body_font";
-
-		} elseif( $heading_font_type == "Google Font" && $body_font_type != "Google Font" ) {
-
-			$fontFamily = "http://fonts.googleapis.com/css?family=$heading_font";
-
-		} elseif( $heading_font_type != "Google Font" && $body_font_type == "Google Font" ){
-
-			$fontFamily = "http://fonts.googleapis.com/css?family=$body_font";
-
-		}
-
-		//only add script if at least one is a Google Font
-		if( $heading_font_type == "Google Font" || $body_font_type == "Google Font" ){
-			wp_register_style( 'custom-fonts', $fontFamily, array(), '', 'all' );
-			wp_enqueue_style('custom-fonts');
-		}
+		//enqueue google font scripts
+		wp_register_style( 'custom-fonts', $fontFamily, array(), '', 'all' );
+		wp_enqueue_style('custom-fonts');
 
 	}
 

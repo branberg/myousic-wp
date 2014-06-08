@@ -56,27 +56,31 @@ function myousic_theme_customizer( $wp_customize ) {
 			g. Link color
 			h. Footer Background color
 			i. Footer text color
+		
+		5. Typography
+			a. Heading font
+			b. Body font
 
-		5. Music Embeds
+		6. Music Embeds
 			a. Embed background color
 			b. Embed title color
 			c. Embed text color
 			d. Embed button background color
 
-		6. News Sections
+		7. News Sections
 			a. Read more button background
 
-		7. Shows Sections
+		8. Shows Sections
 
-		8. Videos
+		9. Videos
 			a. Video background color
 			b. Video text color (title)
 
-		9. Photos Sections
+		10. Photos Sections
 
-		10. Text Sections
+		11. Text Sections
 
-		11. Contact Page
+		12. Contact Page
 
 	****************************************************/
 
@@ -457,9 +461,93 @@ function myousic_theme_customizer( $wp_customize ) {
 			)
 		);
 
+
 	/****************************************************
 
-	5. Music Embeds
+	5. Typography
+
+	****************************************************/
+	$wp_customize->add_section(
+		'typography',
+		array(
+			'title' => 'Typography',
+			'description' => '',
+			'priority' => 5,
+		)
+	);
+
+		/****************************************************
+		5a. Heading Font
+		****************************************************/
+		$wp_customize->add_setting(
+			'heading_font',
+			array(
+				'default' => 'Montserrat',
+			)
+		);
+		$wp_customize->add_control(
+			'heading_font',
+			array(
+				'type' => 'select',
+				'label' => 'Heading Font:',
+				'section' => 'typography',
+				'choices' => array(
+					'Lato' => 'Lato',
+					'Open Sans' => 'Open Sans',
+					'Montserrat' => 'Montserrat',
+					'Roboto' => 'Roboto',
+					'Source Sans Pro' => 'Source Sans Pro',
+					'Oswald' => 'Oswald',
+					'Quattrocento' => 'Quattrocento',
+					'Quattrocento Sans' => 'Quattrocento Sans',
+					'Josefin Slab' => 'Josefin Slab',
+					'Josefin Sans' => 'Josefin Sans',
+					'Arvo' => 'Arvo',
+					'Ubuntu' => 'Ubuntu',
+					'Droid Sans' => 'Droid Sans',
+					'Droid Serif' => 'Droid Serif',
+				),
+			)
+		);
+
+		/****************************************************
+		5b. Body Font
+		****************************************************/
+		$wp_customize->add_setting(
+			'body_font',
+			array(
+				'default' => 'Open Sans',
+			)
+		);
+		$wp_customize->add_control(
+			'body_font',
+			array(
+				'type' => 'select',
+				'label' => 'Body Font:',
+				'section' => 'typography',
+				'choices' => array(
+					'Lato' => 'Lato',
+					'Open Sans' => 'Open Sans',
+					'Montserrat' => 'Montserrat',
+					'Roboto' => 'Roboto',
+					'Source Sans Pro' => 'Source Sans Pro',
+					'Oswald' => 'Oswald',
+					'Quattrocento' => 'Quattrocento',
+					'Quattrocento Sans' => 'Quattrocento Sans',
+					'Josefin Slab' => 'Josefin Slab',
+					'Josefin Sans' => 'Josefin Sans',
+					'Arvo' => 'Arvo',
+					'Ubuntu' => 'Ubuntu',
+					'Droid Sans' => 'Droid Sans',
+					'Droid Serif' => 'Droid Serif',
+				),
+			)
+		);
+
+
+	/****************************************************
+
+	6. Music Embeds
 
 	****************************************************/
 	$wp_customize->add_section(
@@ -467,12 +555,12 @@ function myousic_theme_customizer( $wp_customize ) {
 		array(
 			'title' => 'Music Embeds',
 			'description' => 'Controls the style options for the music sections throughout the site',
-			'priority' => 5,
+			'priority' => 6,
 		)
 	);
 
 		/****************************************************
-		5a. Embed Background Color
+		6a. Embed Background Color
 		****************************************************/
 		$wp_customize->add_setting(
 			'embed_background_color',
@@ -495,7 +583,7 @@ function myousic_theme_customizer( $wp_customize ) {
 		);
 
 		/****************************************************
-		5b. Embed Title Color
+		6b. Embed Title Color
 		****************************************************/
 		$wp_customize->add_setting(
 			'embed_title_color',
@@ -518,7 +606,7 @@ function myousic_theme_customizer( $wp_customize ) {
 		);
 
 		/****************************************************
-		5c. Embed Text Color
+		6c. Embed Text Color
 		****************************************************/
 		$wp_customize->add_setting(
 			'embed_text_color',
@@ -541,7 +629,7 @@ function myousic_theme_customizer( $wp_customize ) {
 		);
 
 		/****************************************************
-		5d. Embed Button Background Color
+		6d. Embed Button Background Color
 		****************************************************/
 		$wp_customize->add_setting(
 			'embed_button_background_color',
@@ -565,7 +653,7 @@ function myousic_theme_customizer( $wp_customize ) {
 
 	/****************************************************
 
-	6. News Sections
+	7. News Sections
 
 	****************************************************/
 	$wp_customize->add_section(
@@ -573,7 +661,7 @@ function myousic_theme_customizer( $wp_customize ) {
 		array(
 			'title' => 'News Sections',
 			'description' => 'Controls the styles associated with news sections',
-			'priority' => 6,
+			'priority' => 7,
 		)
 	);
 

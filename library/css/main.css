@@ -324,11 +324,91 @@ BORDER RADIUS - Even
 /*********************
 TRIANGLES
 *********************/
+/****************************************************
+
+	THEME CUSTOMIZER OPTIONS
+
+	1. Logo
+		a. Logo Text Color
+
+	2. Header Image
+		a. Image Overlay Color
+		b. Image overlay opacity
+
+	3. Navigation
+
+	4. Colors
+		a. Menu Link Color
+		b. Menu link hover color
+		c. Dropdown menu background color
+		d. Website background color
+		e. Heading font color
+		f. Main text color
+		g. Link color
+		h. Footer Background color
+		i. Footer text color
+	
+	5. Typography
+		a. Heading font
+		b. Body font
+
+	6. Music Embeds
+		a. Embed background color
+		b. Embed title color
+		c. Embed text color
+		d. Embed button background color
+
+	7. News Sections
+		a. Read more button background
+
+	8. Shows Sections
+
+	9. Videos
+		a. Video background color
+		b. Video text color (title)
+
+	10. Photos Sections
+
+	11. Text Sections
+
+	12. Contact Page
+
+****************************************************/
 /*********************
-COLORS
+1. Logo
 *********************/
 /*********************
-TYPOGRAPHY
+2. Header Image
+*********************/
+/*********************
+3. Navigation
+*********************/
+/*********************
+4. Colors
+*********************/
+/*********************
+5. Typography
+*********************/
+/*********************
+6. Music Embeds
+*********************/
+/*********************
+7. News Sections
+*********************/
+/*********************
+8. Shows Sections
+*********************/
+/*********************
+9. Video Sections
+*********************/
+/*********************
+10. Photos Sections
+*********************/
+/*********************
+11. Text Sections
+*********************/
+/*********************
+12. Contact Sections
 *********************/
 /********************************************************************
 *** GLOBALS
@@ -337,11 +417,11 @@ html, body {
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 1em;
-  color: #9dabb3;
+  color: #444444;
   overflow-x: hidden; }
 
 a {
-  color: #9dabb3; }
+  color: #444444; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif;
@@ -349,14 +429,14 @@ h1, h2, h3, h4, h5, h6 {
 
 #site_wrap {
   position: relative;
-  background-color: #233743;
+  background-color: #00243b;
   -moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
   -o-box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); }
 
 #mobile_menu {
-  background-color: #233743;
+  background-color: #00243b;
   position: fixed;
   top: 0;
   right: 0;
@@ -398,8 +478,7 @@ h1, h2, h3, h4, h5, h6 {
 #mobile_header {
   height: 56px;
   width: 100%;
-  background-color: rgba(38, 60, 74, 0.8);
-  border-bottom: solid 1px #1f313d;
+  background-color: #00243b;
   position: fixed;
   top: 0;
   right: 0;
@@ -463,7 +542,6 @@ h1, h2, h3, h4, h5, h6 {
       font-family: "Montserrat", sans-serif;
       color: white;
       text-decoration: none;
-      text-shadow: 5px 5px 0 rgba(0, 36, 59, 0.5);
       font-size: 2em;
       text-align: left; }
       .site_header #logo_wrap #logo img {
@@ -482,8 +560,7 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 2em;
       text-transform: uppercase;
       color: white;
-      text-decoration: none;
-      text-shadow: 1px 1px 0 rgba(0, 36, 59, 0.5); }
+      text-decoration: none; }
     .site_header #page_title .back_to_blog {
       display: block;
       font-size: 16px;
@@ -499,7 +576,7 @@ body.home .site_header #logo_wrap {
     text-align: center; }
 
 .page_section {
-  background-color: #263c4a; }
+  background-color: white; }
   .page_section .section_header {
     text-align: center;
     text-transform: uppercase;
@@ -509,7 +586,7 @@ body.home .site_header #logo_wrap {
       font-size: 1.25rem;
       margin: 0; }
     .page_section .section_header, .page_section .section_header a {
-      color: #9dabb3; }
+      color: black; }
     .page_section .section_header a {
       text-decoration: none;
       position: relative;
@@ -538,7 +615,7 @@ body.home .site_header #logo_wrap {
 MUSIC/ALBUMS
 *************************************/
 .music_section .album {
-  background-color: #335062;
+  background-color: #212121;
   margin-bottom: 30px; }
   .music_section .album:last-child {
     margin-bottom: 0; }
@@ -548,63 +625,61 @@ MUSIC/ALBUMS
       display: block;
       width: 100% !important;
       height: 100% !important; }
-  .music_section .album .album_info_wrapper {
-    color: #9dabb3; }
-    .music_section .album .album_info_wrapper .album_info {
-      padding: 20px; }
-      .music_section .album .album_info_wrapper .album_info .album_type {
-        font-family: "Montserrat", sans-serif;
-        text-transform: uppercase;
-        font-size: 0.85rem;
+  .music_section .album .album_info_wrapper .album_info {
+    padding: 20px; }
+    .music_section .album .album_info_wrapper .album_info .album_type {
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      opacity: 0.7; }
+    .music_section .album .album_info_wrapper .album_info .album_title {
+      font-size: 1.625rem;
+      font-weight: 500;
+      margin: 10px 0;
+      color: #eeeeee; }
+    .music_section .album .album_info_wrapper .album_info .album_description {
+      color: #999999; }
+      .music_section .album .album_info_wrapper .album_info .album_description > :first-child {
+        margin-top: 0; }
+      .music_section .album .album_info_wrapper .album_info .album_description > :last-child {
+        margin-bottom: 0; }
+    .music_section .album .album_info_wrapper .album_info .album_button {
+      font-size: 1.25rem;
+      display: block;
+      margin: 20px 0 0 0;
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      background-color: white;
+      color: #212121;
+      text-decoration: none;
+      padding: 20px;
+      -webkit-transition: opacity 0.05s linear;
+      -ms-transition: opacity 0.05s linear;
+      -o-transition: opacity 0.05s linear;
+      -transition: opacity 0.05s linear;
+      transition: opacity 0.05s linear; }
+      .music_section .album .album_info_wrapper .album_info .album_button:hover {
         opacity: 0.7; }
-      .music_section .album .album_info_wrapper .album_info .album_title {
-        font-size: 1.625rem;
-        font-weight: 500;
-        margin: 10px 0;
-        color: white; }
-      .music_section .album .album_info_wrapper .album_info .album_description {
-        color: #9dabb3; }
-        .music_section .album .album_info_wrapper .album_info .album_description > :first-child {
-          margin-top: 0; }
-        .music_section .album .album_info_wrapper .album_info .album_description > :last-child {
-          margin-bottom: 0; }
-      .music_section .album .album_info_wrapper .album_info .album_button {
-        font-size: 1.25rem;
-        display: block;
-        margin: 20px 0 0 0;
-        font-family: "Montserrat", sans-serif;
-        text-transform: uppercase;
-        text-align: center;
-        background-color: #5c7381;
-        color: #263c4a;
-        text-decoration: none;
-        padding: 20px;
-        -webkit-transition: opacity 0.05s linear;
-        -ms-transition: opacity 0.05s linear;
-        -o-transition: opacity 0.05s linear;
-        -transition: opacity 0.05s linear;
-        transition: opacity 0.05s linear; }
-        .music_section .album .album_info_wrapper .album_info .album_button:hover {
-          opacity: 0.7; }
 
 /*************************************
 NEWS SECTION
 *************************************/
 .news_section .news_article_wrap {
   position: relative;
-  border-top: solid 2px #9dabb3;
+  border-top: solid 2px black;
   margin-bottom: 30px; }
   .news_section .news_article_wrap:last-child {
     margin-bottom: 0; }
   .news_section .news_article_wrap:before {
     content: "";
     position: absolute;
-    background-color: #263c4a;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#9dabb3), to(#263c4a));
-    background-image: -webkit-linear-gradient(top, #9dabb3, #263c4a);
-    background-image: -moz-linear-gradient(top, #9dabb3, #263c4a);
-    background-image: -o-linear-gradient(top, #9dabb3, #263c4a);
-    background-image: linear-gradient(to bottom, #9dabb3, #263c4a);
+    background-color: white;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(white));
+    background-image: -webkit-linear-gradient(top, black, white);
+    background-image: -moz-linear-gradient(top, black, white);
+    background-image: -o-linear-gradient(top, black, white);
+    background-image: linear-gradient(to bottom, black, white);
     z-index: 0;
     width: 100%;
     height: 100%;
@@ -613,7 +688,7 @@ NEWS SECTION
     position: relative;
     z-index: 10;
     margin: 0 2px;
-    background-color: #263c4a;
+    background-color: white;
     padding: 20px; }
     .news_section .news_article_wrap .news_article header.article_header {
       margin-bottom: 20px; }
@@ -636,7 +711,7 @@ NEWS SECTION
       display: block;
       padding: 10px 20px;
       text-decoration: none;
-      border: solid 1px #263c4a;
+      border: solid 1px #444444;
       text-align: center;
       margin-top: 20px;
       font-size: 18px;
@@ -660,7 +735,7 @@ NEWS SECTION
           padding: 0 10px;
           font-size: 24px; }
           .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li a:hover {
-            color: white; }
+            color: #444444; }
       .news_section .news_article_wrap .news_article footer.article_footer ul.share_links li.share_label {
         font-size: 20px;
         margin-right: 18px;
@@ -673,16 +748,16 @@ NEWS SECTION
 .news_section .news_article_wrap.sticky {
   border-top: solid 2px #fbb03b; }
   .news_section .news_article_wrap.sticky:before {
-    background-color: #263c4a;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#fbb03b), to(#263c4a));
-    background-image: -webkit-linear-gradient(top, #fbb03b, #263c4a);
-    background-image: -moz-linear-gradient(top, #fbb03b, #263c4a);
-    background-image: -o-linear-gradient(top, #fbb03b, #263c4a);
-    background-image: linear-gradient(to bottom, #fbb03b, #263c4a); }
+    background-color: white;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fbb03b), to(white));
+    background-image: -webkit-linear-gradient(top, #fbb03b, white);
+    background-image: -moz-linear-gradient(top, #fbb03b, white);
+    background-image: -o-linear-gradient(top, #fbb03b, white);
+    background-image: linear-gradient(to bottom, #fbb03b, white); }
   .news_section .news_article_wrap.sticky .sticky_post_header {
     position: relative;
     display: block;
-    color: #263c4a;
+    color: white;
     padding: 10px;
     text-align: center; }
   .news_section .news_article_wrap.sticky .news_article {
@@ -696,14 +771,14 @@ NEWS SECTION
       height: 40px;
       line-height: 40px;
       text-align: center;
-      color: #263c4a;
+      color: #444444;
       background-color: #fbb03b; }
 .news_section ul.post_meta {
   font-weight: 300;
   padding: 10px 0;
   margin: 0 0 20px 0;
-  border-top: dashed 1px #345265;
-  border-bottom: dashed 1px #345265;
+  border-top: dashed 1px #444444;
+  border-bottom: dashed 1px #444444;
   display: block;
   clear: both; }
   .news_section ul.post_meta li {
@@ -761,11 +836,12 @@ nav#pagination {
     nav#pagination .nav_next a {
       display: block;
       text-decoration: none;
-      background-color: #1d2e39;
+      background-color: #444444;
+      color: white;
       padding: 10px; }
       nav#pagination .nav_previous a:hover,
       nav#pagination .nav_next a:hover {
-        background-color: #152128; }
+        opacity: 0.7; }
   nav#pagination .nav_next {
     float: right; }
 
@@ -776,7 +852,7 @@ COMMENTS
   margin: 0;
   padding: 0; }
   #comments .comment-list > .comment {
-    background: #1d2e39;
+    background: white;
     margin-bottom: 30px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -786,7 +862,8 @@ COMMENTS
     list-style: none; }
     #comments .comment-list .comment .comment-body .comment-meta {
       overflow: hidden;
-      background: #1a2932;
+      background: #444444;
+      color: white;
       padding: 20px;
       -moz-border-radius: 6px 6px 0 0;
       -webkit-border-radius: 6px 6px 0 0;
@@ -821,7 +898,6 @@ COMMENTS
         margin-top: 20px;
         font-size: 14px; }
         #comments .comment-list .comment .comment-body .comment-meta .comment-metadata a {
-          color: #2f4a5b;
           text-decoration: none; }
           #comments .comment-list .comment .comment-body .comment-meta .comment-metadata a:hover {
             text-decoration: underline; }
@@ -839,30 +915,31 @@ COMMENTS
         text-decoration: none;
         padding: 4px 8px;
         margin: 0 0 20px 20px;
-        background-color: #18262f;
+        background-color: #444444;
+        color: white;
         -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
         -o-border-radius: 3px;
         border-radius: 3px; }
         #comments .comment-list .comment .comment-body .reply a.comment-reply-link:hover {
-          background-color: #0c1317; }
+          opacity: 0.7; }
     #comments .comment-list .comment .children {
       padding: 0 0 20px 0px; }
       #comments .comment-list .comment .children li {
-        border: solid 2px #1a2932;
+        border: solid 2px #444444;
         -moz-border-radius: 6px;
         -webkit-border-radius: 6px;
         -o-border-radius: 6px;
         border-radius: 6px;
         margin: 20px 20px 0 20px; }
 #comments #respond {
-  border-top: dashed 2px #37576c; }
+  border-top: dashed 2px #444444; }
   #comments #respond form .logged-in-as a {
     text-decoration: none; }
     #comments #respond form .logged-in-as a:hover {
       text-decoration: underline; }
   #comments #respond form .comment-form-comment {
-    background-color: #1d2e39;
+    background-color: white;
     padding: 20px;
     margin: 0;
     -moz-border-radius: 6px 6px 0 0;
@@ -874,19 +951,16 @@ COMMENTS
       display: block; }
     #comments #respond form .comment-form-comment textarea {
       display: block;
-      background: #263c4a;
+      background: white;
       border: none;
       width: 100%;
       outline: none;
       padding: 20px;
-      color: white; }
-      #comments #respond form .comment-form-comment textarea:focus {
-        background-color: #283f4d; }
+      color: #444444; }
   #comments #respond form .form-allowed-tags {
-    background-color: #1d2e39;
     margin: 0;
     padding: 0 20px 20px 20px;
-    color: #2f4a5b;
+    color: #444444;
     font-size: 14px;
     -moz-border-radius: 0 0 6px 6px;
     -webkit-border-radius: 0 0 6px 6px;
@@ -894,9 +968,9 @@ COMMENTS
     border-radius: 0 0 6px 6px; }
   #comments #respond form .form-submit #submit {
     display: inline-block;
-    background-color: #1d2e39;
+    background-color: #444444;
     border: none;
-    color: #9dabb3;
+    color: white;
     padding: 20px 30px;
     font-size: 1.4em;
     -moz-border-radius: 6px;
@@ -904,7 +978,7 @@ COMMENTS
     -o-border-radius: 6px;
     border-radius: 6px; }
     #comments #respond form .form-submit #submit:hover {
-      background-color: #1a2932; }
+      opacity: 0.7; }
 
 /*************************************
 SHOWS - BANDSINTOWN
@@ -926,7 +1000,7 @@ td.bit-venue {
   font-family: "Open Sans", sans-serif; }
 
 #bit-events td .bit-uiButton {
-  background-color: #263c4a;
+  background-color: white;
   background-image: none; }
 
 /*************************************
@@ -941,9 +1015,9 @@ table.tour_dates {
   font-weight: 300;
   border-collapse: separate; }
   table.tour_dates tr:first-child td {
-    border-top: solid 2px rgba(157, 171, 179, 0.3); }
+    border-top: solid 2px #444444; }
   table.tour_dates tr td {
-    border-bottom: solid 2px rgba(157, 171, 179, 0.3); }
+    border-bottom: solid 2px #444444; }
   table.tour_dates tr td {
     font-size: 12px; }
     table.tour_dates tr td .cell_wrap {
@@ -974,7 +1048,7 @@ table.tour_dates {
     text-align: right; }
     table.tour_dates tr td.info a:hover {
       text-decoration: none;
-      color: #bac4c9; }
+      opacity: 0.7; }
 
 /*************************************
 VIDEOS
@@ -984,6 +1058,8 @@ VIDEOS
   padding: 40px 0; }
   .videos_section .section_header {
     margin: 0 0 40px 0; }
+    .videos_section .section_header a {
+      color: white; }
   .videos_section .video_embed {
     padding: 0; }
 
@@ -1027,9 +1103,9 @@ TEXT SECTION
 FOOTER
 *************************************/
 .site_footer {
-  color: #5c7381;
+  color: #999999;
   padding: 40px 0;
-  background-color: #1d2d38; }
+  background-color: #333333; }
   .site_footer .credits {
     font-family: "Montserrat", sans-serif;
     text-align: center;
@@ -1045,7 +1121,7 @@ FOOTER
   font-family: "Montserrat", sans-serif; }
   .mailing_list .mailing_list_title, .mailing_list form {
     display: block;
-    color: #5c7381; }
+    color: #999999; }
   .mailing_list .mailing_list_title {
     text-transform: uppercase;
     font-size: 1.4em;
@@ -1054,7 +1130,7 @@ FOOTER
     font-size: 18px;
     overflow: hidden; }
     .mailing_list form input {
-      border: solid 2px #5c7381;
+      border: solid 2px #999999;
       display: block;
       padding: 15px;
       outline: none; }
@@ -1062,11 +1138,11 @@ FOOTER
       width: 100%;
       background: none;
       margin-bottom: 10px;
-      color: #5c7381; }
+      color: #999999; }
     .mailing_list form input[type="submit"] {
       text-transform: uppercase;
-      background-color: #5c7381;
-      color: #1d2d38;
+      background-color: #999999;
+      color: #333333;
       width: 100%; }
       .mailing_list form input[type="submit"]:hover {
         opacity: 0.7; }
@@ -1140,7 +1216,7 @@ form.contact_form label {
   margin-bottom: 10px; }
 form.contact_form input, form.contact_form textarea {
   display: block;
-  border: solid 2px #5c7381;
+  border: solid 2px #999999;
   background: none;
   font-size: 1.5em;
   padding: 20px;
@@ -1151,8 +1227,8 @@ form.contact_form textarea {
   resize: none; }
 form.contact_form input[type="submit"] {
   font-family: "Montserrat", sans-serif;
-  background-color: #5c7381;
-  color: #263c4a;
+  background-color: #999999;
+  color: #444444;
   padding: 20px 30px;
   border: none;
   -webkit-transition: opacity 0.05s linear;
@@ -1164,7 +1240,7 @@ form.contact_form input[type="submit"] {
     opacity: 0.7; }
 
 p.alert {
-  color: #263c4a;
+  color: #444444;
   text-align: center;
   padding: 6px;
   font-size: 1.1em;
@@ -1311,7 +1387,6 @@ p.alert {
       max-width: 22%; }
       .site_header #logo_wrap #logo {
         font-size: 1.6em;
-        text-shadow: 0 0 4px rgba(0, 36, 59, 0.5);
         -webkit-backface-visibility: hidden;
         -webkit-transition: opacity 0.15s linear;
         -ms-transition: opacity 0.15s linear;
@@ -1368,7 +1443,7 @@ p.alert {
             .site_header #header_nav ul li ul.sub-menu li:last-child a {
               padding-bottom: 28px; }
           .site_header #header_nav ul li a {
-            color: #aaaaaa;
+            color: white;
             display: inline-block;
             text-decoration: none;
             padding: 10px 16px;
@@ -1381,15 +1456,14 @@ p.alert {
             transition: color 0.15s linear; }
         .site_header #header_nav ul li.current-menu-item > a,
         .site_header #header_nav ul li a:hover {
-          color: #ffffff; }
+          color: #ba4343; }
         .site_header #header_nav ul li:hover ul.sub-menu {
           display: block; }
     .site_header #page_title {
       padding: 80px 0 300px 0;
       clear: both; }
       .site_header #page_title h1 {
-        font-size: 2em;
-        text-shadow: 3px 3px 0 rgba(0, 36, 59, 0.5); }
+        font-size: 2em; }
 
   body.home .site_header #logo_wrap {
     padding: 200px 0;
@@ -1491,7 +1565,7 @@ p.alert {
         font-size: 28px; }
       table.tour_dates tr td.date .cell_wrap:after {
         content: "";
-        border-right: solid 2px rgba(157, 171, 179, 0.3);
+        border-right: solid 2px #444444;
         width: 1px;
         position: absolute;
         right: 0;
@@ -1558,7 +1632,7 @@ p.alert {
     margin-top: -200px;
     padding: 0 0 40px 0;
     z-index: 100;
-    background-color: #263c4a;
+    background-color: white;
     min-height: 400px; }
 
   #page_content.content_padding > .wrap {
@@ -1574,7 +1648,7 @@ p.alert {
   SHOWS PAGE
   *************************************/
   #page_content.shows_section > .wrap {
-    background-color: #263c4a; }
+    background-color: white; }
 
   /*************************************
   VIDEOS PAGE

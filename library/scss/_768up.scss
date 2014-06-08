@@ -47,7 +47,6 @@ h1, h2, h3, h4, h5, h6{
 		#logo{
 
 			font-size: 1.6em;
-			text-shadow: 0 0 4px $logoShadow;
 
 			-webkit-backface-visibility: hidden; //to fix the Chrome moving bug on transition hover
 			@include transition(opacity 0.15s linear);
@@ -68,10 +67,10 @@ h1, h2, h3, h4, h5, h6{
 
 		float: right;
 		display: block;
-		font-family: $montserrat;
+		font-family: $headingFont;
 		font-size: 1em;
 		text-transform: uppercase;
-		color: $white;
+		color: $menuLink;
 		font-weight: 500;
 		max-width: 75%;
 
@@ -108,7 +107,7 @@ h1, h2, h3, h4, h5, h6{
 
 					li{
 
-						background-color: #333333;
+						background-color: $dropdownMenuBackground;
 						display: block;
 						text-align: center;
 
@@ -126,7 +125,7 @@ h1, h2, h3, h4, h5, h6{
 
 				a{
 
-					color: #aaaaaa;
+					color: $menuLink;
 					display: inline-block;
 					text-decoration: none;
 					padding: 10px 16px;
@@ -139,7 +138,7 @@ h1, h2, h3, h4, h5, h6{
 			}
 			li.current-menu-item > a,
 			li a:hover{
-				color: #ffffff;
+				color: $menuLinkHover;
 			}
 			li:hover ul.sub-menu{
 				display: block;
@@ -156,7 +155,6 @@ h1, h2, h3, h4, h5, h6{
 
 		h1{
 			font-size: 2em;
-			text-shadow: 3px 3px 0 $logoShadow;
 		}
 
 		.back_to_blog{
@@ -528,7 +526,7 @@ table.tour_dates{
 
 				&:after{
 					content: "";
-					border-right: solid 2px transparentize($textColor, 0.7);
+					border-right: solid 2px $mainTextColor;
 					width: 1px;
 					position: absolute;
 					right: 0;
@@ -800,7 +798,7 @@ PAGE STYLES
 	margin-top: -200px;
 	padding: 0 0 40px 0;
 	z-index: 100;
-	background-color: $accent;
+	background-color: $websiteBackgroundColor;
 	min-height: 400px;
 }
 #page_content.content_padding > .wrap{
@@ -819,7 +817,7 @@ NEWS PAGE
 SHOWS PAGE
 *************************************/
 #page_content.shows_section > .wrap{
-	background-color: $accent;
+	background-color: $websiteBackgroundColor;
 }
 
 /*************************************
