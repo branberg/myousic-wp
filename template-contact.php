@@ -26,8 +26,11 @@ $email_invalid   = "Email Address Invalid.";
 $message_unsent  = "Message was not sent. Try Again.";
 $message_sent    = "Thanks! Your message has been sent.";
 
+//set this so we don't get error in theme customizer panel
+global $wp_customize;
+
 //user posted variables
-if( !empty($_POST) ){
+if( (!empty($_POST)) && (!isset( $wp_customize )) ){
 
 	$name = $_POST['message_name'];
 	$email = $_POST['message_email'];
@@ -90,19 +93,19 @@ if( !empty($_POST) ){
 				<ul>
 					<li class="half">
 						<label for="message_name">Name</label>
-						<input name="message_name" type="text" placeholder="Johnny Depp" value="<?php echo( !empty($_POST) ? esc_attr($_POST['message_name']) : '' ); ?>" required />
+						<input name="message_name" type="text" placeholder="Johnny Depp" value="<?php echo( (!empty($_POST) && !isset( $wp_customize )) ? esc_attr($_POST['message_name']) : '' ); ?>" required />
 					</li>
 					<li class="half last">
 						<label for="message_email">Email</label>
-						<input name="message_email" type="email" placeholder="itdeppends@gmail.com" value="<?php echo( !empty($_POST) ? esc_attr($_POST['message_email']) : '' ); ?>" required />
+						<input name="message_email" type="email" placeholder="itdeppends@gmail.com" value="<?php echo( (!empty($_POST) && !isset( $wp_customize )) ? esc_attr($_POST['message_email']) : '' ); ?>" required />
 					</li>
 					<li class="full">
 						<label for="message_text">Message</label>
-						<textarea name="message_text" type="text" placeholder="I like movies, pirates, and windows nobody else knows about. I still don’t know who/what is eating Gilbert’s grapes."><?php echo( !empty($_POST) ? esc_attr($_POST['message_text']) : '' ); ?></textarea>
+						<textarea name="message_text" type="text" placeholder="I like movies, pirates, and windows nobody else knows about. I still don’t know who/what is eating Gilbert’s grapes."><?php echo( (!empty($_POST) && !isset( $wp_customize )) ? esc_attr($_POST['message_text']) : '' ); ?></textarea>
 					</li>
 					<li class="full hidden">
 						<label for="message_human">Human - What is 2 + 7?</label>
-						<input name="message_human" type="text" placeholder="Enter answer here..." value="<?php echo( !empty($_POST) ? esc_attr($_POST['message_human']) : '' ); ?>" required />
+						<input name="message_human" type="text" placeholder="Enter answer here..." value="<?php echo( (!empty($_POST) && !isset( $wp_customize )) ? esc_attr($_POST['message_human']) : '' ); ?>" required />
 					</li>
 					<input type="hidden" name="submitted" value="1">
 					<li class="full">

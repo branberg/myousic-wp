@@ -21,9 +21,6 @@ h1, h2, h3, h4, h5, h6{
 	font-weight: 500;
 }
 
-::selection { background: $selectionColor; }
-::-moz-selection { background: $selectionColor; }
-
 #site_wrap{
 	position: relative;
 	background-color: darken($accent, 2%);
@@ -498,13 +495,14 @@ NEWS SECTION
 				display: block;
 				padding: 10px 20px;
 				text-decoration: none;
-				background-color: darken($accent, 5%);
+				border: solid 1px $accent;
 				text-align: center;
 				margin-top: 20px;
 				font-size: 18px;
+				@include rounded(6px);
 
 				&:hover{
-					background-color: darken($accent, 10%);
+					opacity: 0.7;
 				}
 
 			}
@@ -1366,7 +1364,7 @@ CONTACT STYLES
 }
 form.contact_form{
 
-	color: $footerText;
+	//color: $footerText;
 
 	ul{
 
@@ -1406,7 +1404,6 @@ form.contact_form{
 		font-size: 1.5em;
 		padding: 20px;
 		outline: none;
-		color: $textColor;
 		width: 100%;
 	}
 	textarea{
@@ -1426,19 +1423,13 @@ form.contact_form{
 		color: $accent;
 		padding: 20px 30px;
 		border: none;
-		@include transition(background-color 0.05s linear);
+		@include transition(opacity 0.05s linear);
 
 		&:hover{
-			background-color: lighten($footerText, 10%);
+			opacity: 0.7;
 		}
 
 	}
-
-	::-webkit-input-placeholder { color: $footerText; }
-	:-moz-placeholder { color: $footerText; }
-	::-moz-placeholder { color: $footerText; }
-	:-ms-input-placeholder { color: $footerText; }
-	label.placeholder{ color: $footerText; }
 
 }
 

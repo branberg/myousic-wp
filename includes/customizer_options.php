@@ -63,9 +63,20 @@ function myousic_theme_customizer( $wp_customize ) {
 			c. Embed text color
 			d. Embed button background color
 
-		6. Videos
+		6. News Sections
+			a. Read more button background
+
+		7. Shows Sections
+
+		8. Videos
 			a. Video background color
 			b. Video text color (title)
+
+		9. Photos Sections
+
+		10. Text Sections
+
+		11. Contact Page
 
 	****************************************************/
 
@@ -551,6 +562,20 @@ function myousic_theme_customizer( $wp_customize ) {
 				)
 			)
 		);
+
+	/****************************************************
+
+	6. News Sections
+
+	****************************************************/
+	$wp_customize->add_section(
+		'news_sections',
+		array(
+			'title' => 'News Sections',
+			'description' => 'Controls the styles associated with news sections',
+			'priority' => 6,
+		)
+	);
 
 
 
