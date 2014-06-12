@@ -42,7 +42,7 @@
 			</div>
 			<span id="mobile_site_title">Fox &amp; Coyote</span>
 		</div>
-		<header id="main_header" class="site_header" style="background-image: url('<?php header_image(); ?>');">
+		<header id="main_header" class="site_header">
 			<div id="header_overlay_color"></div>
 			<div class="wrap">
 				<div id="logo_wrap">

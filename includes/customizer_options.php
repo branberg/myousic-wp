@@ -56,7 +56,7 @@ function myousic_theme_customizer( $wp_customize ) {
 			g. Link color
 			h. Footer Background color
 			i. Footer text color
-		
+
 		5. Typography
 			a. Heading font
 			b. Body font
@@ -178,16 +178,36 @@ function myousic_theme_customizer( $wp_customize ) {
 	2. Header Image
 
 	****************************************************/
-	//Section already exists by default... No need to define it
-	// Let's change the title though
-	$wp_customize->get_section('header_image')->title = __( 'Header Image' );
-	//and reprioritize it
-	$wp_customize->get_section('header_image')->priority = 2;
+	$wp_customize->add_section(
+		'header_image_settings',
+		array(
+			'title' => 'Header Image',
+			'description' => 'Change the image, overlay color and overlay opacity.',
+			'priority' => 2,
+		)
+	);
 
 		/****************************************************
 		2a. Default Header Image fields
 		****************************************************/
-		//Added by Wordpress, no options for it.
+		$wp_customize->add_setting(
+			'custom_header_image',
+			array(
+				'default' => get_stylesheet_directory_uri() . '/library/img/header_background.jpg'
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				'custom_header_image',
+				array(
+					'label' => 'Header Image',
+					'section' => 'header_image_settings',
+					'settings' => 'custom_header_image',
+					'priority' => 1
+				)
+			)
+		);
 
 		/****************************************************
 		2b. Header Image Overlay Color
@@ -205,9 +225,9 @@ function myousic_theme_customizer( $wp_customize ) {
 				'header_image_overlay_color',
 				array(
 					'label' => 'Header Image Overlay Color',
-					'section' => 'header_image',
+					'section' => 'header_image_settings',
 					'settings' => 'header_image_overlay_color',
-					'priority' => 1
+					'priority' => 2
 				)
 			)
 		);
@@ -228,9 +248,9 @@ function myousic_theme_customizer( $wp_customize ) {
 				'header_image_overlay_opacity',
 				array(
 					'label' => 'Header Image Overlay Opacity',
-					'section' => 'header_image',
+					'section' => 'header_image_settings',
 					'settings' => 'header_image_overlay_opacity',
-					'priority' => 2
+					'priority' => 3
 				)
 			)
 		);

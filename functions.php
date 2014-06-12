@@ -28,22 +28,6 @@ WORDPRESS CUSTOMIZER OPTIONS
 *********************************************************************************************************/
 include_once( 'includes/customizer_options.php' );
 
-$defaults = array(
-	'default-image'          => get_template_directory_uri() . '/library/img/header_background.jpg',
-	'random-default'         => false,
-	'flex-height'            => true,
-	'height'				 => 600,
-	'flex-width'             => true,
-	'width'					 => 1920,
-	'default-text-color'     => '#fff',
-	'header-text'            => true,
-	'uploads'                => true,
-	'wp-head-callback'       => '',
-	'admin-head-callback'    => '',
-	'admin-preview-callback' => '',
-);
-add_theme_support( 'custom-header', $defaults );
-
 
 /*********************************************************************************************************
 ADD SUB-OPTIONS PAGES
