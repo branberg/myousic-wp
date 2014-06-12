@@ -32,9 +32,9 @@ $defaults = array(
 	'default-image'          => get_template_directory_uri() . '/library/img/header_background.jpg',
 	'random-default'         => false,
 	'flex-height'            => true,
-	'height'				 => 1920,
+	'height'				 => 600,
 	'flex-width'             => true,
-	'width'					 => 400,
+	'width'					 => 1920,
 	'default-text-color'     => '#fff',
 	'header-text'            => true,
 	'uploads'                => true,
@@ -287,7 +287,7 @@ function the_excerpt_max_charlength($charlength) {
 Custom style for the wordpress editor
 *********************************************************************************************************/
 function boombox_add_editor_styles() {
-    add_editor_style( get_template_directory_uri() . '/library/css/custom-editor-style.css' );
+    add_editor_style( get_template_directory_uri() . '/library/css/custom-editor-styles.css' );
 }
 add_action( 'init', 'boombox_add_editor_styles' );
 

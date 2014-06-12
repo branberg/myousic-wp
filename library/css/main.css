@@ -1597,10 +1597,13 @@ p.alert {
     width: 25%; }
 
   /*************************************
-  PHOTOS SECTION
+  TEXT SECTION
   *************************************/
   .text_section .text_content {
     font-size: 1.6em; }
+
+  #page_content .text_content {
+    padding: 40px; }
 
   /*************************************
   FOOTER

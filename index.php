@@ -17,8 +17,6 @@
 
 				?>
 
-				
-
 				<?php endwhile; ?>
 
 				<nav id="pagination">
