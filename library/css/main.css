@@ -1047,6 +1047,8 @@ table.tour_dates {
     display: none; }
   table.tour_dates tr td.info {
     text-align: right; }
+    table.tour_dates tr td.info a {
+      text-decoration: none; }
     table.tour_dates tr td.info a:hover {
       text-decoration: none;
       opacity: 0.7; }

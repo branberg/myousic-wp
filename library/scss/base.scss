@@ -1081,6 +1081,9 @@ table.tour_dates{
 
 			text-align: right;
 
+			a{
+				text-decoration: none;
+			}
 			a:hover{
 				text-decoration: none;
 				opacity: 0.7;

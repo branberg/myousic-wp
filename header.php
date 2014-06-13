@@ -38,7 +38,7 @@
 
 		<div id="mobile_header">
 			<div id="mobile_menu_toggle">
-				<i class="icon-bars"></i>
+				<i class="icon-menu"></i>
 			</div>
 			<span id="mobile_site_title">Fox &amp; Coyote</span>
 		</div>

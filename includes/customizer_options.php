@@ -190,12 +190,7 @@ function myousic_theme_customizer( $wp_customize ) {
 		/****************************************************
 		2a. Default Header Image fields
 		****************************************************/
-		$wp_customize->add_setting(
-			'custom_header_image',
-			array(
-				'default' => get_stylesheet_directory_uri() . '/library/img/header_background.jpg'
-			)
-		);
+		$wp_customize->add_setting( 'custom_header_image' );
 		$wp_customize->add_control(
 			new WP_Customize_Image_Control(
 				$wp_customize,
