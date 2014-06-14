@@ -75,6 +75,10 @@
 
 							<h1>NEWS</h1>
 
+						<?php elseif( is_singular('shows') ): ?>
+
+							<h1>Shows</h1>
+
 						<?php elseif( is_single() ): ?>
 
 							<?php $posts_page = get_option('page_for_posts'); $posts_page = get_permalink($posts_page); ?>
