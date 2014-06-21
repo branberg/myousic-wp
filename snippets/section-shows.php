@@ -13,18 +13,22 @@
 					$d = substr( $date, 6, 2 );
 					$time = strtotime( "{$y}-{$m}-{$d}" ); //restring into php < 5.3 friendly values
 
+					//location
+					$location = get_field('location');
+
 					//venue
 					$venue = get_field( 'venue' );
 					$venue_link = get_field( 'venue_link' );
-
-					//city
-					$city = get_field( 'city' );
 
 					//Ticket Link
 					$ticket_link = get_field( 'buy_ticket_link' );
 
 					//RSVP Link
 					$rsvp_link = get_field( 'rsvp_link' );
+
+					//URL safe site name...In case someone is using an ampersand ( & ) in their site name.
+					$safe_name = get_bloginfo('name');
+					$safe_name = str_replace( '&amp;', '%26', $safe_name );
 
 				?>
 
@@ -37,10 +41,15 @@
 					</td>
 					<td class="location">
 						<div class="cell_wrap">
-							<a href="<?php echo $venue_link; ?>">
+							<?php if($venue_link): ?>
+								<a href="<?php echo $venue_link; ?>">
+									<span class="venue"><?php echo $venue; ?></span>
+									<span class="location"><?php echo $location; ?></span>
+								</a>
+							<?php else: ?>
 								<span class="venue"><?php echo $venue; ?></span>
-								<span class="city"><?php echo $city; ?></span>
-							</a>
+								<span class="location"><?php echo $location; ?></span>
+							<?php endif; ?>
 						</div>
 					</td>
 					<td class="tickets">
@@ -48,14 +57,20 @@
 							<a href="<?php echo $ticket_link; ?>">Buy Tickets</a>
 						</div>
 					</td>
-					<td class="rsvp">
+					<td class="social_share">
 						<div class="cell_wrap">
-							<a href="<?php echo $rsvp_link; ?>">RSVP</a>
-						</div>
-					</td>
-					<td class="info">
-						<div class="cell_wrap">
-							<a href="<?php the_permalink(); ?>"><i class="icon-info-circle"></i></a>
+							<ul>
+								<li class="facebook_share">
+									<a href="http://www.facebook.com/sharer/sharer.php" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" title="Share this show on Facebook">
+										<i class="icon-facebook"></i>
+									</a>
+								</li>
+								<li class="twitter_share">
+									<a href="http://twitter.com/share?text=<?php echo $safe_name ?> is playing a show on <?php echo date( 'M d', $time ); ?> at <?php echo $venue ?>" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" title="Share this show on Twitter">
+										<i class="icon-twitter"></i>
+									</a>
+								</li>
+							</ul>
 						</div>
 					</td>
 				</tr>

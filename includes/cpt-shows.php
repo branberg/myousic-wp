@@ -21,7 +21,7 @@ function myousic_cpt_shows() {
 		'label'               => __( 'shows', 'text_domain' ),
 		'description'         => __( 'A collection of shows', 'text_domain' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', ),
+		'supports'            => array( '' ), //wow, much custom, many fields
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
@@ -33,7 +33,7 @@ function myousic_cpt_shows() {
 		'can_export'          => true,
 		'has_archive'         => false,
 		'exclude_from_search' => true,
-		'publicly_queryable'  => true,
+		'publicly_queryable'  => false,
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'shows', $args );

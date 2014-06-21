@@ -3,40 +3,40 @@
 *********************************************************************/
 html, body{
 
-	
+
 
 }
 
 a{
-	
+
 }
 
 h1, h2, h3, h4, h5, h6{
-	
+
 }
 
 #site_wrap{
-	
+
 }
 
 #mobile_menu{
 
-	
+
 
 	ul{
 
-		
+
 
 		li{
 
-			
+
 
 			a{
-				
+
 			}
 
 			ul{
-				
+
 			}
 
 		}
@@ -47,45 +47,45 @@ h1, h2, h3, h4, h5, h6{
 
 #mobile_header{
 
-	
+
 
 	#mobile_menu_toggle{
 
-		
+
 
 		svg{
-			
+
 		}
 
 	}
 
 	#mobile_site_title{
-		
+
 	}
 
 }
 
 .site_header{
 
-	
+
 
 	#header_overlay_color{
-		
+
 	}
 
 	.wrap{
-		
+
 	}
 
-	
+
 	#logo_wrap{
 
 		#logo{
 
-			
+
 
 			img{
-				
+
 			}
 
 		}
@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6{
 
 	}
 
-	
+
 
 }
 
@@ -110,7 +110,7 @@ body.home{
 
 		#logo_wrap{
 
-			
+
 			#logo{
 
 				font-size: 3em;
@@ -145,26 +145,26 @@ body.home{
 
 .page_section{
 
-	
+
 
 	.wrap{}
 
 	.section_header{
 
-		
+
 
 		h2{
-			
+
 		}
 		&, a{
-			
+
 		}
 		a{
 
-			
+
 
 			&:after{
-				
+
 			}
 
 		}
@@ -187,13 +187,13 @@ MUSIC/ALBUMS
 		margin-bottom: 40px;
 
 		&:last-child{
-			
+
 		}
 
 		.soundcloud_embed{
 
 			iframe{
-				
+
 			}
 
 		}
@@ -203,10 +203,10 @@ MUSIC/ALBUMS
 			.album_info{
 
 				.album_type{
-					
+
 				}
 				.album_title{
-					
+
 				}
 				.album_description{
 
@@ -218,7 +218,7 @@ MUSIC/ALBUMS
 
 				}
 				.album_button{
-					
+
 				}
 
 			}
@@ -243,55 +243,55 @@ NEWS SECTION
 		margin-bottom: 40px;
 
 		&:last-child{
-			
+
 		}
 
-		
+
 
 		&:before{
-			
+
 		}
 
 		.news_article{
 
-			
+
 
 			header.article_header{
 
-				
+
 
 				h3{
 
-					
+
 
 					a{
-						
+
 					}
 
 				}
 
 				span.article_date{
-					
+
 				}
 
 			}
 
 			.article_excerpt{
 
-				
+
 
 				p{
-					
+
 				}
 
 			}
 
 			a.read_more_link{
 
-				
+
 
 				&:hover{
-					
+
 				}
 
 			}
@@ -302,18 +302,18 @@ NEWS SECTION
 
 				ul.share_links{
 
-					
+
 
 					li{
 
-						
+
 
 						a{
 
-							
+
 
 							&:hover{
-								
+
 							}
 
 							i{
@@ -324,13 +324,13 @@ NEWS SECTION
 
 					}
 					li.share_label{
-						
+
 					}
 					li.twitter:hover a{
-						
+
 					}
 					li.facebook:hover a{
-						
+
 					}
 
 				}
@@ -343,10 +343,10 @@ NEWS SECTION
 
 	ul.post_meta{
 
-		
+
 
 		li{
-			
+
 
 			&:first-child{}
 			&:last-child{}
@@ -354,21 +354,21 @@ NEWS SECTION
 		}
 
 		a{
-			
+
 
 			&:hover{
-				
+
 			}
 
 		}
 
 		i{
-			
+
 		}
 
 		li.author{
 
-			
+
 
 		}
 
@@ -378,7 +378,7 @@ NEWS SECTION
 
 nav#pagination{
 
-	
+
 
 	.nav_previous,
 	.nav_next{
@@ -391,7 +391,7 @@ nav#pagination{
 			@include rounded(4px);
 
 			&:hover{
-				
+
 			}
 
 		}
@@ -412,7 +412,7 @@ SHOWS - CUSTOM
 *************************************/
 .shows_section{
 
-	
+
 
 }
 table.tour_dates{
@@ -420,21 +420,21 @@ table.tour_dates{
 	tr{
 
 		td{
-			
+
 		}
 
 		td.date{
 
-			
+
 
 			.month, .day{
-				
+
 			}
 			.month{
-				
+
 			}
 			.day{
-				
+
 			}
 
 			/*&:after{
@@ -450,26 +450,26 @@ table.tour_dates{
 		}
 		td.location{
 
-			
+
 
 			a{
-				
+
 			}
 
-			.venue, .city{
-				
+			.venue, .location{
+
 			}
 			.venue{
 
 			}
-			.city{
+			.location{
 
 			}
 
 		}
 		td.tickets{
 
-			
+
 
 		}
 		td.rsvp{
@@ -487,10 +487,10 @@ SHOWS - BANDSINTOWN
 .bit-widget-container{
 
 	th, td{
-		
+
 	}
 	th{
-		
+
 	}
 
 }
@@ -498,10 +498,10 @@ td.bit-description-links{
 
 }
 td.bit-date{
-	
+
 }
 td.bit-venue{
-	
+
 }
 td.bit-location{
 
@@ -513,7 +513,7 @@ td.bit-rsvp{
 
 }
 #bit-events td .bit-uiButton{
-	
+
 }
 
 /*************************************
@@ -521,16 +521,16 @@ VIDEOS
 *************************************/
 .videos_section{
 
-	
+
 
 	.wrap{}
 
 	.section_header{
-		
+
 	}
 
 	.video_embed{
-		
+
 	}
 
 }
@@ -549,7 +549,7 @@ PHOTOS SECTION
 
 	ul{
 
-		
+
 
 		li{
 
@@ -557,15 +557,15 @@ PHOTOS SECTION
 
 			a{
 
-				
+
 
 				&:hover{
-					
+
 				}
 
 			}
 			img{
-				
+
 			}
 
 		}
@@ -619,29 +619,29 @@ FOOTER
 	padding: 0 0 60px 0;
 
 	.mailing_list_title, form{
-		
+
 	}
 
 	.mailing_list_title{
-		
+
 	}
 
 	form{
 
-		
+
 
 		input{
-			
+
 		}
 		input[type="text"]{
-			
+
 		}
 		input[type="submit"]{
 
-			
+
 
 			&:hover{
-				
+
 			}
 
 		}
@@ -652,29 +652,29 @@ FOOTER
 		:-ms-input-placeholder {}
 
 	}
-		
+
 }
 .social_links{
 
 	ul{
 
-		
+
 
 		li{
 
-			
+
 
 			a{
 
-				
+
 
 				svg{
 
-					
+
 
 					path{
 
-						
+
 
 					}
 
@@ -720,9 +720,9 @@ VIDEOS PAGE
 .video_list{
 
 	.video_embed{
-		
+
 		&:last-child{
-			
+
 		}
 	}
 
@@ -738,19 +738,19 @@ CONTACT STYLES
 }
 form.contact_form{
 
-	
+
 
 	ul{
 
-		
+
 
 		li{
 
-			
+
 
 		}
 		li:last-child{
-			
+
 		}
 
 		li.half{  }
@@ -760,13 +760,13 @@ form.contact_form{
 	}
 
 	label{
-		
+
 	}
 	input, textarea{
-		
+
 	}
 	textarea{
-		
+
 	}
 	input[type="text"]{
 
@@ -776,10 +776,10 @@ form.contact_form{
 	}
 	input[type="submit"]{
 
-		
+
 
 		&:hover{
-			
+
 		}
 
 	}

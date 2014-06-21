@@ -152,8 +152,35 @@
 .icon-email:before {
   content: "\e029"; }
 
-.icon-bandcamp-icon:before {
+.icon-bandcamp-icon-alt1:before {
+  content: "\e02a"; }
+
+.icon-bandcamp-icon-alt1:before {
   content: "\e02a"; }
 
 .icon-info-circle:before {
   content: "\e01f"; }
+
+.icon-ticket:before {
+  content: "\e02b"; }
+
+.icon-bandcamp:before {
+  content: "\e02a"; }
+
+.icon-calendar:before {
+  content: "\e02c"; }
+
+.icon-search:before {
+  content: "\e02d"; }
+
+.icon-music:before {
+  content: "\e02e"; }
+
+.icon-user:before {
+  content: "\e02f"; }
+
+.icon-archive:before {
+  content: "\e030"; }
+
+.icon-comments:before {
+  content: "\e031"; }

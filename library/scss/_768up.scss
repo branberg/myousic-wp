@@ -550,14 +550,14 @@ table.tour_dates{
 				}
 			}
 
-			.venue, .city{
+			.venue, .location{
 
 			}
 			.venue{
 				text-transform: uppercase;
 				font-weight:700;
 			}
-			.city{
+			.location{
 
 			}
 
@@ -570,14 +570,42 @@ table.tour_dates{
 		td.rsvp{
 
 			.cell_wrap{
-				//padding-right: 40px;
+				padding-right: 40px;
 			}
 
 		}
-		td.info{
-			.cell_wrap{
-				padding-right: 40px;
+		td.social_share{
+
+			display: table-cell;
+
+			.cell_wrap{}
+
+			ul{
+
+
+
+				li{
+
+
+
+					a{
+
+
+
+						i{
+
+						}
+
+						&:hover{
+
+						}
+
+					}
+
+				}
+
 			}
+
 		}
 
 	}
