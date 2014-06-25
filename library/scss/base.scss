@@ -1135,7 +1135,7 @@ table.tour_dates{
 /*************************************
 VIDEOS
 *************************************/
-.page_section.videos_section{
+body.home .page_section.videos_section{
 
 	background-color: $videoSectionBackground;
 	padding: 40px 0;
@@ -1382,7 +1382,7 @@ SHOWS PAGE
 VIDEOS PAGE
 *************************************/
 #page_content.videos_section > .wrap{
-	background-color: $videoSectionBackground;
+	//background-color: $videoSectionBackground;
 }
 .video_list{
 

@@ -1067,14 +1067,14 @@ table.tour_dates {
 /*************************************
 VIDEOS
 *************************************/
-.page_section.videos_section {
+body.home .page_section.videos_section {
   background-color: black;
   padding: 40px 0; }
-  .page_section.videos_section .section_header {
+  body.home .page_section.videos_section .section_header {
     margin: 0 0 40px 0; }
-    .page_section.videos_section .section_header a {
+    body.home .page_section.videos_section .section_header a {
       color: white; }
-  .page_section.videos_section .video_embed {
+  body.home .page_section.videos_section .video_embed {
     padding: 0; }
 
 /*************************************
@@ -1193,9 +1193,6 @@ SHOWS PAGE
 /*************************************
 VIDEOS PAGE
 *************************************/
-#page_content.videos_section > .wrap {
-  background-color: black; }
-
 .video_list .video_embed {
   margin-bottom: 40px; }
   .video_list .video_embed:last-child {
