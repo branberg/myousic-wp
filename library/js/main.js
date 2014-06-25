@@ -55,9 +55,13 @@ FUNCTIONS
 	};
 
 	// 5. Header Photo Parallax Scrolling
-	$.fn.headerParallax = function(){
-		//var yPos = -( $window.scrollTop() / 10 );
-		//return this;
+	$.fn.headerParallax = function(speed){
+		var distance = $(window).scrollTop();
+		var yPos = 50-( distance / speed );
+		var yPosRound = yPos.toFixed(2);
+		var coords = '50% ' + yPosRound + '%';
+		this.css({ backgroundPosition: coords });
+		return this;
 	};
 
 }(jQuery));
@@ -129,11 +133,7 @@ jQuery(document).ready(function($) {
 	*************************************************************************/
 	$(window).scroll(function(){
 
-		var distance = $(window).scrollTop();
-		var yPos = 50-( distance / 5 );
-		var coords = '50% ' + yPos + '%';
-
-		$('#main_header').css({ backgroundPosition: coords });
+		$('#main_header').headerParallax(5);
 
 	});
 
