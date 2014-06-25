@@ -1,5 +1,7 @@
 <?php
-// Register Custom Post Type
+/*********************************************************************************************************
+REGISTER POST TYPE
+*********************************************************************************************************/
 function myousic_cpt_shows() {
 
 	$labels = array(
@@ -56,3 +58,70 @@ function myousic_cpt_icon_shows(){
 <?php
 }
 add_action( 'admin_head', 'myousic_cpt_icon_shows' );
+
+
+/*********************************************************************************************************
+DO CUSTOM COLUMNS IN ADMIN FOR SHOWS CPT
+*********************************************************************************************************/
+//Redefine the columns
+add_filter( 'manage_edit-shows_columns', 'myousic_custom_shows_page_columns' );
+
+function myousic_custom_shows_page_columns($columns) {
+  $columns = array(
+    'cb'        => '<input type="checkbox" />',
+    'showdate'  => 'Show Date',
+    'venue'     => 'Venue',
+    'location'  => 'Location',
+    'showdesc'	=> 'Description',
+  );
+  return $columns;
+}
+
+//display newly defined columns
+add_action( 'manage_shows_posts_custom_column', 'myousic_custom_shows_columns');
+
+function myousic_custom_shows_columns($column) {
+  global $post;
+
+  switch($column) {
+
+    case 'showdate':
+      if( get_field('date') ){
+        $date = get_field('date'); //grab date value from page
+        $y = substr( $date, 0, 4 ); //create vars of each val
+        $m = substr( $date, 4, 2 );
+        $d = substr( $date, 6, 2 );
+        $time = strtotime( "{$y}-{$m}-{$d}" ); //restring into php < 5.3 friendly values
+        echo '<a href="'.get_edit_post_link().'"><strong>' . date( 'm/d/Y', $time ) . '</strong></a>';
+      } else {
+        echo '<a href="'.get_edit_post_link().'"><em>No date set</em></a>';
+      }
+      break;
+
+    case 'venue':
+      if( get_field('venue') ){
+        echo '<a href="'.get_edit_post_link().'">' . get_field('venue') . '</a>';
+      } else {
+        echo '<a href="'.get_edit_post_link().'"><em>No venue set</em></a>';
+      }
+      break;
+
+    case 'location':
+      if( get_field('location') ){
+        echo '<a href="'.get_edit_post_link().'">' . get_field('location') . '</a>';
+      } else {
+        echo '<a href="'.get_edit_post_link().'"><em>No location set</em></a>';
+      }
+      break;
+
+    case 'showdesc':
+    	if( get_field('show_description') ){
+        echo wp_trim_words( get_field('show_description'), 30 );
+      } else {
+        echo '<em>No description set</em>';
+      }
+      break;
+
+  }
+
+}

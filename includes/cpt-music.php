@@ -1,5 +1,7 @@
 <?php
-// Register Custom Post Type
+/*********************************************************************************************************
+REGISTER MUSIC POST TYPE
+*********************************************************************************************************/
 function myousic_cpt_music() {
 
 	$labels = array(
@@ -21,7 +23,7 @@ function myousic_cpt_music() {
 		'label'               => __( 'music', 'text_domain' ),
 		'description'         => __( 'A collection of music', 'text_domain' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title' ),
+		'supports'            => array( '' ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
@@ -56,3 +58,57 @@ function myousic_cpt_icon_music(){
 <?php
 }
 add_action( 'admin_head', 'myousic_cpt_icon_music' );
+
+
+/*********************************************************************************************************
+DO CUSTOM COLUMNS IN ADMIN FOR SHOWS CPT
+*********************************************************************************************************/
+//Redefine the columns
+add_filter( 'manage_edit-music_columns', 'myousic_custom_music_page_columns' );
+
+function myousic_custom_music_page_columns($columns) {
+  $columns = array(
+    'cb'        				=> '<input type="checkbox" />',
+    'musictitle'  			=> 'Music Title',
+    'musicdescription'	=> 'Description',
+    'featuretype'  			=> 'Feature Type',
+    'date'							=> 'Date',
+  );
+  return $columns;
+}
+
+//display newly defined columns
+add_action( 'manage_music_posts_custom_column', 'myousic_custom_music_columns');
+
+function myousic_custom_music_columns($column) {
+  global $post;
+
+  switch($column) {
+
+    case 'musictitle':
+      if( get_field('feature_title') ){
+        echo '<a href="'.get_edit_post_link().'">' . get_field('feature_title') . '</a>';
+      } else {
+        echo '<a href="'.get_edit_post_link().'"><em>No title set</em></a>';
+      }
+      break;
+
+    case 'musicdescription':
+      if( get_field('feature_description') ){
+        echo wp_trim_words( get_field('feature_description'), 30 );
+      } else {
+        echo '<em>No description set</em>';
+      }
+      break;
+
+    case 'featuretype':
+      if( get_field('feature_type') ){
+        echo get_field('feature_type');
+      } else {
+        echo '<em>No type set</em>';
+      }
+      break;
+
+  }
+
+}

@@ -1,5 +1,7 @@
 <?php
-// Register Custom Post Type
+/*********************************************************************************************************
+REGISTER VIDEO POST TYPE
+*********************************************************************************************************/
 function myousic_cpt_videos() {
 
 	$labels = array(
@@ -21,7 +23,7 @@ function myousic_cpt_videos() {
 		'label'               => __( 'videos', 'text_domain' ),
 		'description'         => __( 'A collection of videos', 'text_domain' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', ),
+		'supports'            => array( '', ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
@@ -33,7 +35,7 @@ function myousic_cpt_videos() {
 		'can_export'          => true,
 		'has_archive'         => false,
 		'exclude_from_search' => true,
-		'publicly_queryable'  => true,
+		'publicly_queryable'  => false,
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'videos', $args );
@@ -56,3 +58,48 @@ function myousic_cpt_icon_videos(){
 <?php
 }
 add_action( 'admin_head', 'myousic_cpt_icon_videos' );
+
+
+/*********************************************************************************************************
+DO CUSTOM COLUMNS IN ADMIN FOR SHOWS CPT
+*********************************************************************************************************/
+//Redefine the columns
+add_filter( 'manage_edit-videos_columns', 'myousic_custom_videos_page_columns' );
+
+function myousic_custom_videos_page_columns($columns) {
+  $columns = array(
+    'cb'       		=> '<input type="checkbox" />',
+    'videotitle'	=> 'Video Title',
+    'videourl'  	=> 'Feature URL',
+    'date'				=> 'Date',
+  );
+  return $columns;
+}
+
+//display newly defined columns
+add_action( 'manage_videos_posts_custom_column', 'myousic_custom_videos_columns');
+
+function myousic_custom_videos_columns($column) {
+  global $post;
+
+  switch($column) {
+
+    case 'videotitle':
+      if( get_field('video_title') ){
+        echo '<a href="'.get_edit_post_link().'">' . get_field('video_title') . '</a>';
+      } else {
+        echo '<a href="'.get_edit_post_link().'"><em>No title set</em></a>';
+      }
+      break;
+
+    case 'videourl':
+      if( get_field('video_url') ){
+        echo '<a href="'.get_field('video_url').'" target="_blank">' . get_field('video_url') . ' <div class="dashicons dashicons-share-alt2"></div></a>';
+      } else {
+        echo '<em>No URL set</em>';
+      }
+      break;
+
+  }
+
+}
