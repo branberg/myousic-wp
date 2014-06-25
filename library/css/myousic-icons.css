@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "boombox-myousic-fonts";
-  src: url("../fonts/boombox-myousic-fonts/boombox-myousic-fonts.eot");
-  src: url("../fonts/boombox-myousic-fonts/boombox-myousic-fonts.eot?#iefix") format("embedded-opentype"), url("../fonts/boombox-myousic-fonts/boombox-myousic-fonts.woff") format("woff"), url("../fonts/boombox-myousic-fonts/boombox-myousic-fonts.ttf") format("truetype"), url("../fonts/boombox-myousic-fonts/boombox-myousic-fonts.svg#boombox-myousic-fonts") format("svg");
+  font-family: "myousic-fonts";
+  src: url("../fonts/myousic-fonts/myousic-fonts.eot");
+  src: url("../fonts/myousic-fonts/myousic-fonts.eot?#iefix") format("embedded-opentype"), url("../fonts/myousic-fonts/myousic-fonts.woff") format("woff"), url("../fonts/myousic-fonts/myousic-fonts.ttf") format("truetype"), url("../fonts/myousic-fonts/myousic-fonts.svg#myousic-fonts") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 [data-icon]:before {
-  font-family: "boombox-myousic-fonts" !important;
+  font-family: "myousic-fonts" !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
@@ -19,7 +19,7 @@
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-  font-family: "boombox-myousic-fonts" !important;
+  font-family: "myousic-fonts" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;

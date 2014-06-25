@@ -50,9 +50,9 @@ include_once('includes/cpt-videos.php');
 
 
 /*********************************************************************************************************
-BOOMBOX MAIN MENU - Used as fallback when no menu is initially created
+MYOUSIC MAIN MENU - Used as fallback when no menu is initially created
 *********************************************************************************************************/
-function boombox_main_menu(){
+function myousic_main_menu(){
 	echo '<ul id="menu_links">';
 	wp_list_pages('title_li=');
 	echo '</ul>';
@@ -104,7 +104,7 @@ function hex2rgba($color, $opacity = false) {
 /*********************************************************************************************************
 SCRIPTS & ENQUEUEING FOR CUSTOM WEB FONTS
 *********************************************************************************************************/
-function boombox_custom_webfonts(){
+function myousic_custom_webfonts(){
 
 	if (!is_admin()) { //only load on front end
 
@@ -148,13 +148,13 @@ function boombox_custom_webfonts(){
 	}
 
 }
-add_action( 'wp_enqueue_scripts', 'boombox_custom_webfonts' );
+add_action( 'wp_enqueue_scripts', 'myousic_custom_webfonts' );
 
 
 /*********************************************************************************************************
 SCRIPTS & ENQUEUEING
 *********************************************************************************************************/
-function boombox_styles_and_scripts(){
+function myousic_styles_and_scripts(){
 
 	global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 	if (!is_admin()) {
@@ -199,7 +199,7 @@ function boombox_styles_and_scripts(){
 
 }
 
-add_action( 'wp_enqueue_scripts', 'boombox_styles_and_scripts' );
+add_action( 'wp_enqueue_scripts', 'myousic_styles_and_scripts' );
 
 
 /*********************************************************************************************************
@@ -233,7 +233,7 @@ add_filter('show_admin_bar', '__return_false');
 
 //Register our sidebars and widgetized areas.
 // This is off by defalt, but if you know what you're doing then have at it.
-/*function boombox_widgets_init() {
+/*function myousic_widgets_init() {
 
 	register_sidebar( array(
 		'name' => 'Home Bottom Widget Area',
@@ -244,7 +244,7 @@ add_filter('show_admin_bar', '__return_false');
 		'after_title' => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'boombox_widgets_init' );*/
+add_action( 'widgets_init', 'myousic_widgets_init' );*/
 
 //Custom excerpt lengths
 function the_excerpt_max_charlength($charlength) {
@@ -270,10 +270,10 @@ function the_excerpt_max_charlength($charlength) {
 /*********************************************************************************************************
 Custom style for the wordpress editor
 *********************************************************************************************************/
-function boombox_add_editor_styles() {
+function myousic_add_editor_styles() {
     add_editor_style( get_template_directory_uri() . '/library/css/custom-editor-styles.css' );
 }
-add_action( 'init', 'boombox_add_editor_styles' );
+add_action( 'init', 'myousic_add_editor_styles' );
 
 
 /*********************************************************************************************************
