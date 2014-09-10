@@ -133,7 +133,7 @@ jQuery(document).ready(function($) {
 	*************************************************************************/
 	$(window).scroll(function(){
 
-		$('#main_header').headerParallax(5);
+		$('#main_header').headerParallax(20);
 
 	});
 
